@@ -1,10 +1,5 @@
-import type { Metadata } from "next";
+"use client";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "Free Fitness Calculators — BMI, TDEE, Protein, Macros & More",
-  description: "10 free, science-backed fitness calculators for Indian adults. BMI, TDEE, protein intake, body fat, macros, water intake, one rep max, calorie deficit, lean body mass, FFMI.",
-};
 
 const calculators = [
   { name: "BMI Calculator", desc: "Calculate your Body Mass Index with Indian-adapted cutoffs. Instant results with full health interpretation.", href: "/calculators/bmi", icon: "⚖️", tag: "Most Popular", time: "30 sec" },
