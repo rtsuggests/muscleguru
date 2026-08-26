@@ -66,6 +66,7 @@ function Footer() {
           <p style={{ margin:0,fontSize:"0.78rem" }}>© {new Date().getFullYear()} MuscleGuru.in · For informational purposes only · Not a substitute for medical advice</p>
           <div style={{ display:"flex",gap:"1rem",fontSize:"0.78rem" }}>
             <a href="/privacy-policy" style={{ color:"#9ca3af",textDecoration:"none" }}>Privacy</a>
+            <a href="/terms-of-service" style={{ color:"#9ca3af",textDecoration:"none" }}>Terms</a>
             <a href="/editorial-policy" style={{ color:"#9ca3af",textDecoration:"none" }}>Editorial Policy</a>
             <a href="/contact" style={{ color:"#9ca3af",textDecoration:"none" }}>Contact</a>
           </div>

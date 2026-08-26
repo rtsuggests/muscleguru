@@ -2,41 +2,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Supplement Guides India — Evidence-Based Reviews",
-  description: "Honest, science-backed supplement guides for the Indian fitness community. What works, what doesn't, and what the research actually shows.",
+  title: "Nutrition Guides India — Protein & Meal Plans",
+  description: "Evidence-based nutrition guides for Indian adults. Protein sources, meal plans, and dietary advice based on ICMR guidelines.",
 };
 
 const articles = [
-  { title: "Creatine Guide for Indian Beginners: Everything You Need to Know", desc: "The most researched supplement in sports science. We cover what creatine is, how it works, dosing, safety, and which Indian brands are worth considering.", href: "/supplements/creatine-guide", time: "10 min" },
-  { title: "Whey Protein Explained: Types, Benefits & How to Choose", desc: "Whey concentrate vs isolate vs hydrolysate — what the research says, Indian price points, and whether you actually need it.", href: "/supplements/whey-protein-guide", time: "9 min" },
-  { title: "Supplement Tier List: What Actually Works (Evidence-Based)", desc: "A research-backed ranking of the most popular fitness supplements from 'Strong evidence' to 'No evidence' — no marketing bias.", href: "/supplements/supplement-tier-list", time: "12 min" },
+  { title: "Best Indian Protein Sources", desc: "A complete, ranked list of the highest-protein Indian foods — vegetarian and non-vegetarian.", href: "/nutrition/indian-protein-sources", time: "9 min" },
+  { title: "How Much Protein Do You Actually Need?", desc: "Evidence-based protein targets for different goals — muscle gain, fat loss, and general health.", href: "/nutrition/how-much-protein", time: "8 min" },
+  { title: "Paneer Protein Guide", desc: "Full nutritional breakdown of paneer and how to use it to hit your daily protein target.", href: "/nutrition/paneer-protein-guide", time: "6 min" },
+  { title: "Egg Protein Guide", desc: "Whole egg vs egg white — protein content, nutrition, and how many eggs you should eat.", href: "/nutrition/egg-protein-guide", time: "6 min" },
+  { title: "7-Day Indian Meal Plan", desc: "A complete week of high-protein Indian meals for muscle gain or fat loss.", href: "/nutrition/7-day-meal-plan", time: "10 min" },
 ];
 
-export default function SupplementsPage() {
+export default function NutritionPage() {
   return (
     <div style={{ maxWidth: 1000, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <div style={{ marginBottom: "0.5rem", fontSize: "0.82rem", color: "var(--color-muted)" }}>
-        <Link href="/" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Home</Link> › Supplements
+        <Link href="/" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Home</Link> › Nutrition
       </div>
-      <div style={{ background: "#fffbeb", border: "1.5px solid #fcd34d", borderRadius: "0.875rem", padding: "1rem 1.25rem", marginBottom: "2rem", fontSize: "0.875rem", color: "#92400e" }}>
-        <strong>📋 Our Approach:</strong> We only discuss supplements with peer-reviewed research. We do not promote banned substances, steroids, or products with no scientific evidence. All supplement information is for educational purposes only.
-      </div>
-      <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", marginBottom: "0.75rem" }}>Supplement Guides</h1>
-      <p style={{ color: "var(--color-muted)", fontSize: "1.05rem", marginBottom: "2.5rem", maxWidth: 580 }}>
-        No hype. No affiliate bias. Just what the research actually says about popular fitness supplements.
+      <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", marginTop: "1.5rem", marginBottom: "0.75rem" }}>Nutrition Guides for India</h1>
+      <p style={{ color: "var(--color-muted)", fontSize: "1.05rem", marginBottom: "2.5rem", maxWidth: 600 }}>
+        Practical, evidence-based nutrition using foods actually available in Indian kitchens — no imported superfoods required.
       </p>
       <div style={{ display: "grid", gap: "1rem" }}>
         {articles.map(a => (
           <Link key={a.href} href={a.href} style={{ textDecoration: "none", background: "#fff", border: "1.5px solid var(--color-border)", borderRadius: "0.875rem", padding: "1.5rem", display: "block" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem", flexWrap: "wrap", gap: "0.5rem" }}>
-              <span className="tag">Supplements</span>
+              <span className="tag">Nutrition</span>
               <span style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>{a.time} read</span>
             </div>
             <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--color-dark)", marginBottom: "0.5rem" }}>{a.title}</h2>
             <p style={{ fontSize: "0.9rem", color: "var(--color-muted)", margin: 0, lineHeight: 1.6 }}>{a.desc}</p>
-            <div style={{ marginTop: "0.875rem", fontSize: "0.85rem", color: "var(--color-brand)", fontWeight: 600 }}>Read guide →</div>
+            <div style={{ marginTop: "0.875rem", fontSize: "0.85rem", color: "var(--color-brand-dark)", fontWeight: 600 }}>Read guide →</div>
           </Link>
         ))}
+      </div>
+      <div style={{ marginTop: "3rem", background: "var(--color-bg)", borderRadius: "1rem", padding: "1.75rem" }}>
+        <h2 style={{ fontSize: "1.2rem", marginBottom: "0.875rem" }}>Nutrition Calculators</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.75rem" }}>
+          {[["💪 Protein Calculator", "/calculators/protein"], ["🌱 Vegetarian Protein", "/calculators/vegetarian-protein"], ["🥗 Macro Calculator", "/calculators/macro"], ["🔥 TDEE Calculator", "/calculators/tdee"]].map(([name, href]) => (
+            <Link key={href} href={href} style={{ background: "#fff", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.875rem", color: "var(--color-dark)" }}>{name}</Link>
+          ))}
+        </div>
       </div>
     </div>
   );

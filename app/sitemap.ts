@@ -50,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/editorial-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
     { url: `${base}/medical-disclaimer`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
     { url: `${base}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/terms-of-service`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
   ];
 }
