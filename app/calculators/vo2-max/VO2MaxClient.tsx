@@ -1,2 +1,79 @@
 "use client";
-import type { Metadata } from "next";
+import { useState } from "react";
+import Link from "next/link";
+
+export default function VO2MaxClient() {
+  const [method, setMethod] = useState<"cooper" | "rhr">("cooper");
+  const [distance, setDistance] = useState("");
+  const [age, setAge] = useState("");
+  const [restingHR, setRestingHR] = useState("");
+  const [result, setResult] = useState<number | null>(null);
+  const [error, setError] = useState("");
+
+  function calculate() {
+    setError(""); setResult(null);
+    if (method === "cooper") {
+      const d = parseFloat(distance);
+      if (!d || d < 800 || d > 5000) { setError("Please enter distance covered in 12 minutes (metres)."); return; }
+      const vo2 = (d - 504.9) / 44.73;
+      setResult(Math.round(vo2 * 10) / 10);
+    } else {
+      const a = parseFloat(age), rhr = parseFloat(restingHR);
+      if (!a || !rhr) { setError("Please enter age and resting heart rate."); return; }
+      const maxHR = 220 - a;
+      const vo2 = 15.3 * (maxHR / rhr);
+      setResult(Math.round(vo2 * 10) / 10);
+    }
+  }
+
+  return (
+    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+      <span className="tag">Cardio Fitness</span>
+      <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>VO2 Max Calculator India</h1>
+      <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Estimate your VO2 max using the Cooper 12-minute run test or resting heart rate method.</p>
+      <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
+        <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.25rem", background: "var(--color-bg)", padding: "0.35rem", borderRadius: "0.625rem", width: "fit-content" }}>
+          {([["cooper","Cooper Test"],["rhr","Resting HR"]] as const).map(([m, label]) => (
+            <button key={m} onClick={() => setMethod(m as "cooper" | "rhr")} style={{ padding: "0.45rem 1.25rem", borderRadius: "0.4rem", border: "none", cursor: "pointer", fontWeight: 600, background: method === m ? "var(--color-brand-dark)" : "transparent", color: method === m ? "#fff" : "var(--color-muted)" }}>{label}</button>
+          ))}
+        </div>
+        {method === "cooper" ? (
+          <div style={{ marginBottom: "1.25rem" }}>
+            <label style={{ display: "block", fontWeight: 600, marginBottom: "0.4rem", fontSize: "0.9rem" }}>Distance covered in 12 minutes (metres)</label>
+            <input className="calc-input" type="number" value={distance} onChange={e => setDistance(e.target.value)} placeholder="e.g. 2400" />
+          </div>
+        ) : (
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+            <div><label style={{ display: "block", fontWeight: 600, marginBottom: "0.4rem", fontSize: "0.9rem" }}>Age</label><input className="calc-input" type="number" value={age} onChange={e => setAge(e.target.value)} /></div>
+            <div><label style={{ display: "block", fontWeight: 600, marginBottom: "0.4rem", fontSize: "0.9rem" }}>Resting Heart Rate (bpm)</label><input className="calc-input" type="number" value={restingHR} onChange={e => setRestingHR(e.target.value)} /></div>
+          </div>
+        )}
+        {error && <p style={{ color: "#ef4444", fontSize: "0.875rem", marginBottom: "1rem" }}>{error}</p>}
+        <button className="btn-primary" onClick={calculate}>Calculate My VO2 Max</button>
+        {result && (
+          <div style={{ marginTop: "1.5rem" }} className="result-card">
+            <div className="result-number">{result}</div>
+            <div className="result-label">VO2 Max (ml/kg/min)</div>
+          </div>
+        )}
+      </div>
+      <div className="seo-content">
+        <h2>Understanding VO2 Max</h2>
+        <p>VO2 max measures your body&apos;s maximum oxygen utilisation during intense exercise — the gold standard measure of cardiovascular fitness. Higher VO2 max correlates with better endurance performance and lower cardiovascular disease risk.</p>
+        <table>
+          <thead><tr><th>Rating</th><th>VO2 Max Range (Men)</th></tr></thead>
+          <tbody>
+            <tr><td>Excellent</td><td>Above 52</td></tr>
+            <tr><td>Good</td><td>43-52</td></tr>
+            <tr><td>Average</td><td>35-42</td></tr>
+            <tr><td>Below Average</td><td>Below 35</td></tr>
+          </tbody>
+        </table>
+        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
+          <Link href="/calculators/running-pace" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Running Pace Calc</Link>
+          <Link href="/calculators/heart-rate-zone" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Heart Rate Zones</Link>
+        </div>
+      </div>
+    </div>
+  );
+}
