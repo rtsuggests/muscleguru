@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 const activities = [
   ["Walking (5 km/h)", 3.5], ["Brisk walking (6.5 km/h)", 5.0], ["Running (8 km/h)", 8.3],
@@ -31,6 +33,9 @@ export default function CaloriesBurnedClient() {
       <span className="tag">Popular</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Calories Burned Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate calories burned during 40+ activities including Surya Namaskar, cricket, and yoga.</p>
+
+      <SavedResultBanner slug="calories-burned" />
+
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "1rem", marginBottom: "1.25rem" }}>
           <div><label style={{ display: "block", fontWeight: 600, marginBottom: "0.4rem", fontSize: "0.9rem" }}>Weight (kg)</label><input className="calc-input" type="number" value={weight} onChange={e => setWeight(e.target.value)} placeholder="e.g. 70" /></div>
@@ -45,19 +50,25 @@ export default function CaloriesBurnedClient() {
         {error && <p style={{ color: "#ef4444", fontSize: "0.875rem", marginBottom: "1rem" }}>{error}</p>}
         <button className="btn-primary" onClick={calculate}>Calculate Calories Burned</button>
         {result && (
-          <div style={{ marginTop: "1.5rem" }} className="result-card">
-            <div className="result-number">{result}</div>
-            <div className="result-label">Calories Burned</div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div className="result-card" style={{ marginBottom: "1.25rem" }}>
+              <div className="result-number">{result}</div>
+              <div className="result-label">Calories Burned</div>
+            </div>
+            <SaveResultButton calculator="Calories Burned" slug="calories-burned" icon="🔥" headline={`${result} kcal`} label="Session estimate" />
           </div>
         )}
       </div>
       <div className="seo-content">
         <h2>How This Calculator Works</h2>
         <p>This calculator uses MET (Metabolic Equivalent of Task) values — a standardised measure of exercise intensity from research-validated activity compendiums. Calories burned depend on activity intensity, duration, and your body weight.</p>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/tdee" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>TDEE Calculator</Link>
-          <Link href="/calculators/calorie-deficit" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Calorie Deficit</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+          { name: "Calorie Deficit Calc", href: "/calculators/calorie-deficit", icon: "📉" },
+          { name: "Water Intake Calc", href: "/calculators/water-intake", icon: "💧" },
+          { name: "Heart Rate Zones", href: "/calculators/heart-rate-zone", icon: "❤️" },
+        ]} />
       </div>
     </div>
   );

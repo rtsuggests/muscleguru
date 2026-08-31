@@ -31,7 +31,7 @@ function Header() {
           </div>
         </a>
         <nav style={{ display: "flex", gap: "0.25rem", alignItems: "center", flexWrap: "wrap" }}>
-          {[["Calculators","/calculators"],["Running","/running"],["Workout Plans","/workout-plans"],["Indian Diet","/indian-diet"],["Women","/women"]].map(([label,href])=>(
+          {[["Calculators","/calculators"],["Running","/running"],["Workout Plans","/workout-plans"],["Indian Diet","/indian-diet"],["Fasting","/fasting"],["Women","/women"]].map(([label,href])=>(
             <a key={href} href={href} style={{ padding:"0.35rem 0.625rem",borderRadius:"0.375rem",textDecoration:"none",color:"#374151",fontSize:"0.82rem",fontWeight:500,whiteSpace:"nowrap" }}>{label}</a>
           ))}
         </nav>
@@ -50,7 +50,7 @@ function Footer() {
             <p style={{ fontSize: "0.82rem", lineHeight: 1.7, margin: 0 }}>India&apos;s evidence-based fitness platform. Science-backed calculators, workout plans, and nutrition guides for Indian adults.</p>
           </div>
           {[
-            { title:"Calculators", links:[["BMI Calculator","/calculators/bmi"],["TDEE Calculator","/calculators/tdee"],["Protein Calculator","/calculators/protein"],["Army Fitness","/calculators/army-fitness"],["All Calculators","/calculators"]] },
+            { title:"Calculators", links:[["BMI Calculator","/calculators/bmi"],["TDEE Calculator","/calculators/tdee"],["Protein Calculator","/calculators/protein"],["Army Fitness","/calculators/army-fitness"],["My Progress","/my-progress"],["All Calculators","/calculators"]] },
             { title:"Running", links:[["Beginner Guide","/running/beginners-guide"],["10K Training Plan","/running/10k-training-plan"],["Half Marathon Plan","/running/half-marathon-training"],["How to Run Faster","/running/how-to-run-faster"],["All Running Guides","/running"]] },
             { title:"More", links:[["Workout Plans","/workout-plans"],["Indian Diet","/indian-diet"],["Women's Fitness","/women"],["About Us","/about"],["Medical Disclaimer","/medical-disclaimer"]] },
           ].map(section=>(

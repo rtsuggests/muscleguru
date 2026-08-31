@@ -32,6 +32,7 @@ const calculators = [
   { name:"Vegetarian Protein",desc:"Full Indian veg protein food table with PDCAAS scores.",href:"/calculators/vegetarian-protein",icon:"🌱",tag:"Vegetarian"},
   { name:"IF Calculator",desc:"16:8, 18:6, 5:2 windows with Indian meal timing examples.",href:"/calculators/intermittent-fasting",icon:"⏰",tag:"Fat Loss"},
   { name:"Muscle Gain Rate",desc:"Realistic monthly and yearly muscle gain projections.",href:"/calculators/muscle-gain-rate",icon:"📈",tag:"Muscle Building"},
+  { name:"Fasting Nutrition",desc:"Calorie & protein targets for Navratri, Ekadashi, Karva Chauth.",href:"/calculators/fasting-nutrition",icon:"🪔",tag:"Festival Fasting"},
   { name:"Diabetes Risk",desc:"Indian-adapted BMI + waist + lifestyle risk factors.",href:"/calculators/diabetes-bmi",icon:"🩸",tag:"Medical"},
 ];
 

@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function DiabetesBMIClient() {
   const [weight, setWeight] = useState("");
@@ -27,6 +29,9 @@ export default function DiabetesBMIClient() {
       <span className="tag">Medical</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Diabetes Risk & BMI Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Assess your type 2 diabetes risk using Indian-adapted BMI thresholds.</p>
+
+      <SavedResultBanner slug="diabetes-bmi" />
+
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.25rem", background: "var(--color-bg)", padding: "0.35rem", borderRadius: "0.625rem", width: "fit-content" }}>
           {(["male", "female"] as const).map(s => (
@@ -41,11 +46,14 @@ export default function DiabetesBMIClient() {
         {error && <p style={{ color: "#ef4444", fontSize: "0.875rem", marginBottom: "1rem" }}>{error}</p>}
         <button className="btn-primary" onClick={calculate}>Assess My Risk</button>
         {result && (
-          <div style={{ marginTop: "1.5rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-            <div className="result-card"><div className="result-number">{result.bmi}</div><div className="result-label">BMI</div></div>
-            <div style={{ background: result.color + "18", border: `2px solid ${result.color}40`, borderRadius: "1rem", padding: "1.25rem", textAlign: "center" }}>
-              <div style={{ fontWeight: 800, fontSize: "1.4rem", color: result.color }}>{result.risk}</div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="result-card"><div className="result-number">{result.bmi}</div><div className="result-label">BMI</div></div>
+              <div style={{ background: result.color + "18", border: `2px solid ${result.color}40`, borderRadius: "1rem", padding: "1.25rem", textAlign: "center" }}>
+                <div style={{ fontWeight: 800, fontSize: "1.4rem", color: result.color }}>{result.risk}</div>
+              </div>
             </div>
+            <SaveResultButton calculator="Diabetes Risk" slug="diabetes-bmi" icon="🩸" headline={result.risk} label={`BMI ${result.bmi}`} />
           </div>
         )}
       </div>
@@ -53,10 +61,13 @@ export default function DiabetesBMIClient() {
         <h2>Indian BMI Thresholds</h2>
         <p>Indians develop diabetes at lower BMI than Western populations. ICMR thresholds: overweight starts at BMI 23 (not 25). Waist circumference above 90cm (men) or 80cm (women) indicates elevated risk regardless of BMI.</p>
         <div className="disclaimer-box">This is a screening tool, not a diagnosis. Consult a doctor for proper evaluation.</div>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/bmi" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>BMI Calculator</Link>
-          <Link href="/calculators/waist-hip-ratio" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Waist-Hip Ratio</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "BMI Calculator", href: "/calculators/bmi", icon: "⚖️" },
+          { name: "Waist-Hip Ratio", href: "/calculators/waist-hip-ratio", icon: "📐" },
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+          { name: "Calorie Deficit Calc", href: "/calculators/calorie-deficit", icon: "📉" },
+        ]} />
       </div>
     </div>
   );

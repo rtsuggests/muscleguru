@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function KetoClient() {
   const [calories, setCalories] = useState("");
@@ -31,6 +33,9 @@ export default function KetoClient() {
       <span className="tag">Keto</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Keto Macro Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate keto macros for 4 keto variants with Indian keto food guide.</p>
+
+      <SavedResultBanner slug="keto-macro" />
+
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
           <div><label style={{ display: "block", fontWeight: 600, marginBottom: "0.4rem", fontSize: "0.9rem" }}>Daily Calories</label><input className="calc-input" type="number" value={calories} onChange={e => setCalories(e.target.value)} placeholder="e.g. 2000" /></div>
@@ -47,10 +52,13 @@ export default function KetoClient() {
         {error && <p style={{ color: "#ef4444", fontSize: "0.875rem", marginBottom: "1rem" }}>{error}</p>}
         <button className="btn-primary" onClick={calculate}>Calculate My Keto Macros</button>
         {result && (
-          <div style={{ marginTop: "1.5rem", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
-            <div className="result-card"><div className="result-number">{result.fat}g</div><div className="result-label">Fat</div></div>
-            <div className="result-card"><div className="result-number">{result.protein}g</div><div className="result-label">Protein</div></div>
-            <div className="result-card"><div className="result-number">{result.carbs}g</div><div className="result-label">Carbs</div></div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="result-card"><div className="result-number">{result.fat}g</div><div className="result-label">Fat</div></div>
+              <div className="result-card"><div className="result-number">{result.protein}g</div><div className="result-label">Protein</div></div>
+              <div className="result-card"><div className="result-number">{result.carbs}g</div><div className="result-label">Carbs</div></div>
+            </div>
+            <SaveResultButton calculator="Keto Macro" slug="keto-macro" icon="🥑" headline={`${result.fat}F / ${result.protein}P / ${result.carbs}C`} label="Daily keto macros" />
           </div>
         )}
       </div>
@@ -66,9 +74,12 @@ export default function KetoClient() {
             <tr><td>Coconut oil</td><td>0g</td></tr>
           </tbody>
         </table>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/macro" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Macro Calculator</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "Macro Calculator", href: "/calculators/macro", icon: "🥗" },
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+          { name: "Calorie Deficit Calc", href: "/calculators/calorie-deficit", icon: "📉" },
+        ]} />
       </div>
     </div>
   );

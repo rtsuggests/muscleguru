@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
 
 const related = [
   { name: "BMI Calculator", href: "/calculators/bmi", icon: "⚖️" },
@@ -189,6 +191,8 @@ function IdealWeightCalculator() {
             </div>
           </div>
 
+          <SaveResultButton calculator="Ideal Weight" slug="ideal-weight" icon="🎯" headline={`${result.avg} kg`} label="Average ideal weight" />
+
           {/* Formula breakdown */}
           <div style={{ background: "var(--color-bg)", borderRadius: "0.875rem", padding: "1.25rem" }}>
             <div style={{ fontWeight: 700, marginBottom: "0.875rem", fontSize: "0.95rem" }}>Results by Formula</div>
@@ -245,6 +249,8 @@ export default function IdealWeightClient() {
             Find your ideal body weight range using four validated scientific formulas, plus an Indian-adapted BMI range from ICMR guidelines.
           </p>
         </div>
+
+        <SavedResultBanner slug="ideal-weight" />
 
         {/* Calculator card */}
         <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "clamp(1.25rem, 4vw, 2rem)", boxShadow: "0 4px 24px rgba(0,0,0,0.06)", marginBottom: "2.5rem" }}>

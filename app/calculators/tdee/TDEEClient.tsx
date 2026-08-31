@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function TDEEClient() {
   const [sex, setSex] = useState<"male" | "female">("male");
@@ -36,6 +38,8 @@ export default function TDEEClient() {
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>
         Calculate your Total Daily Energy Expenditure using the Mifflin-St Jeor equation — the most accurate formula validated for modern populations.
       </p>
+
+      <SavedResultBanner slug="tdee" />
 
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.25rem", background: "var(--color-bg)", padding: "0.35rem", borderRadius: "0.625rem", width: "fit-content" }}>
@@ -77,15 +81,18 @@ export default function TDEEClient() {
         <button className="btn-primary" onClick={calculate}>Calculate My TDEE</button>
 
         {result && (
-          <div style={{ marginTop: "1.5rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-            <div className="result-card">
-              <div className="result-number">{result.bmr}</div>
-              <div className="result-label">BMR (kcal/day)</div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="result-card">
+                <div className="result-number">{result.bmr}</div>
+                <div className="result-label">BMR (kcal/day)</div>
+              </div>
+              <div className="result-card">
+                <div className="result-number">{result.tdee}</div>
+                <div className="result-label">TDEE (kcal/day)</div>
+              </div>
             </div>
-            <div className="result-card">
-              <div className="result-number">{result.tdee}</div>
-              <div className="result-label">TDEE (kcal/day)</div>
-            </div>
+            <SaveResultButton calculator="TDEE" slug="tdee" icon="🔥" headline={`${result.tdee} kcal`} label="Daily maintenance" />
           </div>
         )}
       </div>
@@ -100,11 +107,15 @@ export default function TDEEClient() {
           <li><strong>Muscle gain:</strong> Eat 200-300 kcal above your TDEE</li>
           <li><strong>Maintenance:</strong> Eat at your TDEE</li>
         </ul>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/calorie-deficit" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Calorie Deficit Calc</Link>
-          <Link href="/calculators/protein" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Protein Calculator</Link>
-          <Link href="/calculators/macro" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Macro Calculator</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "Calorie Deficit Calculator", href: "/calculators/calorie-deficit", icon: "📉" },
+          { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+          { name: "Macro Calculator", href: "/calculators/macro", icon: "🥗" },
+          { name: "BMI Calculator", href: "/calculators/bmi", icon: "⚖️" },
+          { name: "Water Intake Calculator", href: "/calculators/water-intake", icon: "💧" },
+          { name: "Calories Burned Calculator", href: "/calculators/calories-burned", icon: "🔥" },
+        ]} />
       </div>
     </div>
   );

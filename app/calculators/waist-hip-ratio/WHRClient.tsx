@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
 
 const schema = {
   "@context": "https://schema.org", "@type": "WebApplication",
@@ -105,6 +107,9 @@ function WHRCalculator() {
               <div style={{ fontSize: "0.8rem", color: "var(--color-muted)", marginTop: "0.3rem" }}>Indian ICMR Threshold</div>
             </div>
           </div>
+          <div style={{ marginBottom: "1.25rem" }}>
+            <SaveResultButton calculator="Waist-Hip Ratio" slug="waist-hip-ratio" icon="📐" headline={String(result.whr)} label={result.risk} />
+          </div>
           <div style={{ background: "var(--color-bg)", borderRadius: "0.875rem", padding: "1.25rem", marginBottom: "1.25rem" }}>
             <div style={{ fontWeight: 700, marginBottom: "0.5rem", fontSize: "0.9rem" }}>📋 Recommendation</div>
             <p style={{ fontSize: "0.875rem", margin: 0, lineHeight: 1.7 }}>{result.advice}</p>
@@ -160,6 +165,7 @@ export default function WHRClient() {
           Calculate your WHR with Indian-adapted ICMR risk thresholds. More accurate than BMI for predicting metabolic health risk in Indians.
         </p>
       </div>
+      <SavedResultBanner slug="waist-hip-ratio" />
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "clamp(1.25rem,4vw,2rem)", boxShadow: "0 4px 24px rgba(0,0,0,0.06)", marginBottom: "2.5rem" }}>
         <WHRCalculator />
       </div>

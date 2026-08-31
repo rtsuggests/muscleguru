@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function IFClient() {
   const [startHour, setStartHour] = useState("12");
@@ -25,6 +27,9 @@ export default function IFClient() {
       <span className="tag">Fat Loss</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Intermittent Fasting Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your eating window for 16:8, 18:6, and 14:10 protocols.</p>
+
+      <SavedResultBanner slug="intermittent-fasting" />
+
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
           <div>
@@ -42,18 +47,24 @@ export default function IFClient() {
         </div>
         <button className="btn-primary" onClick={calculate}>Calculate My Window</button>
         {result && (
-          <div style={{ marginTop: "1.5rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-            <div className="result-card"><div className="result-number">{result.eatStart}</div><div className="result-label">Eating Starts</div></div>
-            <div className="result-card"><div className="result-number">{result.eatEnd}</div><div className="result-label">Eating Ends</div></div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="result-card"><div className="result-number">{result.eatStart}</div><div className="result-label">Eating Starts</div></div>
+              <div className="result-card"><div className="result-number">{result.eatEnd}</div><div className="result-label">Eating Ends</div></div>
+            </div>
+            <SaveResultButton calculator="Intermittent Fasting" slug="intermittent-fasting" icon="⏰" headline={`${result.eatStart} – ${result.eatEnd}`} label={`${protocol} protocol`} />
           </div>
         )}
       </div>
       <div className="seo-content">
         <h2>What You Can Drink While Fasting</h2>
         <p>Water, black coffee, and plain green tea are safe during your fasting window. Milk, sugar, and any calorie-containing beverages break the fast. Chai with milk and sugar is not fasting-compatible — substitute with black coffee or plain tea.</p>
-        <div style={{ marginTop: "2rem" }}>
-          <Link href="/calculators/calorie-deficit" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Calorie Deficit Calculator</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "Calorie Deficit Calc", href: "/calculators/calorie-deficit", icon: "📉" },
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+          { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+        ]} />
       </div>
     </div>
   );

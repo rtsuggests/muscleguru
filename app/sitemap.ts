@@ -23,6 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/calculators`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${base}/my-progress`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
+    { url: `${base}/calculators/fasting-nutrition`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/fasting`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${base}/fasting/navratri-diet-plan`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${base}/fasting/karva-chauth-fasting-guide`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
     ...makeUrls("calculators", calculators, 0.85),
     { url: `${base}/running`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     ...makeUrls("running", runningArticles, 0.82),

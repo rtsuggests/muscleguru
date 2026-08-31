@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
 
 const schema = {
   "@context": "https://schema.org", "@type": "WebApplication",
@@ -206,6 +208,9 @@ function RunningPaceCalculator() {
               })}
             </div>
           </div>
+          <div style={{ marginTop: "1.25rem" }}>
+            <SaveResultButton calculator="Running Pace" slug="running-pace" icon="🏃" headline={formatPace(result.paceSecPerKm)} label={`${result.speedKph} km/h`} />
+          </div>
         </div>
       )}
     </div>
@@ -232,6 +237,7 @@ export default function RunningPaceClient() {
           </p>
         </div>
         <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "clamp(1.25rem,4vw,2rem)", boxShadow: "0 4px 24px rgba(0,0,0,0.06)", marginBottom: "2.5rem" }}>
+          <SavedResultBanner slug="running-pace" />
           <RunningPaceCalculator />
         </div>
         <div className="disclaimer-box">

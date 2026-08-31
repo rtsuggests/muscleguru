@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function BodyFatClient() {
   const [sex, setSex] = useState<"male" | "female">("male");
@@ -31,6 +33,9 @@ export default function BodyFatClient() {
       <span className="tag">Body Composition</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Body Fat Calculator India — US Navy Method</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your body fat percentage using the US Navy circumference method.</p>
+
+      <SavedResultBanner slug="body-fat" />
+
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.25rem", background: "var(--color-bg)", padding: "0.35rem", borderRadius: "0.625rem", width: "fit-content" }}>
           {(["male", "female"] as const).map(s => (
@@ -48,19 +53,27 @@ export default function BodyFatClient() {
         {error && <p style={{ color: "#ef4444", fontSize: "0.875rem", marginBottom: "1rem" }}>{error}</p>}
         <button className="btn-primary" onClick={calculate}>Calculate My Body Fat</button>
         {result && (
-          <div style={{ marginTop: "1.5rem" }} className="result-card">
-            <div className="result-number">{result}%</div>
-            <div className="result-label">Estimated Body Fat</div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div className="result-card" style={{ marginBottom: "1.25rem" }}>
+              <div className="result-number">{result}%</div>
+              <div className="result-label">Estimated Body Fat</div>
+            </div>
+            <SaveResultButton calculator="Body Fat" slug="body-fat" icon="📊" headline={`${result}%`} label="Body fat estimate" />
           </div>
         )}
       </div>
       <div className="seo-content">
         <h2>About the US Navy Method</h2>
         <p>The US Navy circumference method estimates body fat using simple tape measurements — no calipers or scans needed. While less precise than DEXA scans, it is accurate within 3-4% for most body types and is free and repeatable at home.</p>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/lean-body-mass" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Lean Body Mass</Link>
-          <Link href="/calculators/bmi" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>BMI Calculator</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "Lean Body Mass", href: "/calculators/lean-body-mass", icon: "🫀" },
+          { name: "BMI Calculator", href: "/calculators/bmi", icon: "⚖️" },
+          { name: "FFMI Calculator", href: "/calculators/ffmi", icon: "🏆" },
+          { name: "Waist-Hip Ratio", href: "/calculators/waist-hip-ratio", icon: "📐" },
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+          { name: "Calorie Deficit Calc", href: "/calculators/calorie-deficit", icon: "📉" },
+        ]} />
       </div>
     </div>
   );

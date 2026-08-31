@@ -2,6 +2,8 @@
 import { useState } from "react";
 import CalcLayout from "@/components/layout/CalcLayout";
 import FAQ from "@/components/ui/FAQ";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
 
 const related = [
   { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
@@ -110,6 +112,10 @@ function BMICalculator() {
             <div style={{ marginTop: "0.75rem", display: "inline-flex", alignItems: "center", padding: "0.35rem 1rem", borderRadius: "9999px", background: cat.bg, color: cat.color, fontWeight: 700, fontSize: "0.95rem" }}>
               {cat.label}
             </div>
+          </div>
+
+          <div style={{ marginTop: "1rem" }}>
+            <SaveResultButton calculator="BMI" slug="bmi" icon="⚖️" headline={String(result)} label={cat.label} />
           </div>
 
           <div style={{ marginTop: "1.25rem", background: cat.bg, border: `1.5px solid ${cat.color}30`, borderRadius: "0.75rem", padding: "1rem 1.25rem" }}>
@@ -259,7 +265,7 @@ export default function BMIClient() {
       subtitle="Calculate your Body Mass Index instantly. Uses Indian-adapted cutoffs recommended by ICMR for more accurate interpretation."
       icon="⚖️"
       breadcrumb="BMI Calculator"
-      calculatorSlot={<BMICalculator />}
+      calculatorSlot={<><SavedResultBanner slug="bmi" /><BMICalculator /></>}
       seoContent={<SEOContent />}
       related={related}
       schema={schema}

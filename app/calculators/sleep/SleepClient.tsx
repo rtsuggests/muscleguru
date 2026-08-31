@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
 
 const schema = {
   "@context": "https://schema.org", "@type": "WebApplication",
@@ -123,6 +125,9 @@ function SleepCalculator() {
           <div style={{ marginTop: "1rem", background: "#f0f9ff", border: "1.5px solid #bae6fd", borderRadius: "0.75rem", padding: "0.875rem 1.125rem", fontSize: "0.875rem", color: "#0369a1" }}>
             <strong>💡 Tip:</strong> These times assume you fall asleep in approximately 15 minutes. Includes a 15-minute wind-down buffer. Aim for 5–6 complete cycles (7.5–9 hours) for optimal recovery.
           </div>
+          <div style={{ marginTop: "1.25rem" }}>
+            <SaveResultButton calculator="Sleep" slug="sleep" icon="😴" headline={result[0]?.split(" (")[0] || ""} label={mode === "wakeup" ? "Best bedtime" : "Best wake time"} />
+          </div>
         </div>
       )}
     </div>
@@ -147,6 +152,7 @@ export default function SleepClient() {
           <p style={{ fontSize: "1.05rem", color: "var(--color-muted)", maxWidth: 580, margin: "0 auto" }}>Find the best time to sleep or wake up based on 90-minute sleep cycles. Wake up refreshed instead of groggy — every day.</p>
         </div>
         <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "clamp(1.25rem,4vw,2rem)", boxShadow: "0 4px 24px rgba(0,0,0,0.06)", marginBottom: "2.5rem" }}>
+          <SavedResultBanner slug="sleep" />
           <SleepCalculator />
         </div>
         <div className="disclaimer-box">

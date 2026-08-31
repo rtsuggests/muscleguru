@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
 import Link from "next/link";
 
 export default function PregnancyClient() {
@@ -41,6 +43,8 @@ export default function PregnancyClient() {
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>
         Calculate healthy pregnancy weight gain with trimester guidance based on your pre-pregnancy BMI.
       </p>
+
+      <SavedResultBanner slug="pregnancy-weight-gain" />
 
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.25rem", background: "var(--color-bg)", padding: "0.35rem", borderRadius: "0.625rem", width: "fit-content" }}>
@@ -85,6 +89,9 @@ export default function PregnancyClient() {
             <div style={{ background: "var(--color-bg)", borderRadius: "0.875rem", padding: "1.25rem" }}>
               <div style={{ fontWeight: 700, marginBottom: "0.5rem", fontSize: "0.9rem" }}>At Week {week}, You Should Have Gained Approximately</div>
               <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.5rem", color: "var(--color-brand-dark)" }}>{result.recommendedNow}kg</div>
+            </div>
+            <div style={{ marginTop: "1.25rem" }}>
+              <SaveResultButton calculator="Pregnancy Weight Gain" slug="pregnancy-weight-gain" icon="🤰" headline={`${result.recommendedNow}kg`} label={`Week ${week} target`} />
             </div>
           </div>
         )}

@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function ORMClient() {
   const [weight, setWeight] = useState("");
@@ -23,6 +25,9 @@ export default function ORMClient() {
       <span className="tag">Strength</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>One Rep Max Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Estimate your 1RM using the Epley formula and get a full training percentage table.</p>
+
+      <SavedResultBanner slug="one-rep-max" />
+
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
           <div><label style={{ display: "block", fontWeight: 600, marginBottom: "0.4rem", fontSize: "0.9rem" }}>Weight Lifted (kg)</label><input className="calc-input" type="number" value={weight} onChange={e => setWeight(e.target.value)} placeholder="e.g. 80" /></div>
@@ -33,6 +38,9 @@ export default function ORMClient() {
         {result && (
           <div style={{ marginTop: "1.5rem" }}>
             <div className="result-card" style={{ marginBottom: "1.25rem" }}><div className="result-number">{result}kg</div><div className="result-label">Estimated One Rep Max</div></div>
+            <div style={{ marginBottom: "1.25rem" }}>
+              <SaveResultButton calculator="One Rep Max" slug="one-rep-max" icon="🏋️" headline={`${result}kg`} label="Estimated 1RM" />
+            </div>
             <table>
               <thead><tr><th>Percentage</th><th>Weight</th><th>Typical Reps</th></tr></thead>
               <tbody>
@@ -47,9 +55,13 @@ export default function ORMClient() {
       <div className="seo-content">
         <h2>How This Calculator Works</h2>
         <p>This calculator uses the Epley formula: 1RM = weight × (1 + reps/30). It is most accurate for rep ranges between 1-10. Use the percentage table to plan training loads for strength, hypertrophy, or endurance phases.</p>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/workout-plans/3-day-full-body" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>3-Day Workout Plan</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "3-Day Workout Plan", href: "/workout-plans/3-day-full-body", icon: "📋" },
+          { name: "Muscle Gain Rate", href: "/calculators/muscle-gain-rate", icon: "📈" },
+          { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+          { name: "Army Fitness Calc", href: "/calculators/army-fitness", icon: "🪖" },
+        ]} />
       </div>
     </div>
   );

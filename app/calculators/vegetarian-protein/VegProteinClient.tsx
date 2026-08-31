@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 const foods = [
   ["Soya chunks (dry)", "52g", "100g"],
@@ -30,6 +32,9 @@ export default function VegProteinClient() {
       <span className="tag">Vegetarian</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Vegetarian Protein Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your protein target and see how to meet it with vegetarian Indian foods.</p>
+
+      <SavedResultBanner slug="vegetarian-protein" />
+
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
           <div><label style={{ display: "block", fontWeight: 600, marginBottom: "0.4rem", fontSize: "0.9rem" }}>Body Weight (kg)</label><input className="calc-input" type="number" value={weight} onChange={e => setWeight(e.target.value)} /></div>
@@ -44,9 +49,12 @@ export default function VegProteinClient() {
         </div>
         <button className="btn-primary" onClick={calculate}>Calculate My Target</button>
         {result && (
-          <div style={{ marginTop: "1.5rem" }} className="result-card">
-            <div className="result-number">{result}g</div>
-            <div className="result-label">Daily Protein Target</div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div className="result-card" style={{ marginBottom: "1.25rem" }}>
+              <div className="result-number">{result}g</div>
+              <div className="result-label">Daily Protein Target</div>
+            </div>
+            <SaveResultButton calculator="Vegetarian Protein" slug="vegetarian-protein" icon="🌱" headline={`${result}g`} label="Daily target" />
           </div>
         )}
       </div>
@@ -60,9 +68,13 @@ export default function VegProteinClient() {
             ))}
           </tbody>
         </table>
-        <div style={{ marginTop: "2rem" }}>
-          <Link href="/calculators/protein" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Protein Calculator</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+          { name: "Macro Calculator", href: "/calculators/macro", icon: "🥗" },
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+          { name: "Muscle Gain Rate", href: "/calculators/muscle-gain-rate", icon: "📈" },
+        ]} />
       </div>
     </div>
   );

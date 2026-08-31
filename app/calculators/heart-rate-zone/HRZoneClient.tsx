@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
 
 const schema = {
   "@context": "https://schema.org", "@type": "WebApplication",
@@ -119,6 +121,9 @@ function HRZoneCalculator() {
               </div>
             ))}
           </div>
+          <div style={{ marginTop: "1.25rem" }}>
+            <SaveResultButton calculator="Heart Rate Zones" slug="heart-rate-zone" icon="❤️" headline={`${result.mhr} bpm`} label="Max Heart Rate" />
+          </div>
         </div>
       )}
     </div>
@@ -143,6 +148,7 @@ export default function HRZoneClient() {
           <p style={{ fontSize: "1.05rem", color: "var(--color-muted)", maxWidth: 560, margin: "0 auto" }}>Calculate your 5 personalised heart rate training zones using the Karvonen (Heart Rate Reserve) method — the most accurate free approach.</p>
         </div>
         <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "clamp(1.25rem,4vw,2rem)", boxShadow: "0 4px 24px rgba(0,0,0,0.06)", marginBottom: "2.5rem" }}>
+          <SavedResultBanner slug="heart-rate-zone" />
           <HRZoneCalculator />
         </div>
         <div className="disclaimer-box">

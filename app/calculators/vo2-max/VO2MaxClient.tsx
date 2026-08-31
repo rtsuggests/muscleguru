@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function VO2MaxClient() {
   const [method, setMethod] = useState<"cooper" | "rhr">("cooper");
@@ -31,6 +33,7 @@ export default function VO2MaxClient() {
       <span className="tag">Cardio Fitness</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>VO2 Max Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Estimate your VO2 max using the Cooper 12-minute run test or resting heart rate method.</p>
+      <SavedResultBanner slug="vo2-max" />
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.25rem", background: "var(--color-bg)", padding: "0.35rem", borderRadius: "0.625rem", width: "fit-content" }}>
           {([["cooper","Cooper Test"],["rhr","Resting HR"]] as const).map(([m, label]) => (
@@ -51,9 +54,12 @@ export default function VO2MaxClient() {
         {error && <p style={{ color: "#ef4444", fontSize: "0.875rem", marginBottom: "1rem" }}>{error}</p>}
         <button className="btn-primary" onClick={calculate}>Calculate My VO2 Max</button>
         {result && (
-          <div style={{ marginTop: "1.5rem" }} className="result-card">
-            <div className="result-number">{result}</div>
-            <div className="result-label">VO2 Max (ml/kg/min)</div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div className="result-card" style={{ marginBottom: "1.25rem" }}>
+              <div className="result-number">{result}</div>
+              <div className="result-label">VO2 Max (ml/kg/min)</div>
+            </div>
+            <SaveResultButton calculator="VO2 Max" slug="vo2-max" icon="🫁" headline={String(result)} label="ml/kg/min" />
           </div>
         )}
       </div>
@@ -69,10 +75,11 @@ export default function VO2MaxClient() {
             <tr><td>Below Average</td><td>Below 35</td></tr>
           </tbody>
         </table>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/running-pace" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Running Pace Calc</Link>
-          <Link href="/calculators/heart-rate-zone" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Heart Rate Zones</Link>
-        </div>
+        <RelatedCalculators items={[
+          { name: "Running Pace Calc", href: "/calculators/running-pace", icon: "🏃" },
+          { name: "Heart Rate Zones", href: "/calculators/heart-rate-zone", icon: "❤️" },
+          { name: "Army Fitness Calc", href: "/calculators/army-fitness", icon: "🪖" },
+        ]} />
       </div>
     </div>
   );

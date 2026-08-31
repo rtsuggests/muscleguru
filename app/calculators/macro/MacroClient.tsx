@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function MacroClient() {
   const [calories, setCalories] = useState("");
@@ -27,6 +30,9 @@ export default function MacroClient() {
       <span className="tag">Nutrition</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Macro Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your daily protein, carbs and fat targets for any fitness goal.</p>
+
+      <SavedResultBanner slug="macro" />
+
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
           <div>
@@ -46,20 +52,28 @@ export default function MacroClient() {
         {error && <p style={{ color: "#ef4444", fontSize: "0.875rem", marginBottom: "1rem" }}>{error}</p>}
         <button className="btn-primary" onClick={calculate}>Calculate My Macros</button>
         {result && (
-          <div style={{ marginTop: "1.5rem", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}>
-            <div className="result-card"><div className="result-number">{result.protein}g</div><div className="result-label">Protein</div></div>
-            <div className="result-card"><div className="result-number">{result.carbs}g</div><div className="result-label">Carbs</div></div>
-            <div className="result-card"><div className="result-number">{result.fat}g</div><div className="result-label">Fat</div></div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="result-card"><div className="result-number">{result.protein}g</div><div className="result-label">Protein</div></div>
+              <div className="result-card"><div className="result-number">{result.carbs}g</div><div className="result-label">Carbs</div></div>
+              <div className="result-card"><div className="result-number">{result.fat}g</div><div className="result-label">Fat</div></div>
+            </div>
+            <SaveResultButton calculator="Macro" slug="macro" icon="🥗" headline={`${result.protein}P / ${result.carbs}C / ${result.fat}F`} label="Daily macro split" />
           </div>
         )}
       </div>
       <div className="seo-content">
         <h2>Understanding Macronutrients</h2>
         <p>Macros are the three nutrients that provide calories: protein (4 kcal/g), carbohydrates (4 kcal/g), and fat (9 kcal/g). Different goals require different macro ratios — higher protein for fat loss to preserve muscle, moderate protein and higher carbs for muscle building performance.</p>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/tdee" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>TDEE Calculator</Link>
-          <Link href="/calculators/keto-macro" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Keto Macro Calc</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+          { name: "Keto Macro Calc", href: "/calculators/keto-macro", icon: "🥑" },
+          { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+          { name: "Calorie Deficit Calc", href: "/calculators/calorie-deficit", icon: "📉" },
+          { name: "Vegetarian Protein", href: "/calculators/vegetarian-protein", icon: "🌱" },
+          { name: "Body Type Quiz", href: "/calculators/body-type", icon: "🧬" },
+        ]} />
       </div>
     </div>
   );

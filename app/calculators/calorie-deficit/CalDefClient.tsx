@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function CalDefClient() {
   const [sex, setSex] = useState<"male" | "female">("male");
@@ -29,6 +31,8 @@ export default function CalDefClient() {
       <span className="tag">Weight Loss</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Calorie Deficit Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your daily calorie target for fat loss with a personalised weekly timeline.</p>
+
+      <SavedResultBanner slug="calorie-deficit" />
 
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.25rem", background: "var(--color-bg)", padding: "0.35rem", borderRadius: "0.625rem", width: "fit-content" }}>
@@ -64,19 +68,27 @@ export default function CalDefClient() {
         {error && <p style={{ color: "#ef4444", fontSize: "0.875rem", marginBottom: "1rem" }}>{error}</p>}
         <button className="btn-primary" onClick={calculate}>Calculate My Deficit</button>
         {result && (
-          <div style={{ marginTop: "1.5rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-            <div className="result-card"><div className="result-number">{result.target}</div><div className="result-label">Daily Calorie Target</div></div>
-            <div className="result-card"><div className="result-number">{result.weeklyLoss}kg</div><div className="result-label">Expected Weekly Loss</div></div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="result-card"><div className="result-number">{result.target}</div><div className="result-label">Daily Calorie Target</div></div>
+              <div className="result-card"><div className="result-number">{result.weeklyLoss}kg</div><div className="result-label">Expected Weekly Loss</div></div>
+            </div>
+            <SaveResultButton calculator="Calorie Deficit" slug="calorie-deficit" icon="📉" headline={`${result.target} kcal`} label="Daily target" />
           </div>
         )}
       </div>
       <div className="seo-content">
         <h2>How Calorie Deficit Works</h2>
         <p>A calorie deficit means eating fewer calories than your body burns (TDEE). 1 kg of fat is approximately 7,700 kcal. A moderate deficit of 500 kcal/day produces approximately 0.5 kg of fat loss per week, sustainable long-term without excessive muscle loss.</p>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/tdee" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>TDEE Calculator</Link>
-          <Link href="/calculators/protein" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Protein Calculator</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+          { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+          { name: "Water Intake Calculator", href: "/calculators/water-intake", icon: "💧" },
+          { name: "BMI Calculator", href: "/calculators/bmi", icon: "⚖️" },
+          { name: "Intermittent Fasting Calc", href: "/calculators/intermittent-fasting", icon: "⏰" },
+          { name: "Body Fat Calculator", href: "/calculators/body-fat", icon: "📊" },
+        ]} />
       </div>
     </div>
   );

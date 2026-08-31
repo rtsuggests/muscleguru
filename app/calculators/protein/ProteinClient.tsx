@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function ProteinClient() {
   const [weight, setWeight] = useState("");
@@ -25,6 +27,8 @@ export default function ProteinClient() {
       </h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your daily protein intake target based on weight and goal.</p>
 
+      <SavedResultBanner slug="protein" />
+
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
           <div>
@@ -43,9 +47,12 @@ export default function ProteinClient() {
         {error && <p style={{ color: "#ef4444", fontSize: "0.875rem", marginBottom: "1rem" }}>{error}</p>}
         <button className="btn-primary" onClick={calculate}>Calculate My Protein Target</button>
         {result && (
-          <div style={{ marginTop: "1.5rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-            <div className="result-card"><div className="result-number">{result.target}g</div><div className="result-label">Daily Protein Target</div></div>
-            <div className="result-card"><div className="result-number">{result.perMeal}g</div><div className="result-label">Per Meal (4 meals)</div></div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="result-card"><div className="result-number">{result.target}g</div><div className="result-label">Daily Protein Target</div></div>
+              <div className="result-card"><div className="result-number">{result.perMeal}g</div><div className="result-label">Per Meal (4 meals)</div></div>
+            </div>
+            <SaveResultButton calculator="Protein" slug="protein" icon="💪" headline={`${result.target}g`} label="Daily target" />
           </div>
         )}
       </div>
@@ -63,10 +70,15 @@ export default function ProteinClient() {
             <tr><td>Hung curd</td><td>10g</td></tr>
           </tbody>
         </table>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/vegetarian-protein" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Vegetarian Protein Calc</Link>
-          <Link href="/calculators/tdee" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>TDEE Calculator</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "Vegetarian Protein Calc", href: "/calculators/vegetarian-protein", icon: "🌱" },
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+          { name: "Macro Calculator", href: "/calculators/macro", icon: "🥗" },
+          { name: "Muscle Gain Rate", href: "/calculators/muscle-gain-rate", icon: "📈" },
+          { name: "Calorie Deficit Calc", href: "/calculators/calorie-deficit", icon: "📉" },
+          { name: "One Rep Max Calc", href: "/calculators/one-rep-max", icon: "🏋️" },
+        ]} />
       </div>
     </div>
   );

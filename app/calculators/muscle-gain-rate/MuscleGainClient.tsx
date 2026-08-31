@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function MuscleGainClient() {
   const [sex, setSex] = useState<"male" | "female">("male");
@@ -24,6 +26,9 @@ export default function MuscleGainClient() {
       <span className="tag">Muscle Building</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Muscle Gain Rate Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Find your realistic maximum natural muscle gain rate per month.</p>
+
+      <SavedResultBanner slug="muscle-gain-rate" />
+
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.25rem", background: "var(--color-bg)", padding: "0.35rem", borderRadius: "0.625rem", width: "fit-content" }}>
           {(["male", "female"] as const).map(s => (
@@ -41,18 +46,25 @@ export default function MuscleGainClient() {
         </div>
         <button className="btn-primary" onClick={calculate}>Calculate My Potential</button>
         {result && (
-          <div style={{ marginTop: "1.5rem" }} className="result-card">
-            <div className="result-number">{result.min}–{result.max} kg</div>
-            <div className="result-label">Max Muscle Gain per Month</div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <div className="result-card" style={{ marginBottom: "1.25rem" }}>
+              <div className="result-number">{result.min}–{result.max} kg</div>
+              <div className="result-label">Max Muscle Gain per Month</div>
+            </div>
+            <SaveResultButton calculator="Muscle Gain Rate" slug="muscle-gain-rate" icon="📈" headline={`${result.min}–${result.max} kg/mo`} label="Max realistic rate" />
           </div>
         )}
       </div>
       <div className="seo-content">
         <h2>Why Rates Slow Over Time</h2>
         <p>Beginners experience the fastest muscle gain due to neurological adaptations and distance from their genetic ceiling. These are maximum rates under optimal conditions — most people achieve 50-70% of these values.</p>
-        <div style={{ marginTop: "2rem" }}>
-          <Link href="/calculators/ffmi" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>FFMI Calculator</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "FFMI Calculator", href: "/calculators/ffmi", icon: "🏆" },
+          { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+          { name: "One Rep Max Calc", href: "/calculators/one-rep-max", icon: "🏋️" },
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+        ]} />
       </div>
     </div>
   );

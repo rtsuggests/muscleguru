@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import SavedResultBanner from "@/components/ui/SavedResultBanner";
+import SaveResultButton from "@/components/ui/SaveResultButton";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 const questions = [
   { q: "How would you describe your natural build?", options: [["Slim, narrow shoulders","ecto"],["Athletic, medium build","meso"],["Broader, gains weight easily","endo"]] },
@@ -39,6 +41,7 @@ export default function BodyTypeClient() {
       <span className="tag">Quiz</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Body Type Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Find your body type — ectomorph, mesomorph or endomorph — with Indian diet advice.</p>
+      <SavedResultBanner slug="body-type" />
       <div style={{ background: "#fff", border: "2px solid var(--color-border)", borderRadius: "1.25rem", padding: "1.5rem", marginBottom: "2rem" }}>
         {questions.map((item, qi) => (
           <div key={qi} style={{ marginBottom: "1.5rem" }}>
@@ -63,14 +66,19 @@ export default function BodyTypeClient() {
             <div style={{ background: "var(--color-bg)", borderRadius: "0.75rem", padding: "1rem" }}>
               <strong>Diet Focus:</strong> {typeInfo[result].diet}
             </div>
+            <div style={{ marginTop: "1.25rem" }}>
+              <SaveResultButton calculator="Body Type" slug="body-type" icon="🧬" headline={typeInfo[result].name} label="Your body type" />
+            </div>
           </div>
         )}
       </div>
       <div className="seo-content">
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/macro" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Macro Calculator</Link>
-          <Link href="/calculators/tdee" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>TDEE Calculator</Link>
-        </div>
+        <RelatedCalculators items={[
+          { name: "Macro Calculator", href: "/calculators/macro", icon: "🥗" },
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+          { name: "Muscle Gain Rate", href: "/calculators/muscle-gain-rate", icon: "📈" },
+          { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+        ]} />
       </div>
     </div>
   );
