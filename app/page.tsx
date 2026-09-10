@@ -3,7 +3,10 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "MuscleGuru.in — Evidence-Based Fitness for India",
-  description: "Free science-backed fitness calculators, workout plans, and nutrition guides for Indian adults. BMI, TDEE, protein, running plans and more.",
+  description: "...",
+  alternates: {
+    canonical: "https://muscleguru.in",
+  },
 };
 
 const featuredCalcs = [
