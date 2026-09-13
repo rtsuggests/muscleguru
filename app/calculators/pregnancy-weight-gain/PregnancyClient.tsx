@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
-import Link from "next/link";
+import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
 export default function PregnancyClient() {
   const [prePregWeight, setPrePregWeight] = useState("");
@@ -27,7 +28,6 @@ export default function PregnancyClient() {
 
     if (multiples === "twins") { minTotal += 6; maxTotal += 7; }
 
-    // Estimate recommended gain by current week (simple proportional model post week 12)
     const progressFraction = Math.max(0, (wk - 12) / (40 - 12));
     const recommendedNow = wk <= 12 ? 1.5 : parseFloat((1.5 + progressFraction * (minTotal - 1.5)).toFixed(1));
 
@@ -37,11 +37,9 @@ export default function PregnancyClient() {
   return (
     <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Women&apos;s Health</span>
-      <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>
-        Pregnancy Weight Gain Calculator India
-      </h1>
+      <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Pregnancy Weight Gain Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>
-        Calculate healthy pregnancy weight gain with trimester guidance based on your pre-pregnancy BMI.
+        Calculate healthy pregnancy weight gain in kilograms, by trimester, based on your pre-pregnancy BMI using ICMR-adapted guidelines.
       </p>
 
       <SavedResultBanner slug="pregnancy-weight-gain" />
@@ -86,35 +84,51 @@ export default function PregnancyClient() {
                 <div className="result-label">Total Recommended Gain</div>
               </div>
             </div>
-            <div style={{ background: "var(--color-bg)", borderRadius: "0.875rem", padding: "1.25rem" }}>
+            <div style={{ background: "var(--color-bg)", borderRadius: "0.875rem", padding: "1.25rem", marginBottom: "1.25rem" }}>
               <div style={{ fontWeight: 700, marginBottom: "0.5rem", fontSize: "0.9rem" }}>At Week {week}, You Should Have Gained Approximately</div>
               <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.5rem", color: "var(--color-brand-dark)" }}>{result.recommendedNow}kg</div>
             </div>
-            <div style={{ marginTop: "1.25rem" }}>
-              <SaveResultButton calculator="Pregnancy Weight Gain" slug="pregnancy-weight-gain" icon="🤰" headline={`${result.recommendedNow}kg`} label={`Week ${week} target`} />
-            </div>
+            <SaveResultButton calculator="Pregnancy Weight Gain" slug="pregnancy-weight-gain" icon="🤰" headline={`${result.recommendedNow}kg`} label={`Week ${week} target`} />
           </div>
         )}
       </div>
 
       <div className="seo-content">
-        <h2>Indian BMI-Based Weight Gain Guidelines</h2>
+        <h2>Healthy Pregnancy Weight Gain in Kg: Indian Guidelines</h2>
+        <p>Pregnancy weight gain recommendations are based on your pre-pregnancy BMI, because starting weight significantly affects both maternal and foetal health outcomes. India&apos;s ICMR-adapted BMI thresholds differ from Western/IOM guidelines — Indian women are classified as overweight starting at BMI 23 (not 25), which shifts the recommended gain ranges accordingly.</p>
         <table>
-          <thead><tr><th>Pre-Pregnancy BMI</th><th>Category</th><th>Total Recommended Gain</th></tr></thead>
+          <thead><tr><th>Pre-Pregnancy BMI</th><th>Category</th><th>Total Recommended Gain</th><th>2nd/3rd Trimester (per week)</th></tr></thead>
           <tbody>
-            <tr><td>Below 18.5</td><td>Underweight</td><td>12.5–18 kg</td></tr>
-            <tr><td>18.5–22.9</td><td>Normal (Indian)</td><td>11.5–16 kg</td></tr>
-            <tr><td>23–27.4</td><td>Overweight (Indian)</td><td>7–11.5 kg</td></tr>
-            <tr><td>27.5+</td><td>Obese</td><td>5–9 kg</td></tr>
+            <tr><td>Below 18.5</td><td>Underweight</td><td>12.5–18 kg</td><td>~0.5 kg/week</td></tr>
+            <tr><td>18.5–22.9</td><td>Normal (Indian)</td><td>11.5–16 kg</td><td>~0.4 kg/week</td></tr>
+            <tr><td>23–27.4</td><td>Overweight (Indian)</td><td>7–11.5 kg</td><td>~0.3 kg/week</td></tr>
+            <tr><td>27.5+</td><td>Obese</td><td>5–9 kg</td><td>~0.2 kg/week</td></tr>
           </tbody>
         </table>
+
+        <h2>Weight Gain by Trimester: What&apos;s Normal</h2>
+        <ul>
+          <li><strong>First trimester (weeks 1-12):</strong> Minimal gain expected — typically 0.5-2 kg total. Some women experience no gain or even slight loss due to morning sickness; this is generally not a concern if it resolves by the second trimester.</li>
+          <li><strong>Second trimester (weeks 13-27):</strong> The period of most consistent, steady gain — typically 0.3-0.5 kg per week for women starting at a normal BMI.</li>
+          <li><strong>Third trimester (weeks 28-40):</strong> Gain continues at a similar or slightly reduced weekly rate as the body prepares for delivery.</li>
+        </ul>
+
+        <h2>What If You&apos;re Gaining Too Fast or Too Slow?</h2>
+        <p>Occasional weeks above or below the target range are normal and not immediately concerning — pregnancy weight gain is rarely perfectly linear. However, a consistent pattern of gaining significantly faster than recommended increases risk of gestational diabetes and delivery complications, while consistently slow gain (particularly in underweight women) is associated with lower birth weight. Discuss any consistent pattern outside the expected range with your obstetrician at your next appointment — this calculator is a general guide, not a substitute for your doctor&apos;s specific monitoring.</p>
+
+        <h2>Twin Pregnancy: Adjusted Targets</h2>
+        <p>Carrying twins requires additional weight gain to support two developing babies. The general adjustment adds approximately 6-7 kg to the singleton recommendation across all BMI categories, though your doctor may provide more specific targets based on individual monitoring throughout your pregnancy.</p>
+
         <div className="disclaimer-box">
-          <strong>Medical Disclaimer:</strong> This calculator provides general guidance only. Always follow your obstetrician&apos;s specific recommendations for your pregnancy.
+          <strong>Medical Disclaimer:</strong> This calculator provides general guidance based on published ICMR-adapted ranges. Always follow your obstetrician&apos;s specific recommendations, which account for your individual health history and pregnancy progress.
         </div>
-        <div style={{ marginTop: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.75rem" }}>
-          <Link href="/calculators/bmi" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>BMI Calculator</Link>
-          <Link href="/calculators/protein" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Protein Calculator</Link>
-        </div>
+
+        <RelatedCalculators items={[
+          { name: "BMI Calculator", href: "/calculators/bmi", icon: "⚖️" },
+          { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+          { name: "Water Intake Calc", href: "/calculators/water-intake", icon: "💧" },
+          { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+        ]} />
       </div>
     </div>
   );

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import CaloriesBurnedClient from "./CaloriesBurnedClient";
 
 export const metadata: Metadata = {
-  title: "Calories Burned Calculator India — 40+ Activities",
-  description: "Calculate calories burned during 40+ activities including Surya Namaskar, cricket, and yoga.",
+  title: "Calories Burned Calculator India",
+  description: "Calculate calories burned during 40+ activities using MET values. Free calorie burn tracker for walking, running, cycling, yoga, and gym workouts.",
+  keywords: ["calorie burn tracker", "calories burned calculator India", "jogging calorie burn", "how many calories burned exercise"],
 };
 
 export default function Page() {

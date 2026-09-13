@@ -28,11 +28,27 @@ export default function BodyFatClient() {
     setResult(Math.round(bf * 10) / 10);
   }
 
+  function category(bf: number, sex: "male" | "female") {
+    if (sex === "male") {
+      if (bf < 6) return { label: "Essential Fat", color: "#2563eb" };
+      if (bf < 14) return { label: "Athletic", color: "#16a34a" };
+      if (bf < 18) return { label: "Fit", color: "#16a34a" };
+      if (bf < 25) return { label: "Average", color: "#f59e0b" };
+      return { label: "Above Average", color: "#ef4444" };
+    } else {
+      if (bf < 14) return { label: "Essential Fat", color: "#2563eb" };
+      if (bf < 21) return { label: "Athletic", color: "#16a34a" };
+      if (bf < 25) return { label: "Fit", color: "#16a34a" };
+      if (bf < 32) return { label: "Average", color: "#f59e0b" };
+      return { label: "Above Average", color: "#ef4444" };
+    }
+  }
+
   return (
     <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Body Composition</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Body Fat Calculator India — US Navy Method</h1>
-      <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your body fat percentage using the US Navy circumference method.</p>
+      <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Check your body fat percentage at home using just a tape measure — no calipers, scans, or gym equipment needed.</p>
 
       <SavedResultBanner slug="body-fat" />
 
@@ -54,17 +70,47 @@ export default function BodyFatClient() {
         <button className="btn-primary" onClick={calculate}>Calculate My Body Fat</button>
         {result && (
           <div style={{ marginTop: "1.5rem" }}>
-            <div className="result-card" style={{ marginBottom: "1.25rem" }}>
-              <div className="result-number">{result}%</div>
-              <div className="result-label">Estimated Body Fat</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="result-card"><div className="result-number">{result}%</div><div className="result-label">Estimated Body Fat</div></div>
+              <div style={{ background: category(result, sex).color + "18", border: `2px solid ${category(result, sex).color}40`, borderRadius: "1rem", padding: "1.25rem", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div style={{ fontWeight: 800, fontSize: "1.3rem", color: category(result, sex).color }}>{category(result, sex).label}</div>
+              </div>
             </div>
-            <SaveResultButton calculator="Body Fat" slug="body-fat" icon="📊" headline={`${result}%`} label="Body fat estimate" />
+            <SaveResultButton calculator="Body Fat" slug="body-fat" icon="📊" headline={`${result}%`} label={category(result, sex).label} />
           </div>
         )}
       </div>
+
       <div className="seo-content">
-        <h2>About the US Navy Method</h2>
-        <p>The US Navy circumference method estimates body fat using simple tape measurements — no calipers or scans needed. While less precise than DEXA scans, it is accurate within 3-4% for most body types and is free and repeatable at home.</p>
+        <h2>How to Check Your Body Fat Percentage at Home</h2>
+        <p>The US Navy circumference method estimates body fat using simple tape measurements at the waist, neck (and hips for women), combined with height. It was developed and validated by the US Naval Health Research Center as a practical field alternative to lab-based methods like underwater weighing. While less precise than a DEXA scan, it is accurate within approximately 3-4% for most body types — accurate enough to track meaningful changes over time.</p>
+
+        <h2>How to Measure Correctly</h2>
+        <table>
+          <thead><tr><th>Measurement</th><th>How to Measure</th></tr></thead>
+          <tbody>
+            <tr><td>Neck</td><td>Just below the larynx (Adam&apos;s apple), tape sloping slightly downward to the front</td></tr>
+            <tr><td>Waist (men)</td><td>At the navel level, standing relaxed, after a normal exhale</td></tr>
+            <tr><td>Waist (women)</td><td>At the narrowest point, usually above the belly button</td></tr>
+            <tr><td>Hip (women only)</td><td>At the widest point around the buttocks</td></tr>
+          </tbody>
+        </table>
+        <p>For best accuracy: measure in the morning before eating, keep the tape snug but not compressing the skin, and take each measurement twice to confirm consistency.</p>
+
+        <h2>Body Fat Percentage Categories</h2>
+        <table>
+          <thead><tr><th>Category</th><th>Men</th><th>Women</th></tr></thead>
+          <tbody>
+            <tr><td>Essential Fat</td><td>2-5%</td><td>10-13%</td></tr>
+            <tr><td>Athletic</td><td>6-13%</td><td>14-20%</td></tr>
+            <tr><td>Fit</td><td>14-17%</td><td>21-24%</td></tr>
+            <tr><td>Average</td><td>18-24%</td><td>25-31%</td></tr>
+            <tr><td>Above Average</td><td>25%+</td><td>32%+</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Why Body Fat % Matters More Than Scale Weight</h2>
+        <p>Two people at the same height and weight can have very different body compositions — one might carry significantly more muscle, the other more fat. Tracking body fat percentage alongside weight gives a much clearer picture of actual physique changes, particularly during body recomposition phases where muscle gain and fat loss happen simultaneously and scale weight alone can be misleading.</p>
 
         <RelatedCalculators items={[
           { name: "Lean Body Mass", href: "/calculators/lean-body-mass", icon: "🫀" },
