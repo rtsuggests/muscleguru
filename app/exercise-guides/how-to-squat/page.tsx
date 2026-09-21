@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/exercise-guides/how-to-squat" },
   title: "How to Squat — Complete Form Guide India",
   description: "Complete squat technique guide with form cues, common mistakes, and progressions for Indian gym-goers.",
 };

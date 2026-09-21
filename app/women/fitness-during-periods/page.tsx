@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/women/fitness-during-periods" },
   title: "Fitness During Periods — Exercise Guide India",
   description: "How to train during your menstrual cycle for Indian women — what to do, what to modify, and what to avoid.",
 };

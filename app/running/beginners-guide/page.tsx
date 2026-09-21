@@ -3,6 +3,7 @@ import Link from "next/link";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/running/beginners-guide" },
   title: "Beginner Running Guide India — Start to 5K",
   description: "How sleep affects muscle growth, testosterone, recovery, and fat loss. Evidence-based guide for Indian gym-goers on optimising sleep for maximum training results.",
   keywords: ["sleep muscle growth India", "how sleep affects muscle building", "sleep recovery gym", "sleep and testosterone", "sleep tips India fitness"],

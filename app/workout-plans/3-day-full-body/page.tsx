@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/workout-plans/3-day-full-body" },
   title: "3-Day Full Body Workout Plan India",
   description: "Free 3-day full body workout plan for Indian gym-goers with progressive overload.",
 };

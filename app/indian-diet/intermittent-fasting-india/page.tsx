@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/indian-diet/intermittent-fasting-india" },
   title: "Intermittent Fasting India — Complete Guide",
   description: "How intermittent fasting works in the Indian context, cultural challenges, and meal timing.",
 };

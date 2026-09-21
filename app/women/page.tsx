@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/women" },
   title: "Women's Fitness India — Strength & Health Guides",
   description: "Evidence-based women's fitness guides for Indian women. Strength training, PCOS and exercise, fitness during periods, protein needs, and more.",
   keywords: ["women fitness India", "strength training women India", "PCOS exercise India", "women workout India"],

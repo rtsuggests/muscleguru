@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms-of-service" },
   title: "Terms of Service — MuscleGuru.in",
   description: "Terms and conditions for using MuscleGuru.in — please read before using our calculators and content.",
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/exercise-guides/dumbbell-exercises" },
   title: "Best Dumbbell Exercises India — Full Body Guide",
   description: "The best dumbbell exercises for every muscle group, with form cues and a sample home workout. No gym or barbell required.",
   keywords: ["dumbbell exercises India", "dumbbell workout home", "best dumbbell exercises full body"],

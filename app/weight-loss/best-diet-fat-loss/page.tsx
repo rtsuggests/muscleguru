@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/weight-loss/best-diet-fat-loss" },
   title: "Best Diet for Fat Loss India",
   description: "Evidence-based comparison of diets for fat loss in Indian context.",
 };

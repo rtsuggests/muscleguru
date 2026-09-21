@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/running/running-clubs-india" },
   title: "Best Running Clubs in India — City Guide",
   description: "Find running clubs in Delhi, Mumbai, Bengaluru, Hyderabad, Pune and more Indian cities to train with a community.",
   keywords: ["running clubs India", "running groups near me India", "join running club India"],

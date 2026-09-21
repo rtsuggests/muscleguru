@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/women/will-lifting-make-women-bulky" },
   title: "Will Lifting Make Women Bulky — The Truth",
   description: "The science behind why women cannot accidentally become bulky from weight training. Research-backed answer for Indian women.",
 };

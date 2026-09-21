@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/muscle-gain" },
   title: "Muscle Gain India — Diet & Workout Guides",
   description: "Evidence-based muscle gain guides for Indian gym-goers. Diet plans, workout programmes, and the science of building muscle.",
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/running/treadmill-vs-outdoor" },
   title: "Treadmill vs Outdoor Running India — Which is Better",
   description: "Evidence-based comparison of treadmill vs outdoor running for Indian runners. Monsoon and pollution protocols, the 1% incline rule, and the hybrid approach.",
   keywords: ["treadmill vs outdoor running India", "is treadmill good for running", "running indoors India"],

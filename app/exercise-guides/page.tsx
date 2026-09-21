@@ -3,6 +3,7 @@ import Link from "next/link";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/exercise-guides" },
   title: "Exercise Guides India — How to Lift Safely",
   description: "Learn how to squat correctly with perfect form. Step-by-step squat technique guide for Indian beginners covering foot placement, depth, breathing, common mistakes, and barbell progressions.",
   keywords: ["how to squat India", "squat technique beginners", "barbell squat form", "squat mistakes India", "squat depth guide"],

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/supplements/whey-protein-guide" },
   title: "Whey Protein Guide India — Brands & Dosage",
   description: "Complete whey protein guide for Indian gym-goers.",
 };

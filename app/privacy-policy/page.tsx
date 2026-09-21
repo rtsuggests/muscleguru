@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy-policy" },
   title: "Privacy Policy — MuscleGuru.in",
   description: "Read MuscleGuru.in's privacy policy. We are committed to protecting your privacy and being transparent about how data is handled.",
 };

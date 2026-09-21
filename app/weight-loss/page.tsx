@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/weight-loss" },
   title: "Weight Loss Guides India — Evidence-Based Fat Loss",
   description: "Science-backed weight loss guides for Indian adults. Calorie deficits, sustainable fat loss, diet strategies — without extreme or dangerous advice.",
 };

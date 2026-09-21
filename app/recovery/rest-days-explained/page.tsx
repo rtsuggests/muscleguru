@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/recovery/rest-days-explained" },
   title: "Rest Days Explained — Why They Matter",
   description: "Why rest days are essential for muscle growth and how many you need per week.",
 };

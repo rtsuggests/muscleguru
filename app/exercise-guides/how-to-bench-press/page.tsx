@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/exercise-guides/how-to-bench-press" },
   title: "How to Bench Press — Form Guide India",
   description: "Complete bench press technique guide with form cues and common mistakes for Indian gym-goers.",
 };

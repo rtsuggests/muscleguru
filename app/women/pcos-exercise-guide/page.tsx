@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/women/pcos-exercise-guide" },
   title: "PCOS and Exercise Guide India — Evidence-Based",
   description: "Evidence-based exercise protocols for Indian women with PCOS. Which exercises help, which to avoid, and how much to do.",
 };

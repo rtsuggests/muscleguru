@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/workout-plans/4-day-upper-lower" },
   title: "4-Day Upper Lower Workout Plan India",
   description: "4-day upper/lower split workout plan for intermediate lifters.",
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/recovery/sleep-muscle-growth" },
   title: "Sleep and Muscle Growth — Science-Backed Guide",
   description: "How sleep affects muscle growth and recovery.",
 };

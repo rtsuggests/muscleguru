@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/fasting" },
   title: "Festival Fasting & Fitness India — Navratri, Karva Chauth",
   description: "Evidence-based fitness and nutrition guides for Indian festival fasting — Navratri, Karva Chauth, Ekadashi, and more. Stay strong while observing your fast.",
 };

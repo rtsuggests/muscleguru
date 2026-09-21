@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/exercise-guides/plank-guide" },
   title: "Plank Guide — Perfect Form & Progressions India",
   description: "Complete plank guide with perfect form cues, common mistakes, and progressive variations to build core strength safely.",
   keywords: ["plank exercise guide", "how to do plank correctly", "plank variations progression"],

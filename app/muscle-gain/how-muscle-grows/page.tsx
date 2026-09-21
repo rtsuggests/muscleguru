@@ -3,6 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/muscle-gain/how-muscle-grows" },
   title: "How Muscle Grows — Hypertrophy Explained",
   description: "A complete evidence-based guide to creating and maintaining a calorie deficit for sustainable fat loss. How big a deficit, what to eat, how to preserve muscle, and common mistakes.",
 };

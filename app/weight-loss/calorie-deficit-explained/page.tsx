@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/weight-loss/calorie-deficit-explained" },
   title: "Calorie Deficit Explained — Lose Weight India",
   description: "How calorie deficit works for weight loss with Indian foods.",
 };

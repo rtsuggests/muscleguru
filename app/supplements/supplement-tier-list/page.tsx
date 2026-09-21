@@ -3,6 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/supplements/supplement-tier-list" },
   title: "Supplement Tier List India — What's Worth It",
   description: "Complete beginner gym guide for Indians. What to expect, how to set up your first routine, gym etiquette, what to eat, and how to make real progress from day one.",
 };

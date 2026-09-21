@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "MuscleGuru.in — Evidence-Based Fitness for India",
-  description: "...",
+  description: "Free evidence-based fitness calculators and guides for Indian adults — BMI with ICMR cutoffs, TDEE, protein and macros, plus workout plans, Indian diet guides and running training plans.",
   alternates: {
-    canonical: "https://muscleguru.in",
+    canonical: "/",
   },
 };
 

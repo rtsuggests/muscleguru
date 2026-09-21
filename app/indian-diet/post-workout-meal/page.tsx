@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/indian-diet/post-workout-meal" },
   title: "Post-Workout Meal India — Recovery Nutrition",
   description: "What to eat after training to maximise muscle repair and glycogen replenishment.",
 };

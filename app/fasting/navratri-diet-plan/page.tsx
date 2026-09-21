@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/fasting/navratri-diet-plan" },
   title: "Navratri Diet Plan — 9-Day Fitness-Focused Fasting Guide",
   description: "Complete 9-day Navratri diet plan for fitness-focused Indians. Day-by-day falahar meal plan with macros, sample recipes, and how to train during Navratri.",
   keywords: ["navratri diet plan", "navratri fasting fitness", "navratri meal plan muscle", "vrat diet plan gym"],

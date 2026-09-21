@@ -3,6 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/supplements/creatine-guide" },
   title: "Creatine Guide India — Benefits & Dosage",
   description: "Evidence-based guide to whey protein for Indian beginners. Concentrate vs isolate vs hydrolysate, how much to take, best Indian brands, and whether you actually need it.",
 };

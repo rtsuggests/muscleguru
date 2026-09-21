@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/indian-diet/pre-workout-meal" },
   title: "Pre-Workout Meal India — What to Eat Before Training",
   description: "Best Indian foods to eat before training for energy, performance, and muscle protection.",
 };

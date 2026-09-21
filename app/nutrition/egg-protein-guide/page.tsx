@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/nutrition/egg-protein-guide" },
   title: "Egg Protein Content India — Complete Guide",
   description: "Complete guide to egg protein content in India — whole egg vs egg white, absorption rates, and how many eggs to eat for muscle gain.",
   keywords: ["egg protein content", "how much protein in egg", "egg white protein", "boiled egg protein", "how many eggs for protein"],

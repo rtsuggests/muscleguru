@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/women/protein-needs-women" },
   title: "Protein Needs for Women India — Complete Guide",
   description: "How much protein Indian women need for fitness, muscle gain, fat loss, and general health. Evidence-based recommendations.",
 };

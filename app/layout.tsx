@@ -82,7 +82,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" media="print" onLoad={"this.media='all'" as any} />
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" />
+        <link id="mg-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" media="print" />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var l=document.getElementById('mg-fonts');if(!l)return;function a(){l.media='all';}if(l.sheet){a();}else{l.addEventListener('load',a);l.addEventListener('error',a);}})();` }} />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" /></noscript>
         <style dangerouslySetInnerHTML={{ __html: `:root{--color-brand:#16a34a;--color-brand-dark:#15803d;--color-brand-darker:#166534;--color-brand-light:#f0fdf4;--color-dark:#111827;--color-body:#374151;--color-muted:#4b5563;--color-border:#e5e7eb;--color-bg:#f9fafb;--font-sans:'Inter',system-ui,-apple-system,sans-serif;--font-display:'Sora','Inter',system-ui,sans-serif;}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{-webkit-text-size-adjust:100%;}body{font-family:var(--font-sans);color:#374151;background:#fff;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;}img,video{max-width:100%;height:auto;}a{color:inherit;}` }} />
       </head>

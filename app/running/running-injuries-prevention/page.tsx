@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/running/running-injuries-prevention" },
   title: "Running Injuries Prevention India — Complete Guide",
   description: "Complete guide to preventing and treating the most common running injuries in India. Shin splints, runner's knee, IT band, plantar fasciitis.",
   keywords: ["running injuries India", "shin splints treatment", "runner's knee prevention"],

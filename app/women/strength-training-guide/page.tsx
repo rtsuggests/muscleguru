@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/women/strength-training-guide" },
   title: "Strength Training Guide for Women India",
   description: "Complete beginner strength training guide for Indian women. 3-day programme, exercise selection, and progression system.",
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/workout-plans/skinny-guys-muscle" },
   title: "Muscle Gain Plan for Skinny Guys India",
   description: "A complete workout and diet plan for naturally thin Indian men struggling to gain muscle. Calorie surplus, compound lifts, and progression.",
   keywords: ["skinny guy muscle gain India", "hardgainer workout plan", "underweight muscle building"],

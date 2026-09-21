@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/fasting/karva-chauth-fasting-guide" },
   title: "Karva Chauth: Safe Fasting Guide for Fitness-Focused Women",
   description: "How to safely observe a Karva Chauth nirjala fast while staying fit. Sargi nutrition planning, hydration strategy, and exercise timing tips.",
   keywords: ["karva chauth fasting tips", "karva chauth diet", "sargi meal plan", "karva chauth exercise safe fasting"],

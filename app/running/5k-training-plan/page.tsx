@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/running/5k-training-plan" },
   title: "5K Training Plan India — 8-Week Beginner Programme",
   description: "Free 8-week 5K training plan for complete beginners with run-walk intervals.",
 };

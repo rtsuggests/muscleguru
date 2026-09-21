@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/running/how-to-run-faster" },
   title: "How to Run Faster — Speed Training India",
   description: "Evidence-based guide to running faster for Indian runners. Interval training, tempo runs, cadence improvement, hill sprints, and a 6-week speed plan.",
   keywords: ["how to run faster India", "speed training running India", "improve running pace India"],

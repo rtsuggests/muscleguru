@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/running/breathing-while-running" },
   title: "How to Breathe While Running India — Guide",
   description: "Nose vs mouth breathing, rhythmic patterns, side stitch prevention, and breathing in India's heat and pollution.",
   keywords: ["how to breathe while running India", "running breathing technique", "side stitch running"],

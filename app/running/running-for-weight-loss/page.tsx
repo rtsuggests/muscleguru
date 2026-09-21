@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 export const metadata: Metadata = {
+  alternates: { canonical: "/running/running-for-weight-loss" },
   title: "Running for Weight Loss India — How Much to Run",
   description: "Evidence-based guide to running for weight loss in India. How much running you need, optimal pace, combining diet with running, and realistic fat loss expectations.",
   keywords: ["running for weight loss India","jogging weight loss India","running diet plan India"],

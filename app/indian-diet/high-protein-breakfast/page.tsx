@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/indian-diet/high-protein-breakfast" },
   title: "High Protein Indian Breakfast — 20 Easy Recipes",
   description: "20 high protein Indian breakfast recipes for muscle gain and fat loss. Quick, easy recipes using common Indian ingredients with macros per serving.",
   keywords: ["high protein breakfast India", "Indian protein breakfast recipes", "protein breakfast India"],

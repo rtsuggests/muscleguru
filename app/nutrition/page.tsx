@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/nutrition" },
   title: "Nutrition Guides India — Protein & Meal Plans",
   description: "Evidence-based nutrition guides for Indian adults. Protein sources, meal plans, and dietary advice based on ICMR guidelines.",
 };

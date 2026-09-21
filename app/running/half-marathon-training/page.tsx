@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/running/half-marathon-training" },
   title: "Half Marathon Training Plan India — 12 Weeks",
   description: "Free 12-week half marathon training plan for Indian runners. Build from 10K to 21.1K with long runs, tempo work, and Indian race calendar.",
   keywords: ["half marathon training plan India", "21K training plan India", "half marathon beginner India"],

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/medical-disclaimer" },
   title: "Medical Disclaimer — MuscleGuru.in",
   description: "Important medical disclaimer for MuscleGuru.in calculators and content. Not a substitute for professional medical advice.",
 };

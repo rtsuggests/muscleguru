@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/recovery/overtraining-signs" },
   title: "Overtraining Signs — What to Watch For",
   description: "Warning signs of overtraining and how to recover.",
 };

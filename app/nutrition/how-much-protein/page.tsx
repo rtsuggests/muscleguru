@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/nutrition/how-much-protein" },
   title: "How Much Protein Per Day — India Guide",
   description: "Evidence-based protein requirements for Indian adults.",
 };

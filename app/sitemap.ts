@@ -13,8 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const beginnerArticles = ["beginner-gym-guide","workout-routine","home-workout-guide"];
   const womenArticles = ["will-lifting-make-women-bulky","strength-training-guide","protein-needs-women","fitness-during-periods","pcos-exercise-guide"];
   const exerciseGuides = ["how-to-squat","how-to-deadlift","how-to-bench-press","pull-up-guide","plank-guide","dumbbell-exercises"];
-  const workoutPlans = ["3-day-full-body","4-day-upper-lower","hiit-beginner","skinny-guys-muscle","overweight-beginners","office-workers"];
-  const recoveryArticles = ["sleep-muscle-growth","overtraining-signs","foam-rolling-guide","rest-days-explained"];
+  const workoutPlans = ["3-day-full-body","4-day-upper-lower","hiit-beginner","skinny-guys-muscle"];
+  const recoveryArticles = ["sleep-muscle-growth","overtraining-signs","rest-days-explained"];
   const indianDietArticles = ["high-protein-breakfast","pre-workout-meal","post-workout-meal","intermittent-fasting-india"];
 
   const makeUrls = (section: string, slugs: string[], priority = 0.8) =>

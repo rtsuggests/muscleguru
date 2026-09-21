@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/running/best-time-to-run" },
   title: "Best Time to Run in India — Morning vs Evening",
   description: "Morning vs evening running guidance for Indian cities considering AQI, heat, and safety.",
 };

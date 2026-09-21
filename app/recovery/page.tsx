@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/recovery" },
   title: "Recovery Guides India — Sleep, Rest & Foam Rolling",
   description: "Evidence-based recovery guides for Indian gym-goers.",
 };

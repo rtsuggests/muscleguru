@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/editorial-policy" },
   title: "Editorial Policy — MuscleGuru.in",
   description: "Read MuscleGuru.in's editorial policy, content review process, and standards for evidence-based health and fitness content.",
 };

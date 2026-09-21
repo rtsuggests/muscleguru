@@ -3,6 +3,7 @@ import Link from "next/link";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/exercise-guides/how-to-deadlift" },
   title: "How to Deadlift — Complete Technique Guide India",
   description: "Master the bench press with perfect form. Step-by-step bench press technique for Indian gym beginners — grip width, arch, bar path, breathing, spotter tips, and safe progression.",
   keywords: ["how to bench press India", "bench press technique beginners", "bench press form", "bench press mistakes", "how to bench press safely"],

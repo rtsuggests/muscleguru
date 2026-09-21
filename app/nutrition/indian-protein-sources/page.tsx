@@ -3,6 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/nutrition/indian-protein-sources" },
   title: "Best Indian Protein Sources — Food List",
   description: "What does the science actually say about daily protein requirements? Evidence-based protein recommendations for muscle gain, fat loss, and general health for Indian adults.",
 };

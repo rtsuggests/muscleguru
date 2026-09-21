@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/indian-diet" },
   title: "Indian Diet for Fitness — Pre & Post Workout Meals",
   description: "Complete Indian diet guides for fitness. High protein breakfast, pre-workout meals, post-workout nutrition, and intermittent fasting for Indians.",
   keywords: ["Indian diet fitness","Indian food gym","pre workout meal India","high protein Indian food"],
