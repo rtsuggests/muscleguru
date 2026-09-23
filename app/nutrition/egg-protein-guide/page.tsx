@@ -1,86 +1,83 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import ArticleLayout from "@/components/layout/ArticleLayout";
+import { articleSchema } from "@/lib/articleSchema";
+
+const TITLE = "Egg Protein Guide: Whole Eggs vs Egg Whites & How Many to Eat";
+const DESC = "How much protein is in an egg, whole egg vs egg white, whether cooking method matters, and how many eggs are safe to eat per day.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/nutrition/egg-protein-guide" },
-  title: "Egg Protein Content India — Complete Guide",
-  description: "Complete guide to egg protein content in India — whole egg vs egg white, absorption rates, and how many eggs to eat for muscle gain.",
-  keywords: ["egg protein content", "how much protein in egg", "egg white protein", "boiled egg protein", "how many eggs for protein"],
+  title: "Egg Protein Guide — Whole vs White",
+  description: DESC,
+  keywords: ["egg protein content", "whole egg vs egg white protein", "how many eggs per day safe"],
 };
 
-export default function Page() {
+const faqs = [
+  { q: "How much protein is in one egg?", a: "A large whole egg has roughly 6 g of protein. About 3.5–4 g comes from the white, and the rest from the yolk." },
+  { q: "Is egg white or whole egg better for muscle gain?", a: "The yolk contains roughly half the egg's protein plus most of its vitamins, healthy fats and choline. Whole eggs are generally the better default; egg whites are useful for boosting protein without extra calories on top of whole eggs already in the diet." },
+  { q: "How many eggs is it safe to eat per day?", a: "Current dietary guidance in most countries, including updated US guidelines, no longer sets a strict daily cholesterol limit for healthy people, and eggs are considered a reasonable part of a balanced diet for most. People with specific cardiovascular risk factors should follow their doctor's individual guidance rather than a generic number." },
+  { q: "Does cooking method affect egg protein content?", a: "The total protein content stays essentially the same across boiling, frying or scrambling. Cooking with excess oil or butter adds calories from fat, not more protein." },
+];
+
+const references = [
+  "US Department of Agriculture, FoodData Central: Egg, whole, cooked.",
+  "US Dietary Guidelines Advisory Committee. Dietary Guidelines for Americans, 2020–2025.",
+];
+
+export default function EggProteinGuidePage() {
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
-      <div style={{ marginBottom: "0.5rem", fontSize: "0.82rem", color: "var(--color-muted)" }}>
-        <Link href="/" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Home</Link> ›{" "}
-        <Link href="/nutrition" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Nutrition</Link> › Egg Protein Guide
-      </div>
-      <span className="tag" style={{ marginTop: "1rem", display: "inline-block" }}>Nutrition</span>
-      <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Egg Protein Content: The Complete Guide</h1>
-      <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>
-        Everything you need to know about protein in eggs — whole egg vs white, how cooking method affects it, and exactly how many eggs you need daily.
-      </p>
+    <ArticleLayout
+      title="Egg Protein Guide: Whole Eggs vs Egg Whites"
+      category="Nutrition"
+      categoryHref="/nutrition"
+      readTime="7 min"
+      lastUpdated="September 2026"
+      summary="A large egg has roughly 6 g of protein, split between the white (~3.5-4 g) and the yolk (~2-2.5 g), plus most of its vitamins and healthy fats. Whole eggs are generally the better default over egg whites alone, and current dietary guidance no longer sets a strict daily limit for most healthy people."
+      relatedCalculators={[
+        { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+      ]}
+      relatedArticles={[
+        { title: "High-Protein Indian Breakfast Ideas", href: "/indian-diet/high-protein-breakfast", time: "7 min" },
+        { title: "How Much Protein Do You Need?", href: "/nutrition/how-much-protein", time: "7 min" },
+      ]}
+      schema={articleSchema({ headline: TITLE, path: "/nutrition/egg-protein-guide", description: DESC, dateModified: "2026-09-21" })}
+      references={references}
+      faqs={faqs}
+    >
+      <h2>How Much Protein Is in One Egg?</h2>
+      <p>A large whole egg (about 50 g) contains roughly 6 g of protein — about 3.5–4 g from the white and 2–2.5 g from the yolk. The protein in egg is considered a high-quality complete protein, containing all essential amino acids in proportions the body uses efficiently.</p>
 
-      <div className="seo-content">
-        <h2>How Much Protein Is in One Egg?</h2>
-        <p>A large whole egg (approximately 50g) contains <strong>6.3g of protein</strong>. This protein is split between the white and yolk, but not evenly — understanding the split matters for anyone tracking intake closely.</p>
-        <table>
-          <thead><tr><th>Egg Part</th><th>Protein (per large egg)</th><th>Calories</th><th>Fat</th></tr></thead>
-          <tbody>
-            <tr><td>Whole egg</td><td>6.3g</td><td>72</td><td>5g</td></tr>
-            <tr><td>Egg white only</td><td>3.6g</td><td>17</td><td>0g</td></tr>
-            <tr><td>Egg yolk only</td><td>2.7g</td><td>55</td><td>4.5g</td></tr>
-          </tbody>
-        </table>
+      <h2>Whole Egg vs Egg White: Which Is Better?</h2>
+      <table>
+        <thead><tr><th></th><th>Whole egg</th><th>Egg white only</th></tr></thead>
+        <tbody>
+          <tr><td>Protein</td><td>~6 g</td><td>~3.5–4 g</td></tr>
+          <tr><td>Calories</td><td>~70–75</td><td>~17</td></tr>
+          <tr><td>Fat</td><td>~5 g (mostly in yolk)</td><td>~0 g</td></tr>
+          <tr><td>Vitamins/minerals</td><td>Most are in the yolk (vitamin D, B12, choline)</td><td>Minimal</td></tr>
+        </tbody>
+      </table>
+      <p>Whole eggs are generally the better default — the yolk holds most of the micronutrients and a large share of the protein. Egg whites are useful when you want to add protein without extra calories on top of whole eggs you're already eating, for example if you're eating 2 whole eggs plus 2–3 extra whites to hit a specific protein target.</p>
 
-        <h2>Whole Egg vs Egg White: Which Is Better?</h2>
-        <p>This is one of the most common questions in Indian fitness circles. The honest answer: it depends on your goal, not a universal &quot;better.&quot;</p>
-        <ul>
-          <li><strong>For muscle building:</strong> Whole eggs are generally superior. The yolk contains choline, vitamin D, and additional leucine that supports muscle protein synthesis more completely than whites alone. Research consistently shows whole eggs produce a greater anabolic response than egg whites with equivalent protein content.</li>
-          <li><strong>For strict calorie control:</strong> Egg whites let you get pure protein with minimal calories — useful during aggressive cutting phases where every calorie is tightly budgeted.</li>
-          <li><strong>Practical recommendation:</strong> Most people benefit from eating whole eggs as the primary source, supplementing with extra whites only if additional protein is needed without additional calories.</li>
-        </ul>
+      <h2>Does Cooking Method Affect Protein Content?</h2>
+      <p>No — boiling, frying, scrambling or poaching all preserve essentially the same protein content. What changes is the calorie count if you cook with added oil, butter or ghee, which adds fat calories, not additional protein.</p>
 
-        <h2>Does Cooking Method Affect Egg Protein?</h2>
-        <p>Cooking does not meaningfully change the total protein content of an egg, but it significantly improves protein digestibility. Raw egg protein is only about 51% bioavailable due to a protein called avidin that interferes with absorption; cooking denatures this protein and raises digestibility to approximately 91%. This means <strong>a cooked egg delivers substantially more usable protein than a raw one</strong> — there is no advantage to eating eggs raw, and doing so also carries salmonella risk.</p>
-        <table>
-          <thead><tr><th>Method</th><th>Protein Retained</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr><td>Boiled</td><td>100%</td><td>Most efficient — no added fat, easy to meal prep</td></tr>
-            <tr><td>Poached</td><td>100%</td><td>No added fat, gentle cooking</td></tr>
-            <tr><td>Scrambled/Bhurji</td><td>100%</td><td>Protein unaffected; calories depend on oil used</td></tr>
-            <tr><td>Fried (Omelette)</td><td>100%</td><td>Protein retained; watch oil quantity for calorie control</td></tr>
-          </tbody>
-        </table>
+      <h2>How Many Eggs Should You Eat Per Day?</h2>
+      <p>Older guidance set strict daily cholesterol limits, but current dietary guidelines in most countries, including the US Dietary Guidelines, no longer impose a specific daily cholesterol cap for healthy people, treating eggs as a reasonable part of a balanced diet. For most healthy adults, 1–3 eggs a day fits comfortably within a normal diet. People with existing cardiovascular risk factors or conditions like diabetes should follow their doctor's specific guidance rather than a generic number, since individual response can vary.</p>
 
-        <h2>How Many Eggs Should You Eat Per Day?</h2>
-        <p>For a typical Indian adult targeting muscle gain (1.6-2.2g protein/kg body weight), eggs are an efficient but not sole protein source. A 70 kg person targeting 140g daily protein would need roughly 22 whole eggs to meet that target from eggs alone — unrealistic and unnecessary. Instead, use eggs as one component: 3-4 whole eggs at breakfast provides 19-25g of protein, complementing dal, paneer, or chicken across other meals.</p>
-        <p>Contrary to older dietary advice, current research does not support strict limits on whole egg consumption for healthy individuals — the historical concern about dietary cholesterol raising blood cholesterol has been substantially revised by newer research showing minimal impact for most people. Those with existing cardiovascular conditions or specific lipid concerns should consult their doctor for personalised guidance.</p>
+      <h2>Egg Protein for Vegetarians</h2>
+      <p>Eggs are accepted in many, though not all, Indian vegetarian diets (ovo-vegetarian). For strict vegetarians who don't eat eggs, paneer, dal, soya chunks and curd are comparable protein sources — see the guide on Indian protein sources for a full comparison.</p>
 
-        <h2>Egg Protein for Vegetarians</h2>
-        <p>Many Indian vegetarians (lacto-ovo) include eggs as their primary complete protein source alongside dairy. Eggs have a PDCAAS (protein quality score) of 1.0 — the maximum possible — making them nutritionally comparable to whey protein in terms of amino acid completeness. For vegetarians avoiding meat but including eggs, this makes egg-based meals a particularly efficient way to hit daily protein targets without relying entirely on paneer or soya.</p>
-
-        <h2>Quick Reference: Protein by Egg Count</h2>
-        <table>
-          <thead><tr><th>Number of Eggs</th><th>Total Protein</th><th>Total Calories</th></tr></thead>
-          <tbody>
-            <tr><td>2 whole eggs</td><td>12.6g</td><td>144</td></tr>
-            <tr><td>3 whole eggs</td><td>18.9g</td><td>216</td></tr>
-            <tr><td>4 whole eggs</td><td>25.2g</td><td>288</td></tr>
-            <tr><td>2 whole + 2 whites</td><td>19.8g</td><td>178</td></tr>
-          </tbody>
-        </table>
-
-        <div style={{ marginTop: "2.5rem", paddingTop: "2rem", borderTop: "1.5px solid var(--color-border)" }}>
-          <h2 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>Related Guides &amp; Calculators</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: "0.75rem" }}>
-            <Link href="/calculators/protein" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Protein Calculator</Link>
-            <Link href="/nutrition/how-much-protein" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>How Much Protein Per Day</Link>
-            <Link href="/nutrition/paneer-protein-guide" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Paneer Protein Guide</Link>
-            <Link href="/indian-diet/high-protein-breakfast" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>High Protein Breakfast</Link>
-          </div>
-        </div>
-      </div>
-    </div>
+      <h2>Quick Reference: Protein by Egg Count</h2>
+      <table>
+        <thead><tr><th>Eggs</th><th>Approx. protein</th></tr></thead>
+        <tbody>
+          <tr><td>2 whole eggs</td><td>~12 g</td></tr>
+          <tr><td>3 whole eggs</td><td>~18 g</td></tr>
+          <tr><td>2 whole + 2 whites</td><td>~19–20 g</td></tr>
+          <tr><td>4 egg whites only</td><td>~14–16 g</td></tr>
+        </tbody>
+      </table>
+    </ArticleLayout>
   );
 }

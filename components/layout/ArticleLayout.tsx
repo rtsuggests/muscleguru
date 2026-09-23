@@ -1,4 +1,6 @@
 import Link from "next/link";
+import FAQ from "@/components/ui/FAQ";
+import { REVIEWER } from "@/lib/site";
 
 interface ArticleLayoutProps {
   title: string; category: string; categoryHref: string;
@@ -7,12 +9,20 @@ interface ArticleLayoutProps {
   relatedArticles?: { title: string; href: string; time: string }[];
   relatedCalculators?: { name: string; href: string; icon: string }[];
   schema: object;
+  references?: string[];
+  faqs?: { q: string; a: string }[];
 }
 
-export default function ArticleLayout({ title, category, categoryHref, readTime, lastUpdated, summary, children, relatedArticles = [], relatedCalculators = [], schema }: ArticleLayoutProps) {
+export default function ArticleLayout({ title, category, categoryHref, readTime, lastUpdated, summary, children, relatedArticles = [], relatedCalculators = [], schema, references = [], faqs = [] }: ArticleLayoutProps) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      {faqs.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org", "@type": "FAQPage",
+          mainEntity: faqs.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+        }) }} />
+      )}
       <div style={{ background: "var(--color-bg)", borderBottom: "1px solid var(--color-border)", padding: "0.6rem 1rem" }}>
         <div style={{ maxWidth: 860, margin: "0 auto", fontSize: "0.82rem", color: "var(--color-muted)", display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
           <Link href="/" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Home</Link><span>›</span>
@@ -36,11 +46,24 @@ export default function ArticleLayout({ title, category, categoryHref, readTime,
             <div style={{ width: 40, height: 40, borderRadius: "50%", background: "var(--color-brand)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 800, fontSize: "0.85rem", flexShrink: 0 }}>MG</div>
             <div>
               <div style={{ fontWeight: 700, fontSize: "0.875rem" }}>MuscleGuru Editorial Team</div>
-              <div style={{ fontSize: "0.78rem", color: "var(--color-muted)" }}>Reviewed against peer-reviewed research</div>
+              <div style={{ fontSize: "0.78rem", color: "var(--color-muted)" }}>
+                {REVIEWER ? `Medically reviewed by ${REVIEWER.name}, ${REVIEWER.credentials}` : "Sources are listed at the end of this article"}
+              </div>
             </div>
           </div>
         </div>
-        <div className="seo-content">{children}</div>
+        <div className="seo-content">
+          {children}
+          {faqs.length > 0 && (<><h2>Frequently Asked Questions</h2><FAQ items={faqs} /></>)}
+          {references.length > 0 && (
+            <>
+              <h2>References</h2>
+              <ol style={{ fontSize: "0.875rem", color: "var(--color-muted)", lineHeight: 1.8 }}>
+                {references.map((r, i) => <li key={i}>{r}</li>)}
+              </ol>
+            </>
+          )}
+        </div>
         <div className="disclaimer-box" style={{ marginTop: "2.5rem" }}>
           <strong>⚠️ Medical Disclaimer:</strong> This article is for educational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional before making significant changes to your diet or exercise routine.
         </div>

@@ -1,109 +1,68 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import ArticleLayout from "@/components/layout/ArticleLayout";
+import { articleSchema } from "@/lib/articleSchema";
+
+const TITLE = "10K Training Plan: 8 Weeks From 5K to 10K";
+const DESC = "An 8-week 10K training plan for runners who can already complete a 5K, with weekly structure, easy run guidance, race-day pacing and heat tips for India.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/running/10k-training-plan" },
-  title: "10K Training Plan India — 8-Week Programme",
-  description: "Free 8-week 10K training plan for Indian runners. Build from 5K to 10K with structured runs, pace guidance, and Indian climate tips.",
-  keywords: ["10K training plan India", "10km beginner India", "how to run 10K India"],
+  title: "10K Training Plan — 8 Weeks",
+  description: DESC,
+  keywords: ["10k training plan", "5k to 10k training", "10k running plan India"],
 };
 
-export default function TenKPage() {
+const faqs = [
+  { q: "How fit do I need to be to start a 10K plan?", a: "Being able to comfortably run a 5K is a good baseline before starting a structured 10K plan. If you can't yet, a 5K training plan is the better starting point." },
+  { q: "How many days a week should I train for a 10K?", a: "4 running days a week is a solid structure for most people: 2 easy runs, 1 quality session (intervals or tempo), and 1 longer run building toward race distance." },
+  { q: "What pace should my easy runs be?", a: "Conversational pace — you should be able to speak in full sentences without gasping. Most beginners run their easy runs too fast, which limits recovery and can increase injury risk." },
+  { q: "How should I pace the actual 10K race?", a: "A common approach is an even or slightly negative split — running the second half at the same pace or slightly faster than the first, rather than starting too fast and fading." },
+];
+
+export default function TenKTrainingPlanPage() {
   return (
-    <>
-      <div style={{ background: "var(--color-bg)", borderBottom: "1px solid var(--color-border)", padding: "0.6rem 1rem" }}>
-        <div style={{ maxWidth: 860, margin: "0 auto", fontSize: "0.82rem", color: "var(--color-muted)", display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
-          <Link href="/" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Home</Link>
-          <span>›</span>
-          <Link href="/running" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Running</Link>
-          <span>›</span>
-          <span style={{ color: "var(--color-dark)", fontWeight: 500 }}>10K Training Plan</span>
-        </div>
-      </div>
+    <ArticleLayout
+      title="10K Training Plan: 8 Weeks"
+      category="Running"
+      categoryHref="/running"
+      readTime="8 min"
+      lastUpdated="September 2026"
+      summary="An 8-week plan for runners already comfortable with 5K builds toward 10K through 4 weekly sessions — 2 easy runs, 1 quality session, and a progressively longer run. Keep easy runs at a truly conversational pace, and aim for an even or slightly negative split on race day."
+      relatedCalculators={[
+        { name: "VO2 Max Calculator", href: "/calculators/vo2-max", icon: "🫁" },
+      ]}
+      relatedArticles={[
+        { title: "5K Training Plan for Beginners", href: "/running/5k-training-plan", time: "8 min" },
+        { title: "Half Marathon Training Plan", href: "/running/half-marathon-training", time: "8 min" },
+        { title: "How to Run Faster", href: "/running/how-to-run-faster", time: "9 min" },
+      ]}
+      schema={articleSchema({ headline: TITLE, path: "/running/10k-training-plan", description: DESC, dateModified: "2026-09-21" })}
+      faqs={faqs}
+    >
+      <h2>The Complete 8-Week Training Plan</h2>
+      <table>
+        <thead><tr><th>Week</th><th>Long run</th><th>Quality session</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>5K</td><td>4 × 400m intervals</td></tr>
+          <tr><td>2</td><td>5.5K</td><td>5 × 400m intervals</td></tr>
+          <tr><td>3</td><td>6K</td><td>15-min tempo run</td></tr>
+          <tr><td>4</td><td>5K (recovery week)</td><td>Easy pace only</td></tr>
+          <tr><td>5</td><td>7K</td><td>6 × 400m intervals</td></tr>
+          <tr><td>6</td><td>8K</td><td>20-min tempo run</td></tr>
+          <tr><td>7</td><td>9K</td><td>Easy pace, short strides</td></tr>
+          <tr><td>8</td><td>10K (race week — taper)</td><td>Short easy runs</td></tr>
+        </tbody>
+      </table>
+      <p>Alongside the sessions above, keep 1–2 easy runs (20–30 minutes, conversational pace) each week for aerobic base building.</p>
 
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
-        <div style={{ display: "flex", gap: "0.75rem", marginBottom: "1rem", flexWrap: "wrap" }}>
-          <span className="tag">Running</span>
-          <span style={{ fontSize: "0.82rem", color: "var(--color-muted)" }}>12 min read</span>
-        </div>
+      <h2>Easy Runs — The Foundation</h2>
+      <p>Easy runs should feel genuinely easy — conversational pace, comfortable breathing. Most beginners run these too fast, which limits recovery between harder sessions and increases cumulative fatigue. If in doubt, slow down; the quality sessions are where the speed work happens.</p>
 
-        <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, marginBottom: "1rem" }}>
-          10K Training Plan India: 8-Week Programme from 5K to 10K
-        </h1>
+      <h2>Race Day Pacing</h2>
+      <p>An even or slightly negative split (second half at the same pace or slightly faster than the first) generally produces a better result than starting fast and fading, which is a very common mistake for less experienced racers caught up in early-race adrenaline. Practising your goal race pace during a few training runs helps you recognise and hold it on race day.</p>
 
-        <div style={{ background: "var(--color-brand-light)", border: "1.5px solid #86efac", borderRadius: "0.875rem", padding: "1.125rem 1.375rem", marginBottom: "1.5rem" }}>
-          <div style={{ fontWeight: 700, fontSize: "0.85rem", color: "var(--color-brand-dark)", marginBottom: "0.75rem", textTransform: "uppercase" }}>Programme Overview</div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))", gap: "0.75rem" }}>
-            <div style={{ textAlign: "center" }}><div style={{ fontWeight: 800, color: "var(--color-brand-dark)" }}>8 weeks</div><div style={{ fontSize: "0.72rem", color: "var(--color-muted)" }}>Duration</div></div>
-            <div style={{ textAlign: "center" }}><div style={{ fontWeight: 800, color: "var(--color-brand-dark)" }}>3–4 runs</div><div style={{ fontSize: "0.72rem", color: "var(--color-muted)" }}>Days/week</div></div>
-            <div style={{ textAlign: "center" }}><div style={{ fontWeight: 800, color: "var(--color-brand-dark)" }}>Can run 5K</div><div style={{ fontSize: "0.72rem", color: "var(--color-muted)" }}>Start point</div></div>
-            <div style={{ textAlign: "center" }}><div style={{ fontWeight: 800, color: "var(--color-brand-dark)" }}>Finish 10K</div><div style={{ fontSize: "0.72rem", color: "var(--color-muted)" }}>Goal</div></div>
-            <div style={{ textAlign: "center" }}><div style={{ fontWeight: 800, color: "var(--color-brand-dark)" }}>~19 km</div><div style={{ fontSize: "0.72rem", color: "var(--color-muted)" }}>Peak week</div></div>
-            <div style={{ textAlign: "center" }}><div style={{ fontWeight: 800, color: "var(--color-brand-dark)" }}>Week 8</div><div style={{ fontSize: "0.72rem", color: "var(--color-muted)" }}>Taper</div></div>
-          </div>
-        </div>
-
-        <div className="seo-content">
-          <h2>Why 10K Is the Perfect Distance for Indian Runners</h2>
-          <p>The 10 kilometre race is the sweet spot of distance running — challenging enough to require genuine preparation, but accessible enough that any moderately fit adult can complete one within 2–4 months of structured training. Major Indian 10K events include the Bengaluru 10K Challenge (25,000+ participants), Airtel Delhi Half Marathon 10K, Hyderabad 10K, Mumbai 10K, and dozens of city-level events annually.</p>
-
-          <h2>The Complete 8-Week Training Plan</h2>
-          <div style={{ overflowX: "auto", marginBottom: "1.5rem" }}>
-            <table>
-              <thead>
-                <tr style={{ background: "var(--color-brand-light)" }}>
-                  <th>Week</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Sat (Long)</th><th>Total</th><th>Focus</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td style={{ fontWeight: 700 }}>Week 1</td><td>3K easy</td><td>Cross-train 30 min</td><td>3K easy</td><td>4K easy</td><td style={{ fontWeight: 700, color: "var(--color-brand-dark)" }}>10K</td><td style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>Building habit</td></tr>
-                <tr><td style={{ fontWeight: 700 }}>Week 2</td><td>3.5K easy</td><td>Cross-train 35 min</td><td>3.5K easy</td><td>5K easy</td><td style={{ fontWeight: 700, color: "var(--color-brand-dark)" }}>12K</td><td style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>Aerobic base</td></tr>
-                <tr><td style={{ fontWeight: 700 }}>Week 3</td><td>4K easy</td><td>3K + 4×200m strides</td><td>4K easy</td><td>6K easy</td><td style={{ fontWeight: 700, color: "var(--color-brand-dark)" }}>14K</td><td style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>Introducing pace</td></tr>
-                <tr style={{ background: "#fffbeb" }}><td style={{ fontWeight: 700 }}>Week 4</td><td>4K easy</td><td>Cross-train 30 min</td><td>3K easy</td><td>5K easy</td><td style={{ fontWeight: 700, color: "var(--color-brand-dark)" }}>12K</td><td style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>Recovery week</td></tr>
-                <tr><td style={{ fontWeight: 700 }}>Week 5</td><td>5K easy</td><td>4K tempo run</td><td>4K easy</td><td>7K easy</td><td style={{ fontWeight: 700, color: "var(--color-brand-dark)" }}>16K</td><td style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>Tempo work</td></tr>
-                <tr><td style={{ fontWeight: 700 }}>Week 6</td><td>5K easy</td><td>5×400m at 10K pace</td><td>4K easy</td><td>8K easy</td><td style={{ fontWeight: 700, color: "var(--color-brand-dark)" }}>18K</td><td style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>Speed work</td></tr>
-                <tr><td style={{ fontWeight: 700 }}>Week 7</td><td>5K easy</td><td>5K tempo run</td><td>4K easy</td><td>9K easy</td><td style={{ fontWeight: 700, color: "var(--color-brand-dark)" }}>19K</td><td style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>Peak week</td></tr>
-                <tr style={{ background: "#f0fdf4" }}><td style={{ fontWeight: 700 }}>Week 8</td><td>4K easy</td><td>3K easy</td><td>2K easy</td><td style={{ fontWeight: 600 }}>RACE DAY</td><td style={{ fontWeight: 700, color: "var(--color-brand-dark)" }}>9K + race</td><td style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>Taper and race</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2>Easy Runs — The Foundation</h2>
-          <p>Easy runs are at a genuinely comfortable conversational pace — Zone 2 heart rate (60–70% of maximum). Use our <Link href="/calculators/heart-rate-zone" style={{ color: "var(--color-brand-darker)" }}>Heart Rate Zone Calculator</Link> to find your personal Zone 2 range. Most Indian beginner runners make the mistake of running too fast on easy days.</p>
-
-          <h2>Race Day Pacing</h2>
-          <ul>
-            <li><strong>Km 1–3:</strong> Run 10–15 sec/km slower than planned — race adrenaline makes easy pace feel slow. Hold back.</li>
-            <li><strong>Km 4–7:</strong> Settle into target pace. Focus on breathing and form.</li>
-            <li><strong>Km 8–9:</strong> Gradually increase if you have energy in reserve.</li>
-            <li><strong>Final km:</strong> Race to the finish.</li>
-          </ul>
-          <p>Use our <Link href="/calculators/running-pace" style={{ color: "var(--color-brand-darker)" }}>Running Pace Calculator</Link> to calculate your km splits for your target finish time.</p>
-
-          <h2>Indian Climate Tips</h2>
-          <ul>
-            <li><strong>Heat:</strong> Run before 7 AM during April–June. Slow your easy pace by 30–60 sec/km on hot days.</li>
-            <li><strong>Hydration:</strong> Drink 500ml before morning runs. Use our <Link href="/calculators/water-intake" style={{ color: "var(--color-brand-darker)" }}>Water Intake Calculator</Link> for daily needs.</li>
-            <li><strong>Air quality:</strong> Check AQI India app. Above AQI 150 reduce intensity; above 200 move to treadmill.</li>
-          </ul>
-
-          <div className="disclaimer-box">
-            <strong>Note:</strong> Stop training and consult a doctor if you experience chest pain, dizziness, or persistent joint pain.
-          </div>
-
-          <div style={{ marginTop: "2.5rem", paddingTop: "2rem", borderTop: "1.5px solid var(--color-border)" }}>
-            <h2 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>Related Guides and Calculators</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: "0.75rem" }}>
-              <Link href="/running/half-marathon-training" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Half Marathon Plan</Link>
-              <Link href="/calculators/running-pace" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Running Pace Calc</Link>
-              <Link href="/calculators/heart-rate-zone" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Heart Rate Zones</Link>
-              <Link href="/calculators/calories-burned" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Calories Burned</Link>
-              <Link href="/calculators/vo2-max" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>VO2 Max Calculator</Link>
-              <Link href="/calculators/water-intake" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Water Intake Calc</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+      <h2>Indian Climate Tips</h2>
+      <p>Heat and humidity across much of India can significantly affect pace and perceived effort, especially outside the cooler winter months. Hydrate well in the hours before a run (not just immediately before), start earlier in the day when possible, and adjust pace expectations on hot or humid days rather than forcing a pace that felt comfortable in cooler weather.</p>
+    </ArticleLayout>
   );
 }

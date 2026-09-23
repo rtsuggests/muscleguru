@@ -1,69 +1,81 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import ArticleLayout from "@/components/layout/ArticleLayout";
+import { articleSchema } from "@/lib/articleSchema";
+
+const TITLE = "Plank Guide: Perfect Form, Mistakes and Progressions";
+const DESC = "How to do a plank with correct form, common mistakes to avoid, plank progressions, and how long you should actually hold one.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/exercise-guides/plank-guide" },
-  title: "Plank Guide — Perfect Form & Progressions India",
-  description: "Complete plank guide with perfect form cues, common mistakes, and progressive variations to build core strength safely.",
-  keywords: ["plank exercise guide", "how to do plank correctly", "plank variations progression"],
+  title: "Plank Guide — Form, Mistakes & Progressions",
+  description: DESC,
+  keywords: ["how to do a plank correctly", "plank form guide", "plank progressions beginner"],
 };
 
-export default function Page() {
+const faqs = [
+  { q: "How long should I hold a plank?", a: "30–60 seconds with good form is a solid target for most people. Holding much longer with breakdown in form (sagging hips, rounded back) trains bad positioning rather than core strength — it's better to do multiple shorter, clean sets than one long, sloppy one." },
+  { q: "Why do my lower back or shoulders hurt during a plank?", a: "Lower back discomfort usually means the hips are sagging, shifting load onto the spine. Shoulder discomfort often means hands are positioned too far forward, or shoulders aren't stacked directly over elbows. Fix your position before continuing." },
+  { q: "Is the plank enough for core training?", a: "It's a solid anti-extension exercise (resisting your spine from arching), but a well-rounded core routine also includes anti-rotation and direct flexion work — side planks, dead bugs, and similar movements complement it." },
+  { q: "Can beginners do a full plank?", a: "Many can, but a knee plank is a reasonable regression if a full plank breaks down quickly. Master the knee version with good form before progressing to a full plank." },
+];
+
+const references = [
+  "Schoenfeld BJ, Contreras B. Are Bodyweight Exercise Equivalent to Resistance Training? Strength Cond J. 2013;35(6):8–17.",
+];
+
+export default function PlankGuidePage() {
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
-      <div style={{ marginBottom: "0.5rem", fontSize: "0.82rem", color: "var(--color-muted)" }}>
-        <Link href="/" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Home</Link> ›{" "}
-        <Link href="/exercise-guides" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Exercise Guides</Link> › Plank Guide
-      </div>
-      <span className="tag" style={{ marginTop: "1rem", display: "inline-block" }}>Exercise Guide</span>
-      <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Plank Guide: Perfect Form and Progressions</h1>
-      <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>
-        The plank is one of the most effective core exercises — but poor form makes it far less useful. Here&apos;s how to do it correctly and progress safely.
-      </p>
+    <ArticleLayout
+      title="Plank Guide: Perfect Form, Mistakes and Progressions"
+      category="Exercise Guides"
+      categoryHref="/exercise-guides"
+      readTime="6 min"
+      lastUpdated="September 2026"
+      summary="A plank should form a straight line from head to heels, with hips level (not sagging or piked up) and shoulders stacked over elbows. 30–60 seconds with clean form beats a longer hold with breakdown. Progress by adding variations rather than just chasing longer times."
+      relatedCalculators={[
+        { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+      ]}
+      relatedArticles={[
+        { title: "No-Equipment Home Workout Guide", href: "/beginner-fitness/home-workout-guide", time: "8 min" },
+        { title: "How to Squat: Full Technique Guide", href: "/exercise-guides/how-to-squat", time: "7 min" },
+      ]}
+      schema={articleSchema({ headline: TITLE, path: "/exercise-guides/plank-guide", description: DESC, dateModified: "2026-09-21" })}
+      references={references}
+      faqs={faqs}
+    >
+      <h2>Perfect Plank Form</h2>
+      <ol>
+        <li>Forearms on the floor, elbows directly under shoulders</li>
+        <li>Body forming a straight line from head to heels — no sagging or piking at the hips</li>
+        <li>Core braced, glutes lightly squeezed</li>
+        <li>Neck neutral, gaze down toward the floor rather than straining forward</li>
+        <li>Breathe steadily throughout — holding your breath adds unnecessary strain</li>
+      </ol>
 
-      <div className="seo-content">
-        <h2>Perfect Plank Form</h2>
-        <ul>
-          <li><strong>Forearms and toes on the ground</strong> — elbows directly beneath shoulders</li>
-          <li><strong>Straight line from head to heels</strong> — no sagging hips, no piking upward</li>
-          <li><strong>Brace your core</strong> — imagine tensing as if about to be punched in the stomach</li>
-          <li><strong>Neutral neck</strong> — look at the floor slightly ahead, not straight down or up</li>
-          <li><strong>Squeeze glutes</strong> — this helps maintain the straight hip line automatically</li>
-        </ul>
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li><strong>Hips sagging</strong> — the most common mistake, shifting load onto the lower back instead of the core</li>
+        <li><strong>Hips piked too high</strong> — reduces how much the core actually has to work</li>
+        <li><strong>Shoulders not stacked over elbows</strong> — increases shoulder strain over time</li>
+        <li><strong>Holding your breath</strong> — makes the hold feel harder than it needs to and can spike blood pressure unnecessarily</li>
+      </ul>
 
-        <h2>Common Plank Mistakes</h2>
-        <ul>
-          <li><strong>Sagging hips</strong> — the most common error, places excessive strain on the lower back. Fix by actively bracing the core and squeezing glutes.</li>
-          <li><strong>Hips too high (piking)</strong> — reduces core engagement, turns the exercise into a shoulder/hip flexor hold instead.</li>
-          <li><strong>Holding breath</strong> — breathe steadily throughout; holding breath increases blood pressure unnecessarily.</li>
-          <li><strong>Chasing time over form</strong> — a strict 30-second plank is more valuable than a sagging 2-minute one.</li>
-        </ul>
+      <h2>How Long Should You Hold a Plank?</h2>
+      <p>30–60 seconds with clean form is a solid working target. Once form starts to break down — hips sagging, shaking excessively — the set is effectively over, even if the timer hasn't hit your goal. Multiple clean 30-second holds train the core better than one long, sloppy 90-second hold.</p>
 
-        <h2>Plank Progressions</h2>
-        <table>
-          <thead><tr><th>Level</th><th>Variation</th><th>How</th></tr></thead>
-          <tbody>
-            <tr><td>Beginner</td><td>Knee Plank</td><td>Same form, knees on the ground instead of toes</td></tr>
-            <tr><td>Standard</td><td>Forearm Plank</td><td>Full plank as described above, build to 45-60 sec</td></tr>
-            <tr><td>Intermediate</td><td>Plank with Shoulder Taps</td><td>Tap opposite shoulder alternately without rotating hips</td></tr>
-            <tr><td>Intermediate</td><td>Side Plank</td><td>Balance on one forearm, stack feet, hold each side</td></tr>
-            <tr><td>Advanced</td><td>Plank to Push-up</td><td>Alternate between forearm and full push-up position</td></tr>
-            <tr><td>Advanced</td><td>Weighted Plank</td><td>Add light plate on upper back once bodyweight is easy</td></tr>
-          </tbody>
-        </table>
+      <h2>Plank Progressions</h2>
+      <table>
+        <thead><tr><th>Level</th><th>Variation</th></tr></thead>
+        <tbody>
+          <tr><td>Beginner</td><td>Knee plank (forearms + knees on floor)</td></tr>
+          <tr><td>Standard</td><td>Full forearm plank</td></tr>
+          <tr><td>Intermediate</td><td>Plank with shoulder taps, or side plank</td></tr>
+          <tr><td>Advanced</td><td>Plank with leg lifts, or a weighted plank (plate on the back)</td></tr>
+        </tbody>
+      </table>
 
-        <h2>How Long Should You Hold a Plank?</h2>
-        <p>Research does not support endless plank-hold progression as a training goal in itself — beyond roughly 60-90 seconds of good form, the exercise stops providing proportionally more core benefit. Instead of chasing longer holds, progress to harder variations (shoulder taps, side planks, plank-to-push-up) once you can comfortably hold a strict 60-second forearm plank.</p>
-
-        <div style={{ marginTop: "2.5rem", paddingTop: "2rem", borderTop: "1.5px solid var(--color-border)" }}>
-          <h2 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>Related Guides &amp; Calculators</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: "0.75rem" }}>
-            <Link href="/exercise-guides/dumbbell-exercises" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Dumbbell Exercises</Link>
-            <Link href="/exercise-guides/how-to-squat" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>How to Squat</Link>
-            <Link href="/workout-plans/3-day-full-body" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>3-Day Workout Plan</Link>
-          </div>
-        </div>
-      </div>
-    </div>
+      <h2>Building a Complete Core Routine</h2>
+      <p>The plank trains your core's ability to resist extension (your spine arching under load). A well-rounded routine also includes anti-rotation work (like a Pallof press) and direct flexion (like a crunch), giving more complete core training than the plank alone.</p>
+    </ArticleLayout>
   );
 }

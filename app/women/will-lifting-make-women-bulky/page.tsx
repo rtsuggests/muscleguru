@@ -1,52 +1,71 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import ArticleLayout from "@/components/layout/ArticleLayout";
+import { articleSchema } from "@/lib/articleSchema";
+
+const TITLE = "Will Lifting Weights Make Women Bulky? The Science";
+const DESC = "Why women don't build large muscles accidentally from strength training, the role of testosterone, and what actually happens to a woman's body when she starts lifting.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/women/will-lifting-make-women-bulky" },
   title: "Will Lifting Make Women Bulky — The Truth",
-  description: "The science behind why women cannot accidentally become bulky from weight training. Research-backed answer for Indian women.",
+  description: DESC,
+  keywords: ["will weight lifting make women bulky", "does lifting make women bulky", "women strength training myths"],
 };
 
-export default function Page() {
-  return (
-    <>
-      <div style={{background:"var(--color-bg)",borderBottom:"1px solid var(--color-border)",padding:"0.6rem 1rem"}}>
-        <div style={{maxWidth:860,margin:"0 auto",fontSize:"0.82rem",color:"var(--color-muted)",display:"flex",gap:"0.4rem",flexWrap:"wrap"}}>
-          <Link href="/" style={{color:"var(--color-muted)",textDecoration:"none"}}>Home</Link>
-          <span>›</span>
-          <Link href="/women" style={{color:"var(--color-muted)",textDecoration:"none"}}>Women</Link>
-          <span>›</span>
-          <span style={{color:"var(--color-dark)",fontWeight:500}}>Will Lifting Make Women Bulky</span>
-        </div>
-      </div>
-      <div style={{maxWidth:860,margin:"0 auto",padding:"2.5rem 1rem 5rem"}}>
-        <div style={{display:"flex",gap:"0.75rem",marginBottom:"1rem"}}><span className="tag">Women&apos;s Fitness</span><span style={{fontSize:"0.82rem",color:"var(--color-muted)"}}>10 min read</span></div>
-        <h1 style={{fontSize:"clamp(1.6rem,4vw,2.5rem)",lineHeight:1.2,marginBottom:"1rem"}}>Will Lifting Make Women Bulky — The Truth</h1>
-        <div style={{background:"var(--color-brand-light)",border:"1.5px solid #86efac",borderRadius:"0.875rem",padding:"1.125rem 1.375rem",marginBottom:"1.5rem"}}>
-          <div style={{fontWeight:700,fontSize:"0.85rem",color:"var(--color-brand-dark)",marginBottom:"0.4rem",textTransform:"uppercase"}}>Quick Answer</div>
-          <p style={{margin:0,fontSize:"0.975rem",color:"var(--color-dark)",lineHeight:1.65}}>No — women lack the testosterone levels needed to build large muscles accidentally. Female bodybuilders train for years with specific nutrition to achieve that look. Regular strength training makes Indian women leaner, stronger, and more defined — not bulky.</p>
-        </div>
-        <div className="seo-content">
+const faqs = [
+  { q: "Why don't women get bulky from lifting weights?", a: "Muscle growth is strongly driven by testosterone, and women naturally have roughly 10-20 times less circulating testosterone than men. This physiological difference limits how much muscle mass women build even with dedicated resistance training." },
+  { q: "How much muscle can a woman realistically gain in a year?", a: "Reviews of resistance-trained women suggest gains in the range of roughly 1–3 kg of lean mass over months of consistent training, with the exact amount varying by training experience, diet and genetics. This produces a toned, defined look — not the size seen in competitive female bodybuilders." },
+  { q: "How do female bodybuilders get so muscular then?", a: "Competitive female bodybuilders typically train for years with highly specific, aggressive nutrition and programming built explicitly around maximizing muscle size. Some also use performance-enhancing substances. It is not something that happens by accident from a normal strength training routine." },
+  { q: "What does happen when women lift consistently?", a: "Reduced body fat percentage, improved bone density, better insulin sensitivity, increased strength, and a more defined, 'toned' appearance — the outcome most women who start lifting are actually looking for." },
+];
 
-          <h2>Why Women Cannot Get Bulky</h2>
-          <p>Women have 10-20 times less testosterone than men — the primary anabolic hormone responsible for large muscle growth. Research by Roberts et al. confirms that women who do resistance training without specific hypertrophy programming gain 1-3 kg of lean muscle per year maximum. This produces a toned, defined appearance — not the large muscular physiques that women fear.</p>
-          <h2>Benefits of Strength Training for Indian Women</h2>
-          <p>Research consistently shows strength training for women produces: reduced body fat percentage, increased resting metabolic rate, improved bone density (critical for Indian women at high osteoporosis risk), better insulin sensitivity and blood sugar control, reduced risk of sarcopenia (muscle loss with ageing), and improved mental health outcomes. The women who develop very muscular physiques are either genetic outliers or using performance-enhancing drugs.</p>
-          <h2>What Actually Happens When Indian Women Lift</h2>
-          <p>In the first 4-8 weeks: strength increases dramatically due to neural adaptations, body composition improves (less fat, slightly more muscle), clothes fit better, energy levels improve. Over 3-6 months: visible muscle definition emerges, particularly in arms, shoulders, and legs. Body weight may stay similar or increase slightly while body fat percentage drops. This is the toned look most Indian women are seeking.</p>
-          <div className="disclaimer-box">
-            <strong>Medical Disclaimer:</strong> This article is for educational purposes only. Women with specific medical conditions including PCOS, endometriosis, or pregnancy should consult their gynaecologist or doctor before starting a new exercise programme.
-          </div>
-          <div style={{marginTop:"2rem",paddingTop:"1.5rem",borderTop:"1.5px solid var(--color-border)"}}>
-            <h2 style={{fontSize:"1.25rem",marginBottom:"1rem"}}>Related Calculators and Guides</h2>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill, minmax(190px, 1fr))",gap:"0.75rem"}}>
-              {[["Protein Calculator","/calculators/protein"],["BMI Calculator","/calculators/bmi"],["TDEE Calculator","/calculators/tdee"],["Pregnancy Weight","/calculators/pregnancy-weight-gain"],["Waist-Hip Ratio","/calculators/waist-hip-ratio"],["Sleep Calculator","/calculators/sleep"]].map(([n,h])=>(
-                <Link key={h} href={h} style={{display:"flex",alignItems:"center",gap:"0.5rem",background:"var(--color-bg)",border:"1.5px solid var(--color-border)",borderRadius:"0.625rem",padding:"0.875rem 1rem",textDecoration:"none",fontWeight:600,fontSize:"0.85rem",color:"var(--color-dark)"}}>{n}</Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+const references = [
+  "Hagstrom AD et al. The Effect of Resistance Training in Women on Dynamic Strength and Muscular Hypertrophy: A Systematic Review with Meta-analysis. Sports Med. 2020;50(6):1075–1093.",
+  "Handelsman DJ et al. Circulating Testosterone as the Hormonal Basis of Sex Differences in Athletic Performance. Endocr Rev. 2018;39(5):803–829.",
+];
+
+export default function WillLiftingMakeWomenBulkyPage() {
+  return (
+    <ArticleLayout
+      title="Will Lifting Weights Make Women Bulky?"
+      category="Women's Fitness"
+      categoryHref="/women"
+      readTime="8 min"
+      lastUpdated="September 2026"
+      summary="No — women have far less testosterone than men, the hormone primarily responsible for large muscle growth, which makes accidentally building bulky muscle physically unlikely. Female bodybuilders who achieve that look train for years with specific, aggressive nutrition and programming built around it. Regular strength training makes women leaner and more defined, not bulky."
+      relatedCalculators={[
+        { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+        { name: "BMI Calculator", href: "/calculators/bmi", icon: "⚖️" },
+      ]}
+      relatedArticles={[
+        { title: "Strength Training Guide for Women", href: "/women/strength-training-guide", time: "9 min" },
+        { title: "Protein Needs for Women", href: "/women/protein-needs-women", time: "8 min" },
+      ]}
+      schema={articleSchema({ headline: TITLE, path: "/women/will-lifting-make-women-bulky", description: DESC, dateModified: "2026-09-21" })}
+      references={references}
+      faqs={faqs}
+    >
+      <h2>Why Women Don't Get Bulky by Accident</h2>
+      <p>Muscle growth is heavily driven by testosterone, and women have roughly 10–20 times lower circulating testosterone than men. This is the core physiological reason that the same strength training programme produces very different amounts of muscle growth in men versus women. It's not that women "can't" build muscle — they absolutely can and should — it's that the ceiling on how much muscle mass a natural, healthy woman builds is much lower than the "bulky" image many people fear.</p>
+
+      <h2>What the Research Shows</h2>
+      <p>A systematic review of resistance training studies in women found meaningful gains in strength and modest, realistic increases in lean body mass — nowhere near the size associated with competitive bodybuilding. The muscle women build through a normal strength programme shows up as visible tone and definition, not bulk.</p>
+
+      <h2>How Female Bodybuilders Actually Get That Look</h2>
+      <p>Competitive female bodybuilders who develop very large, muscular physiques typically train for years with programming and nutrition specifically engineered to maximise muscle size, often involving calorie surpluses and training volumes far beyond what a typical gym-goer does. Some also use performance-enhancing substances. This is a deliberate, specialised pursuit — not something that happens as a side effect of a normal 3–4 day a week strength routine.</p>
+
+      <h2>What Actually Happens When Women Lift Consistently</h2>
+      <table>
+        <thead><tr><th>Timeframe</th><th>What typically happens</th></tr></thead>
+        <tbody>
+          <tr><td>First 4–8 weeks</td><td>Strength increases noticeably (largely neural adaptation), clothes may fit differently, energy improves</td></tr>
+          <tr><td>3–6 months</td><td>Visible muscle definition, particularly in arms, shoulders and legs; body fat percentage typically drops</td></tr>
+          <tr><td>Ongoing</td><td>Continued strength gains, improved bone density and metabolic health, a more defined physique</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Other Benefits Beyond Appearance</h2>
+      <p>Strength training for women is linked to reduced body fat percentage, improved bone density (relevant given elevated osteoporosis risk with age), better insulin sensitivity and blood sugar control, and reduced age-related muscle loss (sarcopenia). These benefits accrue regardless of whether "bulk" is a concern — they're a reason to train even for women with no aesthetic goal at all.</p>
+    </ArticleLayout>
   );
 }

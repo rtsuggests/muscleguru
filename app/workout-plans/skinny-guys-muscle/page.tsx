@@ -1,64 +1,87 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import ArticleLayout from "@/components/layout/ArticleLayout";
+import { articleSchema } from "@/lib/articleSchema";
+
+const TITLE = "Muscle Building Guide for Skinny Guys (Hardgainers) in India";
+const DESC = "A practical training and diet plan for naturally thin ('hardgainer') men trying to build muscle in India, with calorie targets, a workout split and common mistakes to avoid.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/workout-plans/skinny-guys-muscle" },
-  title: "Muscle Gain Plan for Skinny Guys India",
-  description: "A complete workout and diet plan for naturally thin Indian men struggling to gain muscle. Calorie surplus, compound lifts, and progression.",
-  keywords: ["skinny guy muscle gain India", "hardgainer workout plan", "underweight muscle building"],
+  title: "Muscle Building for Skinny Guys — India Guide",
+  description: DESC,
+  keywords: ["skinny guy build muscle India", "hardgainer workout plan", "how to gain weight muscle India"],
 };
 
-export default function Page() {
+const faqs = [
+  { q: "Why can't I gain muscle even though I eat a lot?", a: "Most self-described 'hardgainers' underestimate their actual calorie intake. Naturally thin people also often have higher daily movement (fidgeting, faster metabolism) and can underestimate how large a true surplus needs to be. Tracking intake for two weeks usually reveals the gap." },
+  { q: "How many calories does a skinny guy need to gain muscle?", a: "Start with your TDEE plus 300–500 kcal a day. If the scale hasn't moved in 2 weeks, increase by another 200–300 kcal. Being naturally thin often just means you need a bigger, more deliberate surplus than average." },
+  { q: "Should skinny guys do cardio while bulking?", a: "Light cardio for health is fine, but excessive cardio makes it harder to maintain the calorie surplus needed to gain weight. Keep it minimal and prioritise the surplus and training." },
+  { q: "How long does it take to see results?", a: "Visible muscle growth typically takes 8–12 weeks of consistent training and eating, with more noticeable changes over 6 months to a year. Weight gain on the scale can show within 2–3 weeks if the surplus is right." },
+];
+
+const references = [
+  "Slater G, Phillips SM. Nutrition guidelines for strength sports: sprinting, weightlifting, throwing events, and bodybuilding. J Sports Sci. 2011;29(sup1):S67–S77.",
+  "Garthe I et al. Effect of nutritional intervention on body composition and performance in elite athletes. Eur J Sport Sci. 2013;13(3):295–303.",
+];
+
+export default function SkinnyGuysMusclePage() {
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
-      <div style={{ marginBottom: "0.5rem", fontSize: "0.82rem", color: "var(--color-muted)" }}>
-        <Link href="/" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Home</Link> ›{" "}
-        <Link href="/workout-plans" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Workout Plans</Link> › Skinny Guys Muscle Plan
-      </div>
-      <span className="tag" style={{ marginTop: "1rem", display: "inline-block" }}>Workout Plan</span>
-      <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Muscle Gain Plan for Skinny Guys</h1>
-      <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>
-        A focused programme for naturally thin (ectomorph) Indian men who struggle to gain weight and muscle despite training.
-      </p>
+    <ArticleLayout
+      title="Muscle Building Guide for Skinny Guys (Hardgainers)"
+      category="Workout Plans"
+      categoryHref="/workout-plans"
+      readTime="8 min"
+      lastUpdated="September 2026"
+      summary="Being naturally thin usually means you need a bigger calorie surplus than you think — most 'hardgainers' simply aren't eating as much as they believe. Combine a 300–500 kcal surplus, 1.6–2.2 g/kg protein and a compound-lift training plan, and track your intake for two weeks to find out where the gap really is."
+      relatedCalculators={[
+        { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+        { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+        { name: "Muscle Gain Rate Calculator", href: "/calculators/muscle-gain-rate", icon: "📈" },
+      ]}
+      relatedArticles={[
+        { title: "Muscle Gain Diet for Indians", href: "/muscle-gain/muscle-gain-diet-india", time: "8 min" },
+        { title: "3-Day Full Body Workout Plan", href: "/workout-plans/3-day-full-body", time: "8 min" },
+        { title: "How Muscle Actually Grows", href: "/muscle-gain/how-muscle-grows", time: "9 min" },
+      ]}
+      schema={articleSchema({ headline: TITLE, path: "/workout-plans/skinny-guys-muscle", description: DESC, dateModified: "2026-09-21" })}
+      references={references}
+      faqs={faqs}
+    >
+      <h2>Why "Hardgainers" Struggle to Gain Muscle</h2>
+      <p>Being naturally thin doesn't mean your body can't build muscle — it usually means the calorie surplus you think you're eating isn't actually big enough. Studies tracking self-reported versus actual intake consistently find people underestimate how much they eat, often significantly. Combine that with a fast metabolism or high daily activity from fidgeting, and the "surplus" many thin guys believe they're in is often close to maintenance.</p>
 
-      <div className="seo-content">
-        <h2>Why Skinny Guys Struggle to Gain Muscle</h2>
-        <p>The most common reason isn&apos;t training — it&apos;s insufficient calorie intake. Naturally thin body types (ectomorphs) often have a fast metabolism and underestimate how much they need to eat to be in a genuine surplus. Use our <Link href="/calculators/tdee" style={{ color: "var(--color-brand-darker)" }}>TDEE Calculator</Link> to find your baseline, then add 300-500 kcal for a lean bulk.</p>
+      <h2>Step 1: Find Your Real Calorie Surplus</h2>
+      <p>Start at your TDEE plus 300–500 kcal a day. Track your weight weekly for 2 weeks. If it hasn't moved, you're not actually in a surplus — add another 200–300 kcal and check again. This trial-and-adjust approach is more reliable than trusting a single calculator number.</p>
 
-        <h2>Training Focus: Compound Lifts</h2>
-        <table>
-          <thead><tr><th>Exercise</th><th>Sets × Reps</th></tr></thead>
-          <tbody>
-            <tr><td>Squat</td><td>4 × 6-8</td></tr>
-            <tr><td>Bench Press</td><td>4 × 6-8</td></tr>
-            <tr><td>Deadlift</td><td>3 × 5</td></tr>
-            <tr><td>Overhead Press</td><td>3 × 8</td></tr>
-            <tr><td>Barbell Row</td><td>3 × 8</td></tr>
-          </tbody>
-        </table>
-        <p>Train 3-4 days per week, focusing on progressive overload — add weight or reps every 1-2 weeks.</p>
+      <h2>Step 2: Make Calories Easy to Eat</h2>
+      <p>Large volumes of food can be genuinely hard to eat consistently for naturally thin people with smaller appetites. Calorie-dense foods make this easier:</p>
+      <ul>
+        <li>Peanut butter, nuts and seeds (calorie-dense, easy to add to meals)</li>
+        <li>Whole milk or paneer instead of low-fat versions</li>
+        <li>Rice, roti and potatoes as a base at most meals</li>
+        <li>A calorie-dense shake (milk, banana, peanut butter, oats) between meals if solid food feels like too much</li>
+      </ul>
 
-        <h2>Nutrition Priorities</h2>
-        <ul>
-          <li><strong>Calorie surplus:</strong> 300-500 kcal above TDEE — track this consistently, don&apos;t guess</li>
-          <li><strong>Protein:</strong> 1.6-2.0g/kg body weight daily — use our <Link href="/calculators/protein" style={{ color: "var(--color-brand-darker)" }}>Protein Calculator</Link></li>
-          <li><strong>Frequent meals:</strong> 5-6 smaller meals are easier to hit calorie targets than 3 large ones for people with a fast metabolism and low appetite</li>
-          <li><strong>Calorie-dense foods:</strong> Full-fat milk, nuts, ghee, paneer, rice — don&apos;t rely only on volume-heavy foods like salad and vegetables</li>
-        </ul>
+      <h2>Step 3: Protein and Training</h2>
+      <p>Protein target: 1.6–2.2 g/kg body weight per day. Training: a full-body plan (3 days a week) or an upper/lower split (4 days a week), built around compound lifts — squat, bench press, row, overhead press, deadlift. These recruit the most muscle mass per session and are the most efficient use of training time for a beginner or intermediate lifter trying to gain size.</p>
 
-        <h2>Realistic Expectations</h2>
-        <p>Natural muscle gain is slow — beginners can expect 0.5-1kg of muscle per month in the first year. Use our <Link href="/calculators/muscle-gain-rate" style={{ color: "var(--color-brand-darker)" }}>Muscle Gain Rate Calculator</Link> for a personalised realistic timeline.</p>
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li><strong>Doing too much cardio</strong> — it burns into the calorie surplus you're trying to maintain. Keep it light while actively trying to gain.</li>
+        <li><strong>Constantly changing programmes</strong> — chasing a new workout every few weeks prevents the progressive overload that actually drives growth.</li>
+        <li><strong>Giving up too early</strong> — visible changes typically take 8–12 weeks of consistency, sometimes longer. Weigh in weekly and trust the process if the scale is moving in the right direction.</li>
+        <li><strong>Skipping meals when busy</strong> — a missed meal is a missed opportunity to hit the calorie target; planning ahead matters more for naturally thin people than for anyone else.</li>
+      </ul>
 
-        <div style={{ marginTop: "2.5rem", paddingTop: "2rem", borderTop: "1.5px solid var(--color-border)" }}>
-          <h2 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>Related Guides &amp; Calculators</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: "0.75rem" }}>
-            <Link href="/calculators/tdee" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>TDEE Calculator</Link>
-            <Link href="/calculators/protein" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Protein Calculator</Link>
-            <Link href="/calculators/muscle-gain-rate" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>Muscle Gain Rate</Link>
-            <Link href="/workout-plans/3-day-full-body" style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.625rem", padding: "0.875rem 1rem", textDecoration: "none", fontWeight: 600, fontSize: "0.85rem", color: "var(--color-dark)" }}>3-Day Full Body Plan</Link>
-          </div>
-        </div>
-      </div>
-    </div>
+      <h2>Sample Daily Structure (70 kg target, ~2,800–3,000 kcal)</h2>
+      <ul>
+        <li><strong>Breakfast:</strong> 3 eggs, 2 paratha, a glass of whole milk</li>
+        <li><strong>Mid-morning:</strong> Banana, peanut butter, handful of nuts</li>
+        <li><strong>Lunch:</strong> Rice, dal, paneer or chicken, vegetables, ghee</li>
+        <li><strong>Post-workout:</strong> Protein shake with milk and oats</li>
+        <li><strong>Dinner:</strong> Roti, chicken or soya chunks, vegetables</li>
+      </ul>
+      <p>Adjust portions up or down based on the weekly weigh-in trend, not how the meal feels on any single day.</p>
+    </ArticleLayout>
   );
 }

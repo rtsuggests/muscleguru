@@ -1,52 +1,80 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import ArticleLayout from "@/components/layout/ArticleLayout";
+import { articleSchema } from "@/lib/articleSchema";
+
+const TITLE = "Exercise During Periods: What to Do and What to Modify";
+const DESC = "How to train safely and effectively during your period, how the menstrual cycle affects performance, and which exercises help reduce period pain.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/women/fitness-during-periods" },
   title: "Fitness During Periods — Exercise Guide India",
-  description: "How to train during your menstrual cycle for Indian women — what to do, what to modify, and what to avoid.",
+  description: DESC,
+  keywords: ["exercise during periods", "workout during menstruation", "period pain exercise relief"],
 };
 
-export default function Page() {
-  return (
-    <>
-      <div style={{background:"var(--color-bg)",borderBottom:"1px solid var(--color-border)",padding:"0.6rem 1rem"}}>
-        <div style={{maxWidth:860,margin:"0 auto",fontSize:"0.82rem",color:"var(--color-muted)",display:"flex",gap:"0.4rem",flexWrap:"wrap"}}>
-          <Link href="/" style={{color:"var(--color-muted)",textDecoration:"none"}}>Home</Link>
-          <span>›</span>
-          <Link href="/women" style={{color:"var(--color-muted)",textDecoration:"none"}}>Women</Link>
-          <span>›</span>
-          <span style={{color:"var(--color-dark)",fontWeight:500}}>Fitness During Periods</span>
-        </div>
-      </div>
-      <div style={{maxWidth:860,margin:"0 auto",padding:"2.5rem 1rem 5rem"}}>
-        <div style={{display:"flex",gap:"0.75rem",marginBottom:"1rem"}}><span className="tag">Women&apos;s Fitness</span><span style={{fontSize:"0.82rem",color:"var(--color-muted)"}}>10 min read</span></div>
-        <h1 style={{fontSize:"clamp(1.6rem,4vw,2.5rem)",lineHeight:1.2,marginBottom:"1rem"}}>Fitness During Periods — Exercise Guide India</h1>
-        <div style={{background:"var(--color-brand-light)",border:"1.5px solid #86efac",borderRadius:"0.875rem",padding:"1.125rem 1.375rem",marginBottom:"1.5rem"}}>
-          <div style={{fontWeight:700,fontSize:"0.85rem",color:"var(--color-brand-dark)",marginBottom:"0.4rem",textTransform:"uppercase"}}>Quick Answer</div>
-          <p style={{margin:0,fontSize:"0.975rem",color:"var(--color-dark)",lineHeight:1.65}}>Exercise during periods is safe and beneficial for most women. Light to moderate exercise reduces cramping, bloating, and mood symptoms. You do not need to rest completely unless you have dysmenorrhoea (severe period pain) or endometriosis.</p>
-        </div>
-        <div className="seo-content">
+const faqs = [
+  { q: "Is it safe to exercise during my period?", a: "Yes, for most women. Light to moderate exercise is generally safe and can help reduce cramping, bloating and mood symptoms. You don't need to rest completely unless you have severe dysmenorrhoea, endometriosis, or your doctor has advised otherwise." },
+  { q: "Does exercise actually reduce period pain?", a: "A Cochrane systematic review found that regular exercise, at least 3 times a week for 45–60 minutes, can meaningfully reduce menstrual pain intensity, with no higher rate of adverse events than not exercising." },
+  { q: "Should I reduce workout intensity during my period?", a: "Many women find lower perceived exertion tolerance during the luteal phase (just before their period) and prefer lighter training on the heaviest days of bleeding. This is individual — some women train at full intensity throughout with no issue." },
+  { q: "Are inverted yoga poses unsafe during periods?", a: "There's no strong medical evidence that inversions are harmful during menstruation. Avoiding them during this time is a personal or traditional choice in many yoga practices, not a medical requirement." },
+];
 
-          <h2>The Menstrual Cycle and Exercise Performance</h2>
-          <p>Hormonal fluctuations across the menstrual cycle affect exercise performance and recovery. Phase 1 (menstruation, days 1-5): oestrogen and progesterone are lowest — energy may be lower, but moderate exercise is beneficial. Phase 2 (follicular, days 6-13): rising oestrogen improves strength, power, and mood — this is your best phase for high-intensity training. Phase 3 (ovulation, day 14): peak oestrogen and strength — ideal for personal bests and heavy lifting. Phase 4 (luteal, days 15-28): rising progesterone causes higher perceived exertion — reduce intensity, focus on technique.</p>
-          <h2>What to Modify During Periods</h2>
-          <p>Most women can train normally during periods. Practical adjustments: reduce intensity if experiencing cramping (walk instead of run, lighter weights); focus on lower-body exercises if bloating makes core work uncomfortable; stay well hydrated as fluid retention is common; increase protein intake slightly (0.2g/kg more) as protein breakdown is elevated during menstruation; prioritise sleep as recovery is slightly impaired. Inverted yoga poses (headstands, shoulderstands) are traditionally avoided during menstruation in many Indian yoga traditions — this is a personal choice, not a medical necessity.</p>
-          <h2>Exercise That Reduces Period Symptoms</h2>
-          <p>Research by Daley (2008) found that moderate aerobic exercise significantly reduced primary dysmenorrhoea (period pain) compared to no exercise. Best exercises during periods: brisk walking (reduces cramping through prostaglandin metabolism), yoga and stretching (child's pose, pigeon pose reduce lower back and abdominal cramp), light swimming, and cycling. Avoid very high-intensity sessions (HIIT, heavy lifting) on the first 1-2 days if experiencing severe symptoms.</p>
-          <div className="disclaimer-box">
-            <strong>Medical Disclaimer:</strong> This article is for educational purposes only. Women with specific medical conditions including PCOS, endometriosis, or pregnancy should consult their gynaecologist or doctor before starting a new exercise programme.
-          </div>
-          <div style={{marginTop:"2rem",paddingTop:"1.5rem",borderTop:"1.5px solid var(--color-border)"}}>
-            <h2 style={{fontSize:"1.25rem",marginBottom:"1rem"}}>Related Calculators and Guides</h2>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill, minmax(190px, 1fr))",gap:"0.75rem"}}>
-              {[["Protein Calculator","/calculators/protein"],["BMI Calculator","/calculators/bmi"],["TDEE Calculator","/calculators/tdee"],["Pregnancy Weight","/calculators/pregnancy-weight-gain"],["Waist-Hip Ratio","/calculators/waist-hip-ratio"],["Sleep Calculator","/calculators/sleep"]].map(([n,h])=>(
-                <Link key={h} href={h} style={{display:"flex",alignItems:"center",gap:"0.5rem",background:"var(--color-bg)",border:"1.5px solid var(--color-border)",borderRadius:"0.625rem",padding:"0.875rem 1rem",textDecoration:"none",fontWeight:600,fontSize:"0.85rem",color:"var(--color-dark)"}}>{n}</Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+const references = [
+  "Armour M et al. Exercise for dysmenorrhoea. Cochrane Database Syst Rev. 2019;9:CD004142.",
+  "Xiang Y et al. Efficacy and safety of therapeutic exercise for primary dysmenorrhea: a systematic review and meta-analysis. Front Med. 2025;12:1540557.",
+];
+
+export default function FitnessDuringPeriodsPage() {
+  return (
+    <ArticleLayout
+      title="Exercise During Periods: What to Do and What to Modify"
+      category="Women's Fitness"
+      categoryHref="/women"
+      readTime="8 min"
+      lastUpdated="September 2026"
+      summary="Exercise during periods is safe and, for most women, beneficial — a Cochrane review found regular exercise can meaningfully reduce menstrual pain. You don't need to rest completely unless you have severe dysmenorrhoea, endometriosis, or a doctor has advised otherwise. Light modifications on heavier days can help."
+      relatedCalculators={[
+        { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+        { name: "Sleep Calculator", href: "/calculators/sleep", icon: "😴" },
+      ]}
+      relatedArticles={[
+        { title: "PCOS and Exercise Guide", href: "/women/pcos-exercise-guide", time: "9 min" },
+        { title: "Strength Training Guide for Women", href: "/women/strength-training-guide", time: "9 min" },
+      ]}
+      schema={articleSchema({ headline: TITLE, path: "/women/fitness-during-periods", description: DESC, dateModified: "2026-09-21" })}
+      references={references}
+      faqs={faqs}
+    >
+      <h2>The Menstrual Cycle and Exercise</h2>
+      <p>Hormone levels fluctuate across the menstrual cycle, and some women notice differences in energy, strength and perceived effort at different phases. These patterns are individual — some women notice no meaningful difference across their cycle, while others find certain phases feel harder or easier. It's worth paying attention to your own pattern rather than assuming a generic rule applies to you.</p>
+      <table>
+        <thead><tr><th>Phase</th><th>Roughly when</th><th>What many women notice</th></tr></thead>
+        <tbody>
+          <tr><td>Menstruation</td><td>Days 1–5</td><td>Energy may be lower for some; moderate exercise is generally still fine and often helpful for cramps</td></tr>
+          <tr><td>Follicular</td><td>Days 6–13</td><td>Energy and mood often improve as the cycle progresses</td></tr>
+          <tr><td>Ovulation</td><td>Around day 14</td><td>Some women report feeling strongest around this point</td></tr>
+          <tr><td>Luteal</td><td>Days 15–28</td><td>Some women notice higher perceived effort for the same workout</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What the Research Shows on Exercise and Period Pain</h2>
+      <p>A Cochrane systematic review of exercise for dysmenorrhoea (period pain) found that regular exercise — generally at least 3 sessions a week for 45–60 minutes — can produce a meaningful reduction in menstrual pain intensity, with no higher rate of side effects compared to not exercising. A more recent meta-analysis found benefits with sessions of more than 30 minutes, more than 3 times weekly, sustained for at least 8 weeks.</p>
+
+      <h2>What to Modify During Your Period</h2>
+      <ul>
+        <li><strong>Reduce intensity if cramping is significant</strong> — swap a hard run for a walk, or use lighter weights.</li>
+        <li><strong>Stay well hydrated</strong> — fluid retention is common during this time.</li>
+        <li><strong>Consider slightly more protein</strong> if you notice increased fatigue or slower recovery, though this varies by individual.</li>
+        <li><strong>Prioritise sleep</strong> — some women notice mildly impaired recovery during this phase.</li>
+      </ul>
+
+      <h2>Exercise Types That May Help With Symptoms</h2>
+      <ul>
+        <li><strong>Brisk walking</strong> — low-impact, accessible, and included in most of the supporting research</li>
+        <li><strong>Yoga and stretching</strong> — child's pose and gentle hip-opening stretches are commonly used for lower back and abdominal cramping</li>
+        <li><strong>Light swimming or cycling</strong> — good options if higher-impact activity feels uncomfortable</li>
+      </ul>
+      <p>If symptoms are severe — pain that stops you from normal daily activities, very heavy bleeding, or symptoms that worsen over time — see a doctor or gynaecologist rather than relying on exercise alone, as these can be signs of an underlying condition that needs proper evaluation.</p>
+    </ArticleLayout>
   );
 }

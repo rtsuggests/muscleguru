@@ -1,52 +1,74 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import ArticleLayout from "@/components/layout/ArticleLayout";
+import { articleSchema } from "@/lib/articleSchema";
+
+const TITLE = "Strength Training Guide for Women in India";
+const DESC = "A complete beginner strength training guide for Indian women: a 3-day programme, exercise selection, progressive overload, and why strength training matters for bone and muscle health.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/women/strength-training-guide" },
   title: "Strength Training Guide for Women India",
-  description: "Complete beginner strength training guide for Indian women. 3-day programme, exercise selection, and progression system.",
+  description: DESC,
+  keywords: ["strength training for women India", "beginner weight lifting women", "gym plan for women India"],
 };
 
-export default function Page() {
-  return (
-    <>
-      <div style={{background:"var(--color-bg)",borderBottom:"1px solid var(--color-border)",padding:"0.6rem 1rem"}}>
-        <div style={{maxWidth:860,margin:"0 auto",fontSize:"0.82rem",color:"var(--color-muted)",display:"flex",gap:"0.4rem",flexWrap:"wrap"}}>
-          <Link href="/" style={{color:"var(--color-muted)",textDecoration:"none"}}>Home</Link>
-          <span>›</span>
-          <Link href="/women" style={{color:"var(--color-muted)",textDecoration:"none"}}>Women</Link>
-          <span>›</span>
-          <span style={{color:"var(--color-dark)",fontWeight:500}}>Strength Training Guide for Women India</span>
-        </div>
-      </div>
-      <div style={{maxWidth:860,margin:"0 auto",padding:"2.5rem 1rem 5rem"}}>
-        <div style={{display:"flex",gap:"0.75rem",marginBottom:"1rem"}}><span className="tag">Women&apos;s Fitness</span><span style={{fontSize:"0.82rem",color:"var(--color-muted)"}}>10 min read</span></div>
-        <h1 style={{fontSize:"clamp(1.6rem,4vw,2.5rem)",lineHeight:1.2,marginBottom:"1rem"}}>Strength Training Guide for Women India</h1>
-        <div style={{background:"var(--color-brand-light)",border:"1.5px solid #86efac",borderRadius:"0.875rem",padding:"1.125rem 1.375rem",marginBottom:"1.5rem"}}>
-          <div style={{fontWeight:700,fontSize:"0.85rem",color:"var(--color-brand-dark)",marginBottom:"0.4rem",textTransform:"uppercase"}}>Quick Answer</div>
-          <p style={{margin:0,fontSize:"0.975rem",color:"var(--color-dark)",lineHeight:1.65}}>Start with 3 days per week of full-body resistance training. Focus on compound movements — squats, deadlifts, rows, and presses. Progressive overload (adding weight or reps over time) is the key driver of results.</p>
-        </div>
-        <div className="seo-content">
+const faqs = [
+  { q: "Will strength training make me look bulky?", a: "No. Women have far lower testosterone than men, which limits how much muscle mass they can build. See the full explanation in Will Lifting Make Women Bulky." },
+  { q: "How often should a beginner train?", a: "3 days a week with a full-body routine, allowing at least one rest day between sessions, is a strong starting point." },
+  { q: "Is strength training safe during PCOS, pregnancy or other conditions?", a: "For most healthy women it is, but anyone with PCOS, endometriosis, a pregnancy, or another medical condition should get guidance from their doctor or gynaecologist before starting or adjusting a programme." },
+  { q: "What's the single most important principle for results?", a: "Progressive overload — gradually increasing weight or reps over time. Without it, progress plateaus quickly no matter how consistently you show up." },
+];
 
-          <h2>Why Indian Women Should Prioritise Strength Training</h2>
-          <p>India has one of the world's highest rates of osteoporosis and sarcopenia in women — conditions directly linked to inadequate muscle mass and bone density. Research by the ICMR found that Indian women have significantly lower bone density than their Western counterparts, making strength training a critical health intervention beyond aesthetics. A 3-day strength training programme builds the muscular and skeletal foundation that protects Indian women throughout their lives.</p>
-          <h2>3-Day Beginner Programme for Indian Women</h2>
-          <p>Train Monday, Wednesday, and Friday. Each session: warm-up 5 min, main workout 35-40 min, cool-down 5 min. Week 1-4: goblet squat 3x10, Romanian deadlift 3x10, dumbbell row 3x10/arm, push-up or incline push-up 3x10, plank 3x30 sec. Add weight or reps every 1-2 weeks when current weights feel manageable for all sets with good form.</p>
-          <h2>Progressive Overload: The Key Principle</h2>
-          <p>Progressive overload means consistently increasing the training stimulus over time. The simplest method: when you can complete all prescribed sets and reps with good form, increase weight by 1-2 kg on upper body exercises or 2-4 kg on lower body exercises. Track every session in a notebook. Without progressive overload, results plateau quickly regardless of how consistently you train.</p>
-          <div className="disclaimer-box">
-            <strong>Medical Disclaimer:</strong> This article is for educational purposes only. Women with specific medical conditions including PCOS, endometriosis, or pregnancy should consult their gynaecologist or doctor before starting a new exercise programme.
-          </div>
-          <div style={{marginTop:"2rem",paddingTop:"1.5rem",borderTop:"1.5px solid var(--color-border)"}}>
-            <h2 style={{fontSize:"1.25rem",marginBottom:"1rem"}}>Related Calculators and Guides</h2>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill, minmax(190px, 1fr))",gap:"0.75rem"}}>
-              {[["Protein Calculator","/calculators/protein"],["BMI Calculator","/calculators/bmi"],["TDEE Calculator","/calculators/tdee"],["Pregnancy Weight","/calculators/pregnancy-weight-gain"],["Waist-Hip Ratio","/calculators/waist-hip-ratio"],["Sleep Calculator","/calculators/sleep"]].map(([n,h])=>(
-                <Link key={h} href={h} style={{display:"flex",alignItems:"center",gap:"0.5rem",background:"var(--color-bg)",border:"1.5px solid var(--color-border)",borderRadius:"0.625rem",padding:"0.875rem 1rem",textDecoration:"none",fontWeight:600,fontSize:"0.85rem",color:"var(--color-dark)"}}>{n}</Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+const references = [
+  "Hagstrom AD et al. The Effect of Resistance Training in Women on Dynamic Strength and Muscular Hypertrophy: A Systematic Review with Meta-analysis. Sports Med. 2020;50(6):1075–1093.",
+  "World Health Organization. WHO guidelines on physical activity and sedentary behaviour. 2020.",
+];
+
+export default function StrengthTrainingGuideWomenPage() {
+  return (
+    <ArticleLayout
+      title="Strength Training Guide for Women in India"
+      category="Women's Fitness"
+      categoryHref="/women"
+      readTime="9 min"
+      lastUpdated="September 2026"
+      summary="Start with 3 days a week of full-body resistance training focused on compound movements — squats, deadlifts, rows and presses. Progressive overload, gradually adding weight or reps over time, is the single biggest driver of results, alongside adequate protein and recovery."
+      relatedCalculators={[
+        { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+        { name: "BMI Calculator", href: "/calculators/bmi", icon: "⚖️" },
+        { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+      ]}
+      relatedArticles={[
+        { title: "Will Lifting Make Women Bulky? The Truth", href: "/women/will-lifting-make-women-bulky", time: "8 min" },
+        { title: "Protein Needs for Women", href: "/women/protein-needs-women", time: "8 min" },
+        { title: "3-Day Full Body Workout Plan", href: "/workout-plans/3-day-full-body", time: "8 min" },
+      ]}
+      schema={articleSchema({ headline: TITLE, path: "/women/strength-training-guide", description: DESC, dateModified: "2026-09-21" })}
+      references={references}
+      faqs={faqs}
+    >
+      <h2>Why Strength Training Matters</h2>
+      <p>Bone density and muscle mass naturally decline with age, and this decline accelerates for women after menopause due to falling oestrogen. Strength training is one of the most effective tools for building and preserving both bone density and muscle mass, alongside its benefits for metabolism, insulin sensitivity and overall function. It's worth starting well before any of that decline sets in.</p>
+
+      <h2>3-Day Beginner Programme</h2>
+      <p>Train Monday, Wednesday and Friday. Each session: 5-minute warm-up, 35–40 minute main workout, 5-minute cool-down.</p>
+      <table>
+        <thead><tr><th>Exercise</th><th>Sets × Reps</th></tr></thead>
+        <tbody>
+          <tr><td>Goblet squat</td><td>3 × 10</td></tr>
+          <tr><td>Romanian deadlift</td><td>3 × 10</td></tr>
+          <tr><td>Dumbbell row</td><td>3 × 10 per arm</td></tr>
+          <tr><td>Push-up or incline push-up</td><td>3 × 10</td></tr>
+          <tr><td>Plank</td><td>3 × 30 sec</td></tr>
+        </tbody>
+      </table>
+      <p>Add weight or reps every 1–2 weeks once the current load feels manageable across all sets with good form.</p>
+
+      <h2>Progressive Overload: The Key Principle</h2>
+      <p>Progressive overload means consistently increasing the training stimulus over time. The simplest method: once you can complete all prescribed sets and reps with good form, increase weight by roughly 1–2 kg on upper-body exercises or 2–4 kg on lower-body exercises. Tracking every session (a notebook or an app both work) makes it easy to see when you're ready to progress. Without this, results plateau quickly regardless of how consistently you show up.</p>
+
+      <h2>What Results to Expect</h2>
+      <p>In the first 4–8 weeks, most of the improvement comes from your nervous system getting more efficient at the movements — this shows up as noticeably better strength before much visible change. Over 3–6 months, visible muscle definition and body composition changes typically follow, particularly with consistent training and adequate protein intake.</p>
+    </ArticleLayout>
   );
 }

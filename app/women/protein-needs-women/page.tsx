@@ -1,52 +1,91 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import ArticleLayout from "@/components/layout/ArticleLayout";
+import { articleSchema } from "@/lib/articleSchema";
+
+const TITLE = "Protein Needs for Women in India: A Complete Guide";
+const DESC = "How much protein Indian women need for fitness, muscle gain, fat loss and general health, with targets by goal and practical Indian food sources.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/women/protein-needs-women" },
   title: "Protein Needs for Women India — Complete Guide",
-  description: "How much protein Indian women need for fitness, muscle gain, fat loss, and general health. Evidence-based recommendations.",
+  description: DESC,
+  keywords: ["protein needs women India", "how much protein women", "protein for Indian women fitness"],
 };
 
-export default function Page() {
-  return (
-    <>
-      <div style={{background:"var(--color-bg)",borderBottom:"1px solid var(--color-border)",padding:"0.6rem 1rem"}}>
-        <div style={{maxWidth:860,margin:"0 auto",fontSize:"0.82rem",color:"var(--color-muted)",display:"flex",gap:"0.4rem",flexWrap:"wrap"}}>
-          <Link href="/" style={{color:"var(--color-muted)",textDecoration:"none"}}>Home</Link>
-          <span>›</span>
-          <Link href="/women" style={{color:"var(--color-muted)",textDecoration:"none"}}>Women</Link>
-          <span>›</span>
-          <span style={{color:"var(--color-dark)",fontWeight:500}}>Protein Needs for Women India</span>
-        </div>
-      </div>
-      <div style={{maxWidth:860,margin:"0 auto",padding:"2.5rem 1rem 5rem"}}>
-        <div style={{display:"flex",gap:"0.75rem",marginBottom:"1rem"}}><span className="tag">Women&apos;s Fitness</span><span style={{fontSize:"0.82rem",color:"var(--color-muted)"}}>10 min read</span></div>
-        <h1 style={{fontSize:"clamp(1.6rem,4vw,2.5rem)",lineHeight:1.2,marginBottom:"1rem"}}>Protein Needs for Women India — Complete Guide</h1>
-        <div style={{background:"var(--color-brand-light)",border:"1.5px solid #86efac",borderRadius:"0.875rem",padding:"1.125rem 1.375rem",marginBottom:"1.5rem"}}>
-          <div style={{fontWeight:700,fontSize:"0.85rem",color:"var(--color-brand-dark)",marginBottom:"0.4rem",textTransform:"uppercase"}}>Quick Answer</div>
-          <p style={{margin:0,fontSize:"0.975rem",color:"var(--color-dark)",lineHeight:1.65}}>Indian women need 1.2-2.0g of protein per kg of body weight daily depending on their goal. Most Indian women eat far less than this — studies show average protein intake of Indian women is only 0.6-0.8g/kg, significantly below what is needed for optimal health and body composition.</p>
-        </div>
-        <div className="seo-content">
+const faqs = [
+  { q: "How much protein does a woman need per day?", a: "1.2–1.4 g/kg for general health and maintenance, 1.6–2.0 g/kg for fat loss or muscle building. These ranges are the same as for men — protein needs scale with body weight and activity, not gender specifically." },
+  { q: "Is the RDA of 0.8 g/kg enough for active women?", a: "No — 0.8 g/kg is a deficiency-prevention minimum for largely sedentary adults, not an optimal target for anyone exercising regularly. Active women typically need meaningfully more." },
+  { q: "Can Indian vegetarian women get enough protein?", a: "Yes, with planning. Paneer, curd, dal, soya chunks, tofu and legumes can all contribute meaningfully across the day — it generally takes more deliberate meal structure than a diet with meat and fish." },
+  { q: "How much protein do pregnant or breastfeeding women need?", a: "Requirements increase above baseline during pregnancy and breastfeeding, but the right amount depends on individual factors. Discuss your specific protein and calorie targets with your doctor or a dietitian during these periods rather than following a generic fitness target." },
+];
 
-          <h2>Why Most Indian Women Are Protein Deficient</h2>
-          <p>The traditional Indian vegetarian diet for women — dal, sabzi, roti, rice — provides approximately 40-55g of protein daily for a typical serving pattern. For a 55 kg Indian woman targeting muscle gain or fat loss, this represents only 0.7-1.0g/kg — significantly below the evidence-based recommendation of 1.6-2.0g/kg for active women. Protein deficiency in Indian women leads to poor muscle retention during weight loss, slow recovery from exercise, and suboptimal bone health.</p>
-          <h2>Protein Recommendations by Goal</h2>
-          <p>Maintenance and general health: 1.2-1.4g/kg/day. Fat loss while preserving muscle: 1.6-2.0g/kg/day (higher protein is critical during calorie restriction to prevent muscle loss). Muscle building: 1.6-2.0g/kg/day. Pregnancy: 1.1-1.2g/kg plus 25g additional per day. Breastfeeding: 1.3-1.5g/kg. For a 55 kg active Indian woman targeting fat loss: 88-110g protein daily.</p>
-          <h2>Best Protein Sources for Indian Women</h2>
-          <p>Complete proteins (PDCAAS 1.0): paneer 18g/100g, hung curd 10g/100g, whole eggs 13g/100g, soya chunks 52g/100g dry, whey protein 24g/30g scoop. High-quality plant proteins: chana dal 9g/100g cooked, rajma 9g/100g cooked, moong dal 7g/100g. A practical daily template for a 55 kg woman targeting 90g protein: breakfast 2 eggs + hung curd 200g (30g), lunch paneer 80g + dal (24g), snack soya chunks 30g dry (16g), dinner dal + paneer (20g) = 90g total.</p>
-          <div className="disclaimer-box">
-            <strong>Medical Disclaimer:</strong> This article is for educational purposes only. Women with specific medical conditions including PCOS, endometriosis, or pregnancy should consult their gynaecologist or doctor before starting a new exercise programme.
-          </div>
-          <div style={{marginTop:"2rem",paddingTop:"1.5rem",borderTop:"1.5px solid var(--color-border)"}}>
-            <h2 style={{fontSize:"1.25rem",marginBottom:"1rem"}}>Related Calculators and Guides</h2>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill, minmax(190px, 1fr))",gap:"0.75rem"}}>
-              {[["Protein Calculator","/calculators/protein"],["BMI Calculator","/calculators/bmi"],["TDEE Calculator","/calculators/tdee"],["Pregnancy Weight","/calculators/pregnancy-weight-gain"],["Waist-Hip Ratio","/calculators/waist-hip-ratio"],["Sleep Calculator","/calculators/sleep"]].map(([n,h])=>(
-                <Link key={h} href={h} style={{display:"flex",alignItems:"center",gap:"0.5rem",background:"var(--color-bg)",border:"1.5px solid var(--color-border)",borderRadius:"0.625rem",padding:"0.875rem 1rem",textDecoration:"none",fontWeight:600,fontSize:"0.85rem",color:"var(--color-dark)"}}>{n}</Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+const references = [
+  "Jäger R et al. International Society of Sports Nutrition Position Stand: protein and exercise. J Int Soc Sports Nutr. 2017;14:20.",
+  "Indian Council of Medical Research – National Institute of Nutrition. Nutrient Requirements for Indians, RDA 2020.",
+  "Morton RW et al. A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength. Br J Sports Med. 2018;52(6):376–384.",
+];
+
+export default function ProteinNeedsWomenPage() {
+  return (
+    <ArticleLayout
+      title="Protein Needs for Women in India"
+      category="Women's Fitness"
+      categoryHref="/women"
+      readTime="8 min"
+      lastUpdated="September 2026"
+      summary="Women need 1.2–2.0 g of protein per kg of body weight per day depending on their goal — the same ranges used for men, since protein needs scale with body weight and training, not gender. A typical Indian vegetarian meal pattern (dal, roti, sabzi) often falls short of the higher end of this range without deliberate planning."
+      relatedCalculators={[
+        { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
+        { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
+      ]}
+      relatedArticles={[
+        { title: "How Much Protein Do You Need?", href: "/nutrition/how-much-protein", time: "7 min" },
+        { title: "Strength Training Guide for Women", href: "/women/strength-training-guide", time: "9 min" },
+        { title: "Best Indian Protein Sources", href: "/nutrition/indian-protein-sources", time: "8 min" },
+      ]}
+      schema={articleSchema({ headline: TITLE, path: "/women/protein-needs-women", description: DESC, dateModified: "2026-09-21" })}
+      references={references}
+      faqs={faqs}
+    >
+      <h2>Protein Targets by Goal</h2>
+      <table>
+        <thead><tr><th>Goal</th><th>Protein target</th><th>55 kg example</th></tr></thead>
+        <tbody>
+          <tr><td>General health / maintenance</td><td>1.2–1.4 g/kg</td><td>66–77 g/day</td></tr>
+          <tr><td>Fat loss (preserving muscle)</td><td>1.6–2.0 g/kg</td><td>88–110 g/day</td></tr>
+          <tr><td>Muscle building</td><td>1.6–2.0 g/kg</td><td>88–110 g/day</td></tr>
+          <tr><td>Sedentary (RDA minimum)</td><td>0.8 g/kg</td><td>44 g/day</td></tr>
+        </tbody>
+      </table>
+      <p>These targets are the same as those used for men — protein requirements scale with body weight, activity and goal, not gender specifically. The RDA figure of 0.8 g/kg, set by ICMR's National Institute of Nutrition, is designed to prevent deficiency in a largely sedentary population and is a floor, not a target for anyone training regularly.</p>
+
+      <h2>Why a Typical Vegetarian Pattern Can Fall Short</h2>
+      <p>A traditional Indian vegetarian meal pattern — dal, sabzi, roti, rice — is a healthy foundation but, without deliberate planning, can land in the 0.7–1.0 g/kg range for many women, below the 1.6–2.0 g/kg needed for active fat loss or muscle building goals. This isn't a flaw in the diet itself — it just means protein-dense foods need to be added deliberately rather than assumed.</p>
+
+      <h2>Best Protein Sources</h2>
+      <table>
+        <thead><tr><th>Food</th><th>Protein (per 100 g)</th></tr></thead>
+        <tbody>
+          <tr><td>Paneer</td><td>~18 g</td></tr>
+          <tr><td>Hung curd (Greek-style)</td><td>~10 g</td></tr>
+          <tr><td>Whole eggs</td><td>~13 g</td></tr>
+          <tr><td>Soya chunks (dry)</td><td>~50 g</td></tr>
+          <tr><td>Chana dal (cooked)</td><td>~9 g</td></tr>
+          <tr><td>Rajma (cooked)</td><td>~9 g</td></tr>
+        </tbody>
+      </table>
+
+      <h2>A Practical Day for a 55 kg Woman Targeting ~90 g Protein</h2>
+      <ul>
+        <li><strong>Breakfast:</strong> 2 eggs + 200 g hung curd — roughly 30 g</li>
+        <li><strong>Lunch:</strong> 80 g paneer + dal — roughly 24 g</li>
+        <li><strong>Snack:</strong> 30 g dry soya chunks (rehydrated) — roughly 16 g</li>
+        <li><strong>Dinner:</strong> Dal + paneer — roughly 20 g</li>
+      </ul>
+      <p>That totals roughly 90 g — within the 1.6–2.0 g/kg range for fat loss or muscle building at this body weight. Adjust portions to your own weight and target.</p>
+
+      <h2>Pregnancy and Breastfeeding</h2>
+      <p>Protein needs increase during pregnancy and breastfeeding, but the specifics depend on individual health factors. Work with your doctor or a dietitian for personalised targets during these periods rather than applying a general fitness target.</p>
+    </ArticleLayout>
   );
 }
