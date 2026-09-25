@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer style={{ background: "var(--color-dark)", color: "#d1d5db", marginTop: "4rem" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "3rem 1rem 1.5rem" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "2rem", marginBottom: "2.5rem" }}>
+        <div className="footer-grid" style={{ gap: "2rem", marginBottom: "2.5rem" }}>
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.2rem", color: "#fff", marginBottom: "0.75rem" }}>
               MuscleGuru<span style={{ color: "var(--color-brand)" }}>.in</span>
@@ -52,6 +52,13 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} MuscleGuru.in — All rights reserved. All calculator results are estimates only.</p>
         </div>
       </div>
+
+      <style>{`
+        .footer-grid { display: grid; grid-template-columns: 1fr; }
+        @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 900px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 1180px) { .footer-grid { grid-template-columns: 1.4fr repeat(5, 1fr); } }
+      `}</style>
     </footer>
   );
 }
