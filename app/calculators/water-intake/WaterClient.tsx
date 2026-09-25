@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Water Intake Calculator India — Daily Hydration — MuscleGuru.in",
+  "description": "Calculate your daily water intake needs adjusted for India's climate and activity level.",
+  "url": "https://muscleguru.in/calculators/water-intake",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function WaterClient() {
   const [weight, setWeight] = useState("");
   const [activity, setActivity] = useState("moderate");
@@ -21,7 +32,9 @@ export default function WaterClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Health</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Water Intake Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your daily water intake needs adjusted for India&apos;s climate.</p>
@@ -65,5 +78,6 @@ export default function WaterClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

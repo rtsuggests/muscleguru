@@ -5,6 +5,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Protein Calculator India — MuscleGuru.in",
+  "description": "Calculate your daily protein target based on weight, goal and activity level.",
+  "url": "https://muscleguru.in/calculators/protein",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function ProteinClient() {
   const [weight, setWeight] = useState("");
   const [goal, setGoal] = useState<"maintain" | "muscle" | "loss">("muscle");
@@ -21,7 +32,9 @@ export default function ProteinClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Calculator</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Protein Calculator India — Find Your Daily Target</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate exactly how much protein you need daily based on your body weight and goal.</p>
@@ -96,5 +109,6 @@ export default function ProteinClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

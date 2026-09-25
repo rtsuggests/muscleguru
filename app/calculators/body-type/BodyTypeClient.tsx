@@ -12,6 +12,17 @@ const questions = [
   { q: "What is your typical body fat storage?", options: [["Very lean naturally","ecto"],["Moderate, evenly distributed","meso"],["Higher, mostly midsection","endo"]] },
 ];
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Body Type Calculator India — Ecto, Meso, Endo — MuscleGuru.in",
+  "description": "7-question quiz to find your body type with Indian diet and training advice.",
+  "url": "https://muscleguru.in/calculators/body-type",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function BodyTypeClient() {
   const [answers, setAnswers] = useState<string[]>([]);
   const [result, setResult] = useState<string | null>(null);
@@ -37,7 +48,9 @@ export default function BodyTypeClient() {
   };
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Quiz</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Body Type Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Find your body type — ectomorph, mesomorph or endomorph — with Indian diet advice.</p>
@@ -81,5 +94,6 @@ export default function BodyTypeClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

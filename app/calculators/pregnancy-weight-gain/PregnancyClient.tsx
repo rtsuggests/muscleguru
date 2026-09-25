@@ -5,6 +5,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Pregnancy Weight Gain Calculator India — MuscleGuru.in",
+  "description": "Calculate healthy pregnancy weight gain in kg by trimester, based on your pre-pregnancy BMI using ICMR guidelines.",
+  "url": "https://muscleguru.in/calculators/pregnancy-weight-gain",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function PregnancyClient() {
   const [prePregWeight, setPrePregWeight] = useState("");
   const [height, setHeight] = useState("");
@@ -35,7 +46,9 @@ export default function PregnancyClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Women&apos;s Health</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Pregnancy Weight Gain Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>
@@ -131,5 +144,6 @@ export default function PregnancyClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

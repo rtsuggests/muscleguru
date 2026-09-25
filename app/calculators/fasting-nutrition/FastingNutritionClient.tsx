@@ -45,6 +45,17 @@ const fastingFoods: Record<string, { name: string; protein: number; cal: number;
   ],
 };
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fasting-Safe Nutrition Calculator India — MuscleGuru.in",
+  "description": "Calculate your calorie and protein targets during Navratri, Ekadashi, and other Hindu fasting periods.",
+  "url": "https://muscleguru.in/calculators/fasting-nutrition",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function FastingNutritionClient() {
   const [fastType, setFastType] = useState("navratri");
   const [weight, setWeight] = useState("");
@@ -65,7 +76,9 @@ export default function FastingNutritionClient() {
   const foods = fastingFoods[fastType];
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <div style={{ marginBottom: "0.5rem", fontSize: "0.82rem", color: "var(--color-muted)" }}>
         <Link href="/" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Home</Link> ›{" "}
         <Link href="/calculators" style={{ color: "var(--color-muted)", textDecoration: "none" }}>Calculators</Link> › Fasting Nutrition
@@ -143,5 +156,6 @@ export default function FastingNutritionClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

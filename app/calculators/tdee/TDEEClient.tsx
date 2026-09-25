@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "TDEE Calculator India — Total Daily Energy Expenditure — MuscleGuru.in",
+  "description": "Calculate your Total Daily Energy Expenditure using the Mifflin-St Jeor equation.",
+  "url": "https://muscleguru.in/calculators/tdee",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function TDEEClient() {
   const [sex, setSex] = useState<"male" | "female">("male");
   const [age, setAge] = useState("");
@@ -28,7 +39,9 @@ export default function TDEEClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <div style={{ display: "flex", gap: "0.75rem", marginBottom: "1rem", flexWrap: "wrap" }}>
         <span className="tag">Calculator</span>
       </div>
@@ -118,5 +131,6 @@ export default function TDEEClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

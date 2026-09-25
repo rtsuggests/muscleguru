@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Keto Macro Calculator India — MuscleGuru.in",
+  "description": "Calculate keto macros for 4 keto variants with Indian keto food guide.",
+  "url": "https://muscleguru.in/calculators/keto-macro",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function KetoClient() {
   const [calories, setCalories] = useState("");
   const [variant, setVariant] = useState("standard");
@@ -29,7 +40,9 @@ export default function KetoClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Keto</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Keto Macro Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate keto macros for 4 keto variants with Indian keto food guide.</p>
@@ -82,5 +95,6 @@ export default function KetoClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

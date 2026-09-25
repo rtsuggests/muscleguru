@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "VO2 Max Calculator India — 3 Field Test Methods — MuscleGuru.in",
+  "description": "Estimate your VO2 max using Rockport Walk Test, Cooper Run, and RHR formula.",
+  "url": "https://muscleguru.in/calculators/vo2-max",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function VO2MaxClient() {
   const [method, setMethod] = useState<"cooper" | "rhr">("cooper");
   const [distance, setDistance] = useState("");
@@ -29,7 +40,9 @@ export default function VO2MaxClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Cardio Fitness</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>VO2 Max Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Estimate your VO2 max using the Cooper 12-minute run test or resting heart rate method.</p>
@@ -82,5 +95,6 @@ export default function VO2MaxClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

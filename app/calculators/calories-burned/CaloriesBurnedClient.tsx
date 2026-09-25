@@ -16,6 +16,17 @@ const activities = [
   ["Tennis (singles)", 8.0], ["Elliptical trainer", 5.0], ["Rowing machine", 7.0],
 ] as const;
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calories Burned Calculator India — MuscleGuru.in",
+  "description": "Calculate calories burned during 40+ activities using MET values.",
+  "url": "https://muscleguru.in/calculators/calories-burned",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function CaloriesBurnedClient() {
   const [weight, setWeight] = useState("");
   const [activity, setActivity] = useState(String(activities[0][1]));
@@ -32,7 +43,9 @@ export default function CaloriesBurnedClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Popular</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Calories Burned Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Track calories burned during 40+ activities — from walking and jogging to cricket and Surya Namaskar — using research-validated MET values.</p>
@@ -101,5 +114,6 @@ export default function CaloriesBurnedClient() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -5,6 +5,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Intermittent Fasting Calculator India — MuscleGuru.in",
+  "description": "Calculate your eating and fasting window for 16:8, 18:6, and 14:10 intermittent fasting protocols.",
+  "url": "https://muscleguru.in/calculators/intermittent-fasting",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function IFClient() {
   const [startHour, setStartHour] = useState("12");
   const [protocol, setProtocol] = useState("16-8");
@@ -24,7 +35,9 @@ export default function IFClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Fat Loss</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Intermittent Fasting Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Find your ideal eating and fasting window for 16:8, 18:6, and 14:10 protocols, with Indian meal timing guidance.</p>
@@ -99,5 +112,6 @@ export default function IFClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

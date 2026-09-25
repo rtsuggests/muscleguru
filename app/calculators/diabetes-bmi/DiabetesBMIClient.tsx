@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Diabetes Risk & BMI Calculator India — MuscleGuru.in",
+  "description": "Assess your type 2 diabetes risk using Indian-adapted BMI thresholds and waist circumference.",
+  "url": "https://muscleguru.in/calculators/diabetes-bmi",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function DiabetesBMIClient() {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
@@ -25,7 +36,9 @@ export default function DiabetesBMIClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Medical</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Diabetes Risk & BMI Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Assess your type 2 diabetes risk using Indian-adapted BMI thresholds.</p>
@@ -70,5 +83,6 @@ export default function DiabetesBMIClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Body Fat Calculator India — US Navy Method — MuscleGuru.in",
+  "description": "Calculate your body fat percentage at home using the US Navy circumference method.",
+  "url": "https://muscleguru.in/calculators/body-fat",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function BodyFatClient() {
   const [sex, setSex] = useState<"male" | "female">("male");
   const [height, setHeight] = useState("");
@@ -45,7 +56,9 @@ export default function BodyFatClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Body Composition</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Body Fat Calculator India — US Navy Method</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Check your body fat percentage at home using just a tape measure — no calipers, scans, or gym equipment needed.</p>
@@ -122,5 +135,6 @@ export default function BodyFatClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

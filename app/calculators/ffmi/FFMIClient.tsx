@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "FFMI Calculator India — Fat-Free Mass Index — MuscleGuru.in",
+  "description": "Calculate your Fat-Free Mass Index — the natural muscle ceiling measure.",
+  "url": "https://muscleguru.in/calculators/ffmi",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function FFMIClient() {
   const [sex, setSex] = useState<"male" | "female">("male");
   const [weight, setWeight] = useState("");
@@ -33,7 +44,9 @@ export default function FFMIClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Advanced</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>FFMI Calculator India — Fat-Free Mass Index</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Measure your Fat-Free Mass Index — the science-based measure of muscularity relative to height.</p>
@@ -77,5 +90,6 @@ export default function FFMIClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

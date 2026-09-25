@@ -27,7 +27,13 @@ export default function Footer() {
           </div>
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff", marginBottom: "0.75rem", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>Guides</div>
-            {[["Beginner Fitness", "/beginner-fitness"], ["Nutrition", "/nutrition"], ["Supplements", "/supplements"], ["Muscle Gain", "/muscle-gain"], ["Weight Loss", "/weight-loss"]].map(([l, h]) => (
+            {[["Running", "/running"], ["Workout Plans", "/workout-plans"], ["Beginner Fitness", "/beginner-fitness"], ["Exercise Guides", "/exercise-guides"], ["Recovery", "/recovery"], ["Muscle Gain", "/muscle-gain"], ["Weight Loss", "/weight-loss"]].map(([l, h]) => (
+              <Link key={h} href={h} style={{ display: "block", fontSize: "0.875rem", color: "#9ca3af", textDecoration: "none", marginBottom: "0.35rem" }}>{l}</Link>
+            ))}
+          </div>
+          <div>
+            <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff", marginBottom: "0.75rem", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>More Guides</div>
+            {[["Nutrition", "/nutrition"], ["Supplements", "/supplements"], ["Indian Diet", "/indian-diet"], ["Women's Fitness", "/women"], ["Fasting", "/fasting"]].map(([l, h]) => (
               <Link key={h} href={h} style={{ display: "block", fontSize: "0.875rem", color: "#9ca3af", textDecoration: "none", marginBottom: "0.35rem" }}>{l}</Link>
             ))}
           </div>

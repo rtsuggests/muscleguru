@@ -5,6 +5,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Macro Calculator India — Protein, Carbs & Fat — MuscleGuru.in",
+  "description": "Calculate your daily protein, carbs and fat targets for any fitness goal.",
+  "url": "https://muscleguru.in/calculators/macro",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function MacroClient() {
   const [calories, setCalories] = useState("");
   const [goal, setGoal] = useState<"muscle" | "loss" | "maintain">("maintain");
@@ -26,7 +37,9 @@ export default function MacroClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Nutrition</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Macro Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your daily protein, carbs and fat targets for any fitness goal.</p>
@@ -76,5 +89,6 @@ export default function MacroClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

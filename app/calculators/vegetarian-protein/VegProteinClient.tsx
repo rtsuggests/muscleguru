@@ -15,6 +15,17 @@ const foods = [
   ["Almonds", "21g", "100g"],
 ];
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Vegetarian Protein Calculator India — MuscleGuru.in",
+  "description": "Calculate your daily protein target and see how to meet it with vegetarian Indian foods.",
+  "url": "https://muscleguru.in/calculators/vegetarian-protein",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function VegProteinClient() {
   const [weight, setWeight] = useState("");
   const [goal, setGoal] = useState("muscle");
@@ -28,7 +39,9 @@ export default function VegProteinClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Vegetarian</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Vegetarian Protein Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your protein target and see how to meet it with vegetarian Indian foods.</p>
@@ -77,5 +90,6 @@ export default function VegProteinClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

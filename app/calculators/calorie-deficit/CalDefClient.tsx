@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calorie Deficit Calculator India — Fat Loss — MuscleGuru.in",
+  "description": "Calculate your daily calorie target for fat loss with a personalised weekly timeline.",
+  "url": "https://muscleguru.in/calculators/calorie-deficit",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function CalDefClient() {
   const [sex, setSex] = useState<"male" | "female">("male");
   const [age, setAge] = useState("");
@@ -27,7 +38,9 @@ export default function CalDefClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Weight Loss</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Calorie Deficit Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your daily calorie target for fat loss with a personalised weekly timeline.</p>
@@ -91,5 +104,6 @@ export default function CalDefClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

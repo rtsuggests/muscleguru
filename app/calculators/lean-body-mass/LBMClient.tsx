@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Lean Body Mass Calculator India — 3 Formulas — MuscleGuru.in",
+  "description": "Calculate your lean body mass using Boer, James and Hume formulas.",
+  "url": "https://muscleguru.in/calculators/lean-body-mass",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function LBMClient() {
   const [sex, setSex] = useState<"male" | "female">("male");
   const [weight, setWeight] = useState("");
@@ -27,7 +38,9 @@ export default function LBMClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Advanced</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Lean Body Mass Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Calculate your lean body mass using Boer and James formulas.</p>
@@ -68,5 +81,6 @@ export default function LBMClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

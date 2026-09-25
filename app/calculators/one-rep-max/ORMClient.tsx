@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "One Rep Max Calculator India — Find Your 1RM — MuscleGuru.in",
+  "description": "Estimate your one rep max and get a full training percentage table.",
+  "url": "https://muscleguru.in/calculators/one-rep-max",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function ORMClient() {
   const [weight, setWeight] = useState("");
   const [reps, setReps] = useState("");
@@ -21,7 +32,9 @@ export default function ORMClient() {
   const percentages = [100, 95, 90, 85, 80, 75, 70, 65, 60];
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Strength</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>One Rep Max Calculator India</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Estimate your 1RM using the Epley formula and get a full training percentage table.</p>
@@ -64,5 +77,6 @@ export default function ORMClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }

@@ -4,6 +4,17 @@ import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
 import RelatedCalculators from "@/components/ui/RelatedCalculators";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Army Fitness Calculator — NDA, CDS, Agniveer — MuscleGuru.in",
+  "description": "Check if you meet physical fitness standards for NDA, CDS, Agniveer, and SSB selection.",
+  "url": "https://muscleguru.in/calculators/army-fitness",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+};
+
 export default function ArmyFitnessClient() {
   const [runMin, setRunMin] = useState("");
   const [runSec, setRunSec] = useState("");
@@ -23,7 +34,9 @@ export default function ArmyFitnessClient() {
   }
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "2.5rem 1rem 5rem" }}>
       <span className="tag">Defence</span>
       <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.2, margin: "1rem 0" }}>Army Fitness Calculator</h1>
       <p style={{ color: "var(--color-muted)", marginBottom: "1.5rem" }}>Check if you meet physical fitness standards for NDA, CDS, and Agniveer selection.</p>
@@ -79,5 +92,6 @@ export default function ArmyFitnessClient() {
         ]} />
       </div>
     </div>
+    </>
   );
 }
