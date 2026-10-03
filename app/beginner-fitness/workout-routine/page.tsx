@@ -5,7 +5,7 @@ import FAQ from "@/components/ui/FAQ";
 export const metadata: Metadata = {
   alternates: { canonical: "/beginner-fitness/workout-routine" },
   title: "Best Workout Routine for Beginners India",
-  description: "A complete home workout guide for Indian beginners. Effective bodyweight exercises, a 4-week starter programme, and how to progressively overload without gym equipment.",
+  description: "A complete home workout guide for Indian beginners. Effective bodyweight exercises, a 4-week starter programme, and how to progress without equipment.",
 };
 
 const schema = {

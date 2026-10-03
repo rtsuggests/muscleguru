@@ -7,7 +7,7 @@ const DESC = "How sleep affects muscle protein synthesis, growth hormone and rec
 
 export const metadata: Metadata = {
   alternates: { canonical: "/recovery/sleep-muscle-growth" },
-  title: "Sleep and Muscle Growth — Science-Backed Guide",
+  title: "Sleep and Muscle Growth — Science Guide",
   description: DESC,
   keywords: ["sleep and muscle growth", "sleep for recovery", "how much sleep for bodybuilding"],
 };

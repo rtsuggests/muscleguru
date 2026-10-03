@@ -4,8 +4,8 @@ import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/nutrition/paneer-protein-guide" },
-  title: "Paneer Protein Content — Complete Guide India",
-  description: "Complete guide to eggs as a fitness food. Protein per egg, whole vs whites, best cooking methods, how many eggs per day is safe, and how eggs fit into an Indian fitness diet.",
+  title: "Paneer Protein Content — Guide India",
+  description: "A complete guide to paneer as a fitness food — protein content per 100g, how it compares to chicken and eggs, and how to fit it into an Indian diet.",
 };
 
 const schema = {

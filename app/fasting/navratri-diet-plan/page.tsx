@@ -7,7 +7,7 @@ const DESC = "A practical Navratri (falahar) diet and fitness plan — food list
 
 export const metadata: Metadata = {
   alternates: { canonical: "/fasting/navratri-diet-plan" },
-  title: "Navratri Diet Plan — Fitness & Falahar Food Guide",
+  title: "Navratri Diet Plan — Falahar Foods",
   description: DESC,
   keywords: ["navratri diet plan", "falahar food list", "navratri fasting fitness"],
 };

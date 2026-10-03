@@ -7,7 +7,7 @@ const DESC = "How to approach the Karva Chauth fast safely — the sargi meal, h
 
 export const metadata: Metadata = {
   alternates: { canonical: "/fasting/karva-chauth-fasting-guide" },
-  title: "Karva Chauth Fasting Guide — Health & Fitness",
+  title: "Karva Chauth Fasting — Health Guide",
   description: DESC,
   keywords: ["karva chauth fasting tips", "sargi meal ideas", "karva chauth diet plan"],
 };

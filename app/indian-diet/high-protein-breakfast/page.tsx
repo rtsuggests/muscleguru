@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import { articleSchema } from "@/lib/articleSchema";
 
 const TITLE = "High-Protein Indian Breakfast Ideas for Fat Loss & Muscle Gain";
-const DESC = "Why a high-protein breakfast helps with hunger control and daily protein targets, with Indian vegetarian and non-vegetarian breakfast ideas and their protein content.";
+const DESC = "Why a high-protein breakfast helps with hunger control and daily protein targets, with Indian vegetarian and non-vegetarian breakfast ideas.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/indian-diet/high-protein-breakfast" },

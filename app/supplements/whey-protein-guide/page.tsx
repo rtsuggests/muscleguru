@@ -4,8 +4,8 @@ import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/supplements/whey-protein-guide" },
-  title: "Whey Protein Guide India — Types, Dosage & How to Choose",
-  description: "Evidence-based guide to whey protein for Indian beginners. Concentrate vs isolate vs hydrolysate, how much to take, best Indian brands, and whether you actually need it.",
+  title: "Whey Protein Guide India — Dosage",
+  description: "Evidence-based guide to whey protein for Indian beginners — concentrate vs isolate vs hydrolysate, how much to take, and whether you need it.",
 };
 
 const schema = {

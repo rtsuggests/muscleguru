@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/beginner-fitness" },
-  title: "Beginner Fitness India — Gym & Workout Guides",
-  description: "Complete beginner fitness guides for Indian adults.",
+  title: "Beginner Fitness India — Gym Guides",
+  description: "Complete beginner fitness guides for Indian adults — gym basics, home workouts, and how to start training safely with the right first routine.",
 };
 
 export default function Page() {

@@ -3,11 +3,11 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import { articleSchema } from "@/lib/articleSchema";
 
 const TITLE = "Muscle Building Guide for Skinny Guys (Hardgainers) in India";
-const DESC = "A practical training and diet plan for naturally thin ('hardgainer') men trying to build muscle in India, with calorie targets, a workout split and common mistakes to avoid.";
+const DESC = "A practical training and diet plan for naturally thin ('hardgainer') men trying to build muscle in India, with calorie targets and a workout split.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/workout-plans/skinny-guys-muscle" },
-  title: "Muscle Building for Skinny Guys — India Guide",
+  title: "Muscle Building for Skinny Guys India",
   description: DESC,
   keywords: ["skinny guy build muscle India", "hardgainer workout plan", "how to gain weight muscle India"],
 };

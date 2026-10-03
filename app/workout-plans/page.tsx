@@ -5,7 +5,7 @@ import FAQ from "@/components/ui/FAQ";
 export const metadata: Metadata = {
   alternates: { canonical: "/workout-plans" },
   title: "Workout Plans India — Gym & Home Programmes",
-  description: "The best 3-day full body workout plan for Indian beginners. Complete programme with exercises, sets, reps, progression method, and Indian diet recommendations. Start training today.",
+  description: "The best 3-day full body workout plan for Indian beginners, with exercises, sets, reps, a progression method, and Indian diet recommendations.",
   keywords: ["3 day workout plan India", "full body workout beginners India", "gym workout plan India", "beginner workout plan", "3 day gym programme India"],
 };
 

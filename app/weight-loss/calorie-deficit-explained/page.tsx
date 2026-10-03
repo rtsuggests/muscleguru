@@ -7,7 +7,7 @@ const DESC = "What a calorie deficit is, how big a deficit to aim for, how fast 
 
 export const metadata: Metadata = {
   alternates: { canonical: "/weight-loss/calorie-deficit-explained" },
-  title: "Calorie Deficit Explained — Lose Weight India",
+  title: "Calorie Deficit Explained — India",
   description: DESC,
   keywords: ["calorie deficit explained", "how to lose weight India", "calorie deficit for weight loss"],
 };

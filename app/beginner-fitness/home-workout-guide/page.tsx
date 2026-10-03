@@ -7,7 +7,7 @@ const DESC = "A complete bodyweight home workout plan with no equipment: warm-up
 
 export const metadata: Metadata = {
   alternates: { canonical: "/beginner-fitness/home-workout-guide" },
-  title: "Home Workout Guide India — No Equipment Needed",
+  title: "Home Workout Guide India — No Equipment",
   description: DESC,
   keywords: ["home workout no equipment India", "bodyweight workout beginners", "home workout plan India"],
 };

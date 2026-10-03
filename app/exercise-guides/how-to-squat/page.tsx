@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import { articleSchema } from "@/lib/articleSchema";
 
 const TITLE = "How to Squat: Full Technique Guide";
-const DESC = "Step-by-step squat technique, common form mistakes, mobility fixes, and how to progress the squat safely as a beginner.";
+const DESC = "Step-by-step squat technique, the most common form mistakes, mobility fixes, and how to progress the squat safely as a complete beginner.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/exercise-guides/how-to-squat" },

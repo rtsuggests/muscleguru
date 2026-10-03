@@ -5,7 +5,7 @@ import FAQ from "@/components/ui/FAQ";
 export const metadata: Metadata = {
   alternates: { canonical: "/muscle-gain/how-muscle-grows" },
   title: "How Muscle Grows — Hypertrophy Explained",
-  description: "A complete evidence-based guide to creating and maintaining a calorie deficit for sustainable fat loss. How big a deficit, what to eat, how to preserve muscle, and common mistakes.",
+  description: "A complete evidence-based guide to how muscle actually grows — the role of mechanical tension, protein synthesis, recovery, and training volume.",
 };
 
 const schema = {

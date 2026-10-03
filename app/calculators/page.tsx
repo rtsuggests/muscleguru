@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/calculators" },
-  title: "Free Fitness Calculators India — 25 Tools",
-  description: "25 free science-backed fitness calculators for Indian adults. BMI, TDEE, protein, VO2 max, army fitness, vegetarian protein, intermittent fasting, muscle gain rate, diabetes risk, keto, running pace, sleep and more.",
+  title: "Free Fitness Calculators India — 26 Tools",
+  description: "26 free science-backed fitness calculators for Indian adults — BMI, TDEE, protein, VO2 max, army fitness, intermittent fasting, and more.",
   keywords: ["fitness calculators India","free fitness calculator India","BMI calculator India","TDEE calculator India"],
 };
 

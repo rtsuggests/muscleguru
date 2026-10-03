@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import { articleSchema } from "@/lib/articleSchema";
 
 const TITLE = "Will Lifting Weights Make Women Bulky? The Science";
-const DESC = "Why women don't build large muscles accidentally from strength training, the role of testosterone, and what actually happens to a woman's body when she starts lifting.";
+const DESC = "Why women don't build large muscles accidentally from strength training, the role of testosterone, and what actually happens when you lift.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/women/will-lifting-make-women-bulky" },

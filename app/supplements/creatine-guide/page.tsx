@@ -3,11 +3,11 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import { articleSchema } from "@/lib/articleSchema";
 
 const TITLE = "Creatine Guide for Indians: Benefits, Dosage & Vegetarian Use";
-const DESC = "How creatine works, how much to take (3–5 g a day), why vegetarians may benefit most, safety, side effects and what to look for when buying creatine monohydrate in India.";
+const DESC = "How creatine works, how much to take (3–5 g a day), why vegetarians may benefit most, safety, side effects, and what to look for when buying it.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/supplements/creatine-guide" },
-  title: "Creatine Guide India — Benefits, Dosage & Vegetarian Use",
+  title: "Creatine Guide India — Dosage & Safety",
   description: DESC,
   keywords: ["creatine India", "creatine for vegetarians India", "creatine dosage", "creatine monohydrate India", "is creatine safe"],
 };

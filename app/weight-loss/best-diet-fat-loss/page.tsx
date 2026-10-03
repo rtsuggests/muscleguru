@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import { articleSchema } from "@/lib/articleSchema";
 
 const TITLE = "Best Diet for Fat Loss in India: What the Research Says";
-const DESC = "A comparison of low-carb, intermittent fasting and calorie counting for fat loss, what the research actually shows, and how to choose the right approach for an Indian diet.";
+const DESC = "A comparison of low-carb, intermittent fasting, and calorie counting for fat loss, and how to choose the right approach for an Indian diet.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/weight-loss/best-diet-fat-loss" },

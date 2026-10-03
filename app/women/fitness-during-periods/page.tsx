@@ -7,7 +7,7 @@ const DESC = "How to train safely and effectively during your period, how the me
 
 export const metadata: Metadata = {
   alternates: { canonical: "/women/fitness-during-periods" },
-  title: "Fitness During Periods — Exercise Guide India",
+  title: "Exercise During Periods — Guide India",
   description: DESC,
   keywords: ["exercise during periods", "workout during menstruation", "period pain exercise relief"],
 };

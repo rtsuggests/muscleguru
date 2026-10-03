@@ -7,7 +7,7 @@ const DESC = "How much protein Indian women need for fitness, muscle gain, fat l
 
 export const metadata: Metadata = {
   alternates: { canonical: "/women/protein-needs-women" },
-  title: "Protein Needs for Women India — Complete Guide",
+  title: "Protein Needs for Women — Guide",
   description: DESC,
   keywords: ["protein needs women India", "how much protein women", "protein for Indian women fitness"],
 };

@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import { articleSchema } from "@/lib/articleSchema";
 
 const TITLE = "Intermittent Fasting for Indians: A Practical Guide";
-const DESC = "How intermittent fasting works, common schedules like 16:8, how it fits an Indian meal pattern, who should avoid it, and what the research actually shows about fat loss.";
+const DESC = "How intermittent fasting works, common schedules like 16:8, how it fits an Indian meal pattern, and what the research shows about fat loss.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/indian-diet/intermittent-fasting-india" },

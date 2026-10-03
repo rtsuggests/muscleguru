@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import { articleSchema } from "@/lib/articleSchema";
 
 const TITLE = "Best Time to Run: Morning vs Evening (India Guide)";
-const DESC = "Whether morning or evening running is better for fat loss and performance, how Indian heat and air quality affect timing, and how to choose what fits your schedule.";
+const DESC = "Whether morning or evening running is better for fat loss and performance, and how Indian heat and air quality affect your choice of timing.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/running/best-time-to-run" },
