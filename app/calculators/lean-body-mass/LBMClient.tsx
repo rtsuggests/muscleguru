@@ -73,6 +73,24 @@ export default function LBMClient() {
         <h2>Understanding Lean Body Mass</h2>
         <p>Lean body mass (LBM) is your total body weight minus fat mass — including muscle, bone, organs, and water. The Boer formula is widely considered the most accurate for most body types. Tracking LBM over time is a better progress indicator than scale weight alone.</p>
 
+        <h2>The Formulas Explained</h2>
+        <p>Lean body mass (LBM) is everything in your body except fat: muscle, bone, organs and water. These calculators estimate it from height and weight using validated equations. Two common ones, with weight in kg and height in cm:</p>
+        <ul>
+          <li><strong>Boer (men):</strong> 0.407 x weight + 0.267 x height - 19.2</li>
+          <li><strong>Boer (women):</strong> 0.252 x weight + 0.473 x height - 48.3</li>
+          <li><strong>James (men):</strong> 1.10 x weight - 128 x (weight / height)^2</li>
+          <li><strong>James (women):</strong> 1.07 x weight - 148 x (weight / height)^2</li>
+        </ul>
+        <p>For a man weighing 70 kg at 175 cm, Boer gives about 56 kg of lean mass, which implies roughly 20% body fat, and James gives about 56.5 kg. Results differ a little between formulas, which is normal.</p>
+        <h2>Why It Is Useful</h2>
+        <ul>
+          <li><strong>Protein targets:</strong> some people base protein intake on lean mass rather than total weight.</li>
+          <li><strong>Tracking progress:</strong> if weight stays the same but lean mass estimates rise, body composition is improving.</li>
+          <li><strong>Calorie estimates:</strong> lean mass is the main driver of resting energy expenditure.</li>
+        </ul>
+        <h2>Accuracy and Limits</h2>
+        <p>Formula-based estimates cannot see your actual body composition. Two people with the same height and weight can have very different muscle and fat levels. Methods such as DEXA scans, skinfold measurements or bioimpedance devices are more direct, though each has its own margin of error.</p>
+
         <RelatedCalculators items={[
           { name: "FFMI Calculator", href: "/calculators/ffmi", icon: "🏆" },
           { name: "Body Fat Calculator", href: "/calculators/body-fat", icon: "📊" },

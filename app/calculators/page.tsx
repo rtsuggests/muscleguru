@@ -50,7 +50,7 @@ export default function CalculatorsPage() {
         <div style={{textAlign:"center",marginBottom:"3rem"}}>
           <h1 style={{fontSize:"clamp(1.75rem,4vw,2.75rem)",marginBottom:"0.75rem"}}>Free Fitness Calculators for India</h1>
           <p style={{fontSize:"1.05rem",color:"var(--color-muted)",maxWidth:640,margin:"0 auto 1.5rem"}}>
-            25 science-backed tools covering body composition, nutrition, exercise, cardio fitness, army training, diabetes risk, and more. All free. All formulas explained. Indian context built in.
+            26 science-backed tools covering body composition, nutrition, exercise, cardio fitness, army training, diabetes risk, and more. All free. All formulas explained. Indian context built in.
           </p>
           <div style={{display:"flex",gap:"1rem",justifyContent:"center",flexWrap:"wrap",fontSize:"0.875rem",color:"var(--color-brand-dark)",fontWeight:500}}>
             <span>✅ Instant results</span><span>📱 Mobile-friendly</span><span>🔬 Peer-reviewed formulas</span><span>🇮🇳 Indian-adapted cutoffs</span>

@@ -79,6 +79,28 @@ export default function MacroClient() {
         <h2>Understanding Macronutrients</h2>
         <p>Macros are the three nutrients that provide calories: protein (4 kcal/g), carbohydrates (4 kcal/g), and fat (9 kcal/g). Different goals require different macro ratios — higher protein for fat loss to preserve muscle, moderate protein and higher carbs for muscle building performance.</p>
 
+        <h2>Calories in Each Macronutrient</h2>
+        <p>Protein and carbohydrate each provide about 4 calories per gram, fat provides 9, and alcohol 7. Your macro targets split your daily calories between them. A common starting framework is to set protein first, set fat next, then give the remaining calories to carbohydrate.</p>
+        <h2>A Worked Example</h2>
+        <p>Take a 70 kg person eating 2,200 kcal a day to build muscle:</p>
+        <ul>
+          <li><strong>Protein:</strong> 2 g per kg gives 140 g, which is 560 kcal.</li>
+          <li><strong>Fat:</strong> about 1 g per kg gives 70 g, which is 630 kcal.</li>
+          <li><strong>Carbohydrate:</strong> the remaining 1,010 kcal divided by 4 gives about 252 g.</li>
+        </ul>
+        <h2>Typical Ranges</h2>
+        <table>
+          <thead><tr><th>Macro</th><th>General guidance</th></tr></thead>
+          <tbody>
+            <tr><td>Protein</td><td>1.6 to 2.2 g/kg for active people; 10 to 35% of calories is the standard range</td></tr>
+            <tr><td>Fat</td><td>20 to 35% of calories; keep at least about 0.6 g/kg for hormone health</td></tr>
+            <tr><td>Carbohydrate</td><td>45 to 65% of calories in standard guidance; flexible depending on activity</td></tr>
+            <tr><td>Fibre</td><td>About 14 g per 1,000 kcal, or roughly 25 to 38 g a day</td></tr>
+          </tbody>
+        </table>
+        <h2>Tracking Tips for Indian Food</h2>
+        <p>Oil and ghee used in cooking add up quickly, so measure them with a spoon rather than estimating. Weigh rice and dal cooked or raw consistently, and use a food composition database or label values. Hit your calories and protein first; the remaining macros do not need to be exact every day.</p>
+
         <RelatedCalculators items={[
           { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
           { name: "Keto Macro Calc", href: "/calculators/keto-macro", icon: "🥑" },

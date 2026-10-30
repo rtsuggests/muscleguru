@@ -88,6 +88,23 @@ export default function VO2MaxClient() {
             <tr><td>Below Average</td><td>Below 35</td></tr>
           </tbody>
         </table>
+        <h2>What VO2 Max Tells You</h2>
+        <p>VO2 max is the maximum amount of oxygen your body can use during intense exercise, measured in millilitres per kilogram of body weight per minute (ml/kg/min). It is one of the strongest single indicators of cardiovascular fitness, and higher values are linked with lower risk of heart disease and earlier death. Typical untrained adults sit somewhere around 30 to 40, trained recreational athletes around 45 to 60, and elite endurance athletes can exceed 70. Women usually score lower than men, and values decline with age, often by about 10% per decade in inactive people.</p>
+        <h2>How the Field Tests Work</h2>
+        <ul>
+          <li><strong>Cooper 12-minute run:</strong> VO2 max = (distance in metres - 504.9) / 44.73. Running 2,400 m gives roughly 42 ml/kg/min.</li>
+          <li><strong>Resting heart rate method:</strong> VO2 max is about 15.3 x (maximum heart rate / resting heart rate). A maximum of 190 and resting rate of 60 gives roughly 48.5.</li>
+          <li><strong>Rockport walk test:</strong> a timed 1-mile brisk walk with heart rate measured at the finish, useful for beginners and older adults.</li>
+        </ul>
+        <p>These tests estimate rather than measure VO2 max. A lab test with a gas analyser is the gold standard.</p>
+        <h2>How to Improve It</h2>
+        <ul>
+          <li>Train three to five times a week, mixing easy aerobic sessions with one or two harder interval sessions.</li>
+          <li>Try intervals such as four rounds of 4 minutes at a hard effort with 3 minutes of easy recovery.</li>
+          <li>Be consistent for 8 to 12 weeks; beginners often see noticeable gains in that window.</li>
+        </ul>
+        <p>Check with your doctor before hard testing if you have heart conditions, chest pain or have been inactive for a long time.</p>
+
         <RelatedCalculators items={[
           { name: "Running Pace Calc", href: "/calculators/running-pace", icon: "🏃" },
           { name: "Heart Rate Zones", href: "/calculators/heart-rate-zone", icon: "❤️" },

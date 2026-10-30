@@ -69,6 +69,25 @@ export default function ORMClient() {
         <h2>How This Calculator Works</h2>
         <p>This calculator uses the Epley formula: 1RM = weight × (1 + reps/30). It is most accurate for rep ranges between 1-10. Use the percentage table to plan training loads for strength, hypertrophy, or endurance phases.</p>
 
+        <h2>The Formulas Behind the Estimate</h2>
+        <p>Rather than testing a true maximum, which is demanding and risky, calculators estimate it from a lighter set taken close to failure. Two of the most common formulas are:</p>
+        <ul>
+          <li><strong>Epley:</strong> 1RM = weight x (1 + reps / 30)</li>
+          <li><strong>Brzycki:</strong> 1RM = weight x 36 / (37 - reps)</li>
+        </ul>
+        <p>For example, 80 kg lifted for 5 reps gives about 93 kg with Epley and 90 kg with Brzycki. The estimates are closest when you perform fewer than 10 reps; higher-rep sets become less reliable.</p>
+        <h2>Using Percentages to Train</h2>
+        <table>
+          <thead><tr><th>Goal</th><th>Typical load (% of 1RM)</th><th>Typical reps</th></tr></thead>
+          <tbody>
+            <tr><td>Maximal strength</td><td>85 to 95%</td><td>1 to 5</td></tr>
+            <tr><td>Muscle growth</td><td>65 to 85%</td><td>6 to 12</td></tr>
+            <tr><td>Muscular endurance</td><td>50 to 65%</td><td>12 to 20</td></tr>
+          </tbody>
+        </table>
+        <h2>Testing Safely</h2>
+        <p>Warm up thoroughly, use a spotter or safety pins for bench press and squat, and avoid testing a true 1RM when tired or when your form is breaking down. Re-test every 6 to 8 weeks and adjust training loads accordingly. The result is an estimate, so treat it as a planning guide rather than an exact number.</p>
+
         <RelatedCalculators items={[
           { name: "3-Day Workout Plan", href: "/workout-plans/3-day-full-body", icon: "📋" },
           { name: "Muscle Gain Rate", href: "/calculators/muscle-gain-rate", icon: "📈" },

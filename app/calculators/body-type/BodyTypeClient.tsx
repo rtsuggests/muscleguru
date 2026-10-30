@@ -86,6 +86,25 @@ export default function BodyTypeClient() {
         )}
       </div>
       <div className="seo-content">
+        <h2>What Are the Three Body Types?</h2>
+        <p>The ectomorph, mesomorph and endomorph labels come from somatotype theory, proposed by psychologist William Sheldon in the 1940s. Modern exercise science treats it as a rough descriptive framework rather than a rigid classification: almost everyone is a blend, and your type does not fix what you can achieve. What it can do is help you set realistic expectations and choose where to focus first.</p>
+        <table>
+          <thead><tr><th>Type</th><th>Typical traits</th><th>Common challenge</th></tr></thead>
+          <tbody>
+            <tr><td>Ectomorph</td><td>Lean, narrow frame, fast-feeling metabolism</td><td>Gaining weight and muscle</td></tr>
+            <tr><td>Mesomorph</td><td>Naturally athletic, medium frame, gains muscle readily</td><td>Gaining fat if food intake drifts up</td></tr>
+            <tr><td>Endomorph</td><td>Broader frame, stores fat more easily</td><td>Losing fat and staying lean</td></tr>
+          </tbody>
+        </table>
+        <h2>Training and Diet by Body Type</h2>
+        <ul>
+          <li><strong>Ectomorph:</strong> prioritise a steady calorie surplus (roughly 300 to 500 kcal above maintenance), heavy compound lifts, and calorie-dense Indian foods such as paneer, nuts, ghee, whole milk, banana shakes and rice. Keep cardio modest.</li>
+          <li><strong>Mesomorph:</strong> responds well to most programmes. Keep protein high, track weekly body weight, and adjust food before fat creeps up.</li>
+          <li><strong>Endomorph:</strong> a moderate calorie deficit, high protein (dal, curd, eggs, chicken, soya), strength training for muscle retention, and daily walking. Watch portions of rice and fried snacks rather than cutting entire food groups.</li>
+        </ul>
+        <h2>Limits of the Idea</h2>
+        <p>Body type influences how easy gaining or losing weight feels, but training consistency, protein intake, sleep and total calories matter far more over months and years. Treat your result as a starting point, not a verdict.</p>
+
         <RelatedCalculators items={[
           { name: "Macro Calculator", href: "/calculators/macro", icon: "🥗" },
           { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },

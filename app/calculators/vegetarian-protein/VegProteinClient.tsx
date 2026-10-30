@@ -82,6 +82,21 @@ export default function VegProteinClient() {
           </tbody>
         </table>
 
+        <h2>Can Vegetarians Reach Their Protein Target?</h2>
+        <p>Yes, with planning. Lifters and active adults generally aim for about 1.6 to 2.2 g of protein per kg of body weight. A 70 kg person therefore needs roughly 110 to 155 g a day. Spreading protein across three or four meals makes this easier than trying to fit it into one or two.</p>
+        <h2>Protein Quality and Combining Foods</h2>
+        <p>Most plant proteins are lower in one or more essential amino acids, which is why pairing foods works well: dal with rice or roti, rajma with rice, and chana with wheat all complement each other. You do not need to combine them in the same meal; eating a variety across the day is enough. Soya, paneer, curd, milk and eggs (for ovo-vegetarians) are higher-quality sources on their own.</p>
+        <h2>A Sample 110 g Vegetarian Day</h2>
+        <ul>
+          <li><strong>Breakfast:</strong> moong dal chilla with curd, about 22 g</li>
+          <li><strong>Lunch:</strong> dal, roti and a bowl of rajma, about 28 g</li>
+          <li><strong>Snack:</strong> roasted chana and a glass of milk, about 18 g</li>
+          <li><strong>Dinner:</strong> 100 g paneer or soya chunks curry with roti, about 30 g</li>
+          <li><strong>Optional:</strong> a plant or whey protein shake, about 20 g</li>
+        </ul>
+        <h2>Other Nutrients to Watch</h2>
+        <p>Vegetarians should also keep an eye on vitamin B12 (found mainly in animal foods, so dairy or a supplement is often needed), iron, zinc and omega-3 fats. A blood test and a doctor or dietitian can confirm whether supplements are necessary.</p>
+
         <RelatedCalculators items={[
           { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },
           { name: "Macro Calculator", href: "/calculators/macro", icon: "🥗" },

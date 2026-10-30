@@ -4,15 +4,16 @@ import Link from "next/link";
 
 const primaryLinks = [
   { label: "Calculators", href: "/calculators" },
+  { label: "Defence", href: "/defence" },
   { label: "Running", href: "/running" },
   { label: "Workout Plans", href: "/workout-plans" },
   { label: "Nutrition", href: "/nutrition" },
   { label: "Supplements", href: "/supplements" },
   { label: "Muscle Gain", href: "/muscle-gain" },
-  { label: "Weight Loss", href: "/weight-loss" },
 ];
 
 const moreLinks = [
+  { label: "Weight Loss", href: "/weight-loss" },
   { label: "Beginners", href: "/beginner-fitness" },
   { label: "Exercise Guides", href: "/exercise-guides" },
   { label: "Recovery", href: "/recovery" },

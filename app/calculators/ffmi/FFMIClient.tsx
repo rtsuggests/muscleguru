@@ -82,6 +82,29 @@ export default function FFMIClient() {
         <h2>What Is FFMI?</h2>
         <p>Fat-Free Mass Index (FFMI) measures muscularity relative to height, normalizing for body size the way BMI does — but using lean mass instead of total weight. Research by Kouri et al. (1995) found that natural male bodybuilders rarely exceed a normalized FFMI of 25, making it a useful reference point for identifying the natural muscular ceiling.</p>
 
+        <h2>How FFMI Is Calculated</h2>
+        <p>FFMI divides your fat-free mass in kilograms by your height in metres squared, much like BMI but with fat removed: FFMI = lean mass / height squared. Because taller people tend to score higher, a normalised version adds a height adjustment: normalised FFMI = FFMI + 6.1 x (1.8 - height in metres).</p>
+        <p>For example, a man with 65 kg of lean mass at 1.75 m has an FFMI of about 21.2 and a normalised FFMI of about 21.5.</p>
+        <h2>What the Numbers Mean</h2>
+        <table>
+          <thead><tr><th>Normalised FFMI (men)</th><th>Typical interpretation</th></tr></thead>
+          <tbody>
+            <tr><td>Below 18</td><td>Below average muscularity</td></tr>
+            <tr><td>18 to 20</td><td>Average</td></tr>
+            <tr><td>20 to 22</td><td>Above average, regularly trained</td></tr>
+            <tr><td>22 to 25</td><td>Excellent, years of serious training</td></tr>
+            <tr><td>Above 25</td><td>Rare without performance-enhancing drugs</td></tr>
+          </tbody>
+        </table>
+        <h2>Where the 25 Figure Comes From</h2>
+        <p>A well-known 1995 study by Kouri and colleagues compared natural and steroid-using athletes and found that natural athletes rarely exceeded a normalised FFMI of about 25. It is a useful rough benchmark, but not a hard limit.</p>
+        <h2>Important Caveats</h2>
+        <ul>
+          <li>Accuracy depends on your body fat estimate, and common methods carry meaningful error.</li>
+          <li>A few natural individuals can exceed 25, and a high score is not proof of drug use.</li>
+          <li>Women generally score lower, and the table above applies to men.</li>
+        </ul>
+
         <RelatedCalculators items={[
           { name: "Lean Body Mass", href: "/calculators/lean-body-mass", icon: "🫀" },
           { name: "Body Fat Calculator", href: "/calculators/body-fat", icon: "📊" },

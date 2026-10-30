@@ -72,6 +72,20 @@ export default function MuscleGainClient() {
         <h2>Why Rates Slow Over Time</h2>
         <p>Beginners experience the fastest muscle gain due to neurological adaptations and distance from their genetic ceiling. These are maximum rates under optimal conditions — most people achieve 50-70% of these values.</p>
 
+        <h2>Realistic Muscle Gain Rates</h2>
+        <p>There is no exact universal rate, but two widely used rules of thumb give a sensible picture for natural lifters. One expresses gain as a share of body weight per month: roughly 1 to 1.5% in the first year of proper training, 0.5 to 1% in the second, and 0.25 to 0.5% afterwards. Another estimates total lean mass gain by year, with a beginner man typically gaining around 9 to 11 kg in year one if everything is in place, falling sharply in later years. Women generally gain about half as much in absolute terms.</p>
+        <p>These are estimates, not guarantees. Genetics, age, sleep, stress and training quality all shift the numbers.</p>
+        <h2>What Speeds Up Progress</h2>
+        <ul>
+          <li><strong>Progressive overload:</strong> add reps or weight over time on compound lifts.</li>
+          <li><strong>Protein:</strong> about 1.6 to 2.2 g per kg of body weight daily.</li>
+          <li><strong>A small surplus:</strong> 200 to 300 kcal above maintenance is enough; larger surpluses mostly add fat.</li>
+          <li><strong>Sleep:</strong> 7 to 9 hours supports recovery and hormone balance.</li>
+          <li><strong>Consistency:</strong> training each muscle group roughly twice a week for months, not weeks.</li>
+        </ul>
+        <h2>Reading the Scale Correctly</h2>
+        <p>Early weight gain includes water and glycogen, and any surplus brings some fat alongside muscle. Judge progress using several measures: weekly average body weight, strength in key lifts, tape measurements and photos taken under similar conditions.</p>
+
         <RelatedCalculators items={[
           { name: "FFMI Calculator", href: "/calculators/ffmi", icon: "🏆" },
           { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },

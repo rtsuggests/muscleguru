@@ -75,6 +75,27 @@ export default function DiabetesBMIClient() {
         <p>Indians develop diabetes at lower BMI than Western populations. ICMR thresholds: overweight starts at BMI 23 (not 25). Waist circumference above 90cm (men) or 80cm (women) indicates elevated risk regardless of BMI.</p>
         <div className="disclaimer-box">This is a screening tool, not a diagnosis. Consult a doctor for proper evaluation.</div>
 
+        <h2>Why Indians Face Risk at a Lower BMI</h2>
+        <p>At the same BMI, South Asians tend to carry more body fat, particularly visceral fat around the abdomen, and are more prone to insulin resistance than many other populations. This is why Asian-specific guidance flags increased health risk from a BMI of about 23 and higher risk from about 27.5, rather than waiting until the global thresholds of 25 and 30.</p>
+        <h2>Waist Size Often Tells You More</h2>
+        <p>Waist circumference is a practical marker of abdominal fat. For Asian adults, commonly used cut-offs for increased risk are 90 cm or more in men and 80 cm or more in women. Another simple check is waist-to-height ratio: keeping your waist below half your height is a widely used target.</p>
+        <h2>Tests That Actually Diagnose Diabetes</h2>
+        <p>BMI and waist measurements are screening tools only. Diagnosis needs a blood test, and common criteria (American Diabetes Association) are:</p>
+        <table>
+          <thead><tr><th>Test</th><th>Prediabetes</th><th>Diabetes</th></tr></thead>
+          <tbody>
+            <tr><td>Fasting blood glucose</td><td>100 to 125 mg/dL</td><td>126 mg/dL or higher</td></tr>
+            <tr><td>HbA1c</td><td>5.7 to 6.4%</td><td>6.5% or higher</td></tr>
+          </tbody>
+        </table>
+        <h2>Lowering Your Risk</h2>
+        <ul>
+          <li>Aim for around 150 minutes of moderate activity a week plus two strength sessions.</li>
+          <li>Favour whole grains, millets, dal, vegetables and protein; reduce sugary drinks, sweets and refined flour.</li>
+          <li>Lose even 5 to 7% of body weight if you are overweight; this meaningfully lowers risk.</li>
+        </ul>
+        <p>If you have a family history, a high waist measurement or symptoms such as constant thirst, frequent urination or unexplained fatigue, see a doctor for a blood test.</p>
+
         <RelatedCalculators items={[
           { name: "BMI Calculator", href: "/calculators/bmi", icon: "⚖️" },
           { name: "Waist-Hip Ratio", href: "/calculators/waist-hip-ratio", icon: "📐" },

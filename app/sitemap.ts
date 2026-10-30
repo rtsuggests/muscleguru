@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const workoutPlans = ["3-day-full-body","4-day-upper-lower","hiit-beginner","skinny-guys-muscle"];
   const recoveryArticles = ["sleep-muscle-growth","overtraining-signs","rest-days-explained"];
   const indianDietArticles = ["high-protein-breakfast","pre-workout-meal","post-workout-meal","intermittent-fasting-india"];
+  const defenceArticles = ["agniveer-height-weight-chest-chart","ssc-gd-capf-police-physical-test","nda-cds-medical-bmi-standards"];
 
   const makeUrls = (section: string, slugs: string[], priority = 0.8) =>
     slugs.map(slug => ({ url: `${base}/${section}/${slug}`, lastModified: now, changeFrequency: "monthly" as const, priority }));
@@ -51,6 +52,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...makeUrls("recovery", recoveryArticles),
     { url: `${base}/indian-diet`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("indian-diet", indianDietArticles),
+    { url: `${base}/defence`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    ...makeUrls("defence", defenceArticles, 0.88),
     { url: `${base}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${base}/editorial-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
     { url: `${base}/medical-disclaimer`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },

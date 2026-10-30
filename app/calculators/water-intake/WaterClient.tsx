@@ -70,6 +70,19 @@ export default function WaterClient() {
         <h2>Hydration Needs in Indian Climate</h2>
         <p>India&apos;s heat and humidity significantly increase fluid loss through sweat. The baseline formula (33ml per kg body weight) is adjusted upward for activity level and hot weather. Add 500-750ml for every hour of exercise, especially in summer months.</p>
 
+        <h2>How Much Water Do You Really Need?</h2>
+        <p>There is no single number that suits everyone. As a general reference, health authorities such as the US National Academies suggest total fluid intake of about 3.7 litres a day for men and 2.7 litres for women, and roughly 20% of that normally comes from food. Needs rise with heat, humidity, sweating, body size, pregnancy and breastfeeding.</p>
+        <h2>Simple Ways to Check Hydration</h2>
+        <ul>
+          <li><strong>Urine colour:</strong> pale straw colour generally indicates good hydration; dark yellow suggests you need more fluid.</li>
+          <li><strong>Thirst:</strong> a reasonably reliable guide for healthy adults, but drink earlier during long or hot sessions.</li>
+          <li><strong>Body weight around exercise:</strong> losing 1 kg during a session represents roughly 1 litre of fluid to replace.</li>
+        </ul>
+        <h2>Hydration Sources in an Indian Diet</h2>
+        <p>Water is best, but chaas (buttermilk), coconut water, nimbu pani with a pinch of salt, lassi, tea and coffee all contribute. Water-rich foods such as cucumber, watermelon, oranges, curd and soups add to your total as well.</p>
+        <h2>When to Be Careful</h2>
+        <p>Drinking very large amounts in a short time can dilute blood sodium (hyponatremia), which is rare but serious during long endurance events. People with kidney disease, heart failure or conditions that require fluid restriction should follow their doctor's advice rather than a general calculator.</p>
+
         <RelatedCalculators items={[
           { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
           { name: "Calories Burned", href: "/calculators/calories-burned", icon: "🔥" },

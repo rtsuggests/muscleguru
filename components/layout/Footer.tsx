@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff", marginBottom: "0.75rem", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>More Guides</div>
-            {[["Nutrition", "/nutrition"], ["Supplements", "/supplements"], ["Indian Diet", "/indian-diet"], ["Women's Fitness", "/women"], ["Fasting", "/fasting"]].map(([l, h]) => (
+            {[["Defence Exams", "/defence"], ["Nutrition", "/nutrition"], ["Supplements", "/supplements"], ["Indian Diet", "/indian-diet"], ["Women's Fitness", "/women"], ["Fasting", "/fasting"]].map(([l, h]) => (
               <Link key={h} href={h} style={{ display: "block", fontSize: "0.875rem", color: "#9ca3af", textDecoration: "none", marginBottom: "0.35rem" }}>{l}</Link>
             ))}
           </div>

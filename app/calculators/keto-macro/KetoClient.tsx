@@ -88,6 +88,27 @@ export default function KetoClient() {
           </tbody>
         </table>
 
+        <h2>How a Ketogenic Diet Works</h2>
+        <p>Keto limits carbohydrates so strictly that the body shifts from using glucose as its main fuel to producing ketones from fat. This state, called nutritional ketosis, usually requires keeping carbohydrates to roughly 20 to 50 grams per day, depending on the person and the keto variant.</p>
+        <table>
+          <thead><tr><th>Variant</th><th>Approximate split (fat / protein / carbs)</th></tr></thead>
+          <tbody>
+            <tr><td>Standard keto</td><td>70 to 75% / 20 to 25% / 5 to 10%</td></tr>
+            <tr><td>High-protein keto</td><td>60% / 30-35% / 5 to 10%</td></tr>
+            <tr><td>Targeted keto</td><td>Standard, with small carb intake around workouts</td></tr>
+            <tr><td>Cyclical keto</td><td>Keto days with scheduled higher-carb refeed days</td></tr>
+          </tbody>
+        </table>
+        <h2>What the Research Says</h2>
+        <p>Studies comparing keto with other diets at matched calories generally find similar fat loss over the medium term. Keto can reduce appetite for some people, which makes eating less easier, but it is hard to sustain on a traditional Indian diet built around roti, rice and dal. The best diet is the one you can follow consistently.</p>
+        <h2>Side Effects and Who Should Avoid It</h2>
+        <ul>
+          <li>The first week often brings the so-called keto flu: headache, fatigue and irritability while the body adapts. Adequate fluids, salt and electrolytes help.</li>
+          <li>Constipation is common if fibre from vegetables, seeds and nuts is too low.</li>
+          <li>Avoid keto, or only follow it under medical supervision, if you have type 1 diabetes, take diabetes medication (including SGLT2 inhibitors), have liver, pancreatic or kidney disease, are pregnant or breastfeeding, or have a history of disordered eating.</li>
+        </ul>
+        <p>Always speak to a doctor before starting keto if you have any medical condition or take regular medication.</p>
+
         <RelatedCalculators items={[
           { name: "Macro Calculator", href: "/calculators/macro", icon: "🥗" },
           { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },

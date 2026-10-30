@@ -94,6 +94,20 @@ export default function CalDefClient() {
         <h2>How Calorie Deficit Works</h2>
         <p>A calorie deficit means eating fewer calories than your body burns (TDEE). 1 kg of fat is approximately 7,700 kcal. A moderate deficit of 500 kcal/day produces approximately 0.5 kg of fat loss per week, sustainable long-term without excessive muscle loss.</p>
 
+        <h2>The Maths of Fat Loss</h2>
+        <p>One kilogram of body fat contains roughly 7,700 kcal of energy, so a daily deficit of 500 kcal translates to about 0.45 kg of fat loss per week. For example, if your maintenance (TDEE) is 2,400 kcal and you eat 1,900 kcal, you would expect a loss of around 0.4 to 0.5 kg a week. This is an estimate: as you lose weight, your energy needs fall and results become less linear.</p>
+        <h2>Choosing a Sensible Deficit</h2>
+        <ul>
+          <li><strong>Moderate (10 to 20% below maintenance):</strong> best for most people, sustainable and muscle-friendly.</li>
+          <li><strong>Aggressive (over 25%):</strong> faster early loss but higher risk of muscle loss, hunger, low energy and rebound eating.</li>
+          <li>Avoid dropping below about 1,200 kcal (women) or 1,500 kcal (men) a day unless supervised by a clinician.</li>
+        </ul>
+        <h2>Protecting Muscle While Losing Fat</h2>
+        <p>Eat 1.6 to 2.2 g of protein per kg of body weight and keep lifting weights two to four times a week. Both signals tell your body to keep muscle while it burns fat.</p>
+        <h2>When Progress Stalls</h2>
+        <p>Weigh yourself daily or several times a week and compare weekly averages, since water retention can mask fat loss for days. If your average has not moved in 2 to 3 weeks, recheck portion sizes (especially oil, ghee and snacks), increase daily steps, or trim 100 to 200 kcal. A planned one to two week break at maintenance can also help.</p>
+        <p>This approach is not suitable for pregnant or breastfeeding women, people under 18, anyone with a history of eating disorders, or those with medical conditions, who should seek individual advice.</p>
+
         <RelatedCalculators items={[
           { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
           { name: "Protein Calculator", href: "/calculators/protein", icon: "💪" },

@@ -1,6 +1,3 @@
-"use client";
-import { useState } from "react";
-
 interface FAQItem {
   q: string;
   a: string;
@@ -10,37 +7,22 @@ interface FAQProps {
   items: FAQItem[];
 }
 
+// Deliberately a plain server component using native <details>/<summary>.
+// This keeps every question AND answer present in the server-rendered HTML
+// at all times (collapsed or not) so search engines index the full text —
+// a client-side-only accordion (open state in useState) would omit every
+// answer from the initial HTML until a user clicks it.
 export default function FAQ({ items }: FAQProps) {
-  const [open, setOpen] = useState<number | null>(null);
-
   return (
     <div style={{ marginTop: "1.5rem" }}>
       {items.map((item, i) => (
-        <div key={i} className="faq-item">
-          <button
-            className="faq-question"
-            onClick={() => setOpen(open === i ? null : i)}
-            aria-expanded={open === i}
-          >
+        <details key={i} className="faq-item">
+          <summary className="faq-question">
             <span>{item.q}</span>
-            <span
-              style={{
-                fontSize: "1.2rem",
-                color: "var(--color-brand-darker)",
-                flexShrink: 0,
-                marginLeft: "0.75rem",
-                fontWeight: 700,
-              }}
-            >
-              {open === i ? "−" : "+"}
-            </span>
-          </button>
-          {open === i && (
-            <div className="faq-answer">
-              {item.a}
-            </div>
-          )}
-        </div>
+            <span className="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div className="faq-answer">{item.a}</div>
+        </details>
       ))}
     </div>
   );
