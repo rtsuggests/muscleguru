@@ -13,6 +13,8 @@ const articles = [
   { title:"Pre-Workout Meal India — What to Eat Before Training", desc:"Best Indian foods to eat before training for energy, performance, and muscle protection.", href:"/indian-diet/pre-workout-meal", icon:"⚡" },
   { title:"Post-Workout Meal India — Recovery Nutrition Guide", desc:"What to eat after training to maximise muscle repair and glycogen replenishment.", href:"/indian-diet/post-workout-meal", icon:"💪" },
   { title:"Intermittent Fasting India — The Complete Guide", desc:"How intermittent fasting works in the Indian context, cultural challenges, and meal timing.", href:"/indian-diet/intermittent-fasting-india", icon:"⏰" },
+  { title:"100g Protein Vegetarian Diet Under ₹150 a Day", desc:"Cost per 10 g of protein for soya, dal, besan, paneer and eggs, plus a full 100 g day for about ₹110.", href:"/indian-diet/100g-protein-vegetarian-diet-under-150", icon:"💰" },
+  { title:"Indian Vegetarian Diet for Blood Sugar and HbA1c", desc:"The ICMR-NIN plate method, millets, dal portions, post-meal walks and a sample vegetarian day.", href:"/indian-diet/diabetes-diet-indian-vegetarian", icon:"🩸" },
 ];
 
 export default function IndianDietPage() {

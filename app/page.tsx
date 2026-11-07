@@ -72,7 +72,7 @@ export default function HomePage() {
         <div style={{ marginBottom: "4rem" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem", flexWrap: "wrap", gap: "0.75rem" }}>
             <h2 style={{ fontSize: "1.75rem", margin: 0 }}>Popular Calculators</h2>
-            <Link href="/calculators" style={{ color: "var(--color-brand-dark)", fontWeight: 600, textDecoration: "none", fontSize: "0.9rem" }}>View all 26 →</Link>
+            <Link href="/calculators" style={{ color: "var(--color-brand-dark)", fontWeight: 600, textDecoration: "none", fontSize: "0.9rem" }}>View all 27 →</Link>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1rem" }}>
             {featuredCalcs.map(c => (
@@ -112,7 +112,7 @@ export default function HomePage() {
             {[
               ["🇮🇳 India-First", "Indian BMI thresholds, ICMR guidelines, Indian food tables, Indian race calendars."],
               ["🔬 Evidence-Based", "Every claim backed by peer-reviewed research. References cited on every page."],
-              ["🆓 Always Free", "All 26 calculators, all articles, all training plans — completely free, no sign-up."],
+              ["🆓 Always Free", "All 27 calculators, all articles, all training plans — completely free, no sign-up."],
               ["📱 Mobile-Friendly", "Designed for Indian mobile users. Fast, clean, and works on any device."],
             ].map(([title, desc]) => (
               <div key={title as string}>

@@ -101,6 +101,7 @@ export default function DiabetesBMIClient() {
           { name: "Waist-Hip Ratio", href: "/calculators/waist-hip-ratio", icon: "📐" },
           { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
           { name: "Calorie Deficit Calc", href: "/calculators/calorie-deficit", icon: "📉" },
+          { name: "IDRS Diabetes Score", href: "/calculators/idrs", icon: "📋" },
         ]} />
       </div>
     </div>

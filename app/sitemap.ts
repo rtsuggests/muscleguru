@@ -4,18 +4,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://muscleguru.in";
   const now = new Date();
 
-  const calculators = ["bmi","tdee","protein","body-fat","macro","water-intake","one-rep-max","calorie-deficit","lean-body-mass","ffmi","ideal-weight","running-pace","heart-rate-zone","sleep","waist-hip-ratio","calories-burned","keto-macro","body-type","pregnancy-weight-gain","vo2-max","army-fitness","vegetarian-protein","intermittent-fasting","muscle-gain-rate","diabetes-bmi"];
+  const calculators = ["bmi","tdee","protein","body-fat","macro","water-intake","one-rep-max","calorie-deficit","lean-body-mass","ffmi","ideal-weight","running-pace","heart-rate-zone","sleep","waist-hip-ratio","calories-burned","keto-macro","body-type","pregnancy-weight-gain","vo2-max","army-fitness","vegetarian-protein","intermittent-fasting","muscle-gain-rate","diabetes-bmi","idrs"];
   const runningArticles = ["beginners-guide","5k-training-plan","10k-training-plan","half-marathon-training","running-for-weight-loss","treadmill-vs-outdoor","running-injuries-prevention","breathing-while-running","how-to-run-faster","running-clubs-india","best-time-to-run"];
-  const nutritionArticles = ["indian-protein-sources","how-much-protein","paneer-protein-guide","egg-protein-guide","7-day-meal-plan"];
-  const supplementArticles = ["creatine-guide","whey-protein-guide","supplement-tier-list"];
-  const muscleGainArticles = ["push-pull-legs","muscle-gain-diet-india","how-muscle-grows"];
-  const weightLossArticles = ["calorie-deficit-explained","why-not-losing-weight","best-diet-fat-loss"];
+  const nutritionArticles = ["indian-protein-sources","how-much-protein","paneer-protein-guide","egg-protein-guide","7-day-meal-plan","calories-in-indian-foods"];
+  const supplementArticles = ["creatine-guide","whey-protein-guide","supplement-tier-list","how-to-spot-fake-whey-protein-india"];
+  const muscleGainArticles = ["push-pull-legs","muscle-gain-diet-india","how-muscle-grows","hostel-pg-muscle-gain-diet"];
+  const weightLossArticles = ["calorie-deficit-explained","why-not-losing-weight","best-diet-fat-loss","why-indians-need-lower-bmi-cutoff"];
   const beginnerArticles = ["beginner-gym-guide","workout-routine","home-workout-guide"];
-  const womenArticles = ["will-lifting-make-women-bulky","strength-training-guide","protein-needs-women","fitness-during-periods","pcos-exercise-guide"];
+  const womenArticles = ["will-lifting-make-women-bulky","strength-training-guide","protein-needs-women","fitness-during-periods","pcos-exercise-guide","pcos-hypothyroid-indian-diet"];
   const exerciseGuides = ["how-to-squat","how-to-deadlift","how-to-bench-press","pull-up-guide","plank-guide","dumbbell-exercises"];
   const workoutPlans = ["3-day-full-body","4-day-upper-lower","hiit-beginner","skinny-guys-muscle"];
   const recoveryArticles = ["sleep-muscle-growth","overtraining-signs","rest-days-explained"];
-  const indianDietArticles = ["high-protein-breakfast","pre-workout-meal","post-workout-meal","intermittent-fasting-india"];
+  const indianDietArticles = ["high-protein-breakfast","pre-workout-meal","post-workout-meal","intermittent-fasting-india","100g-protein-vegetarian-diet-under-150","diabetes-diet-indian-vegetarian"];
   const defenceArticles = ["agniveer-height-weight-chest-chart","ssc-gd-capf-police-physical-test","nda-cds-medical-bmi-standards"];
 
   const makeUrls = (section: string, slugs: string[], priority = 0.8) =>

@@ -11,6 +11,7 @@ const articles = [
   { title: "Creatine Guide for Indian Beginners: Everything You Need to Know", desc: "The most researched supplement in sports science. We cover what creatine is, how it works, dosing, safety, and which Indian brands are worth considering.", href: "/supplements/creatine-guide", time: "10 min" },
   { title: "Whey Protein Explained: Types, Benefits & How to Choose", desc: "Whey concentrate vs isolate vs hydrolysate — what the research says, Indian price points, and whether you actually need it.", href: "/supplements/whey-protein-guide", time: "9 min" },
   { title: "Supplement Tier List: What Actually Works (Evidence-Based)", desc: "A research-backed ranking of the most popular fitness supplements from 'Strong evidence' to 'No evidence' — no marketing bias.", href: "/supplements/supplement-tier-list", time: "12 min" },
+  { title: "How to Spot Fake Whey Protein in India", desc: "FSSAI, batch and label checks, lab reports and cost per gram of protein.", href: "/supplements/how-to-spot-fake-whey-protein-india", time: "9 min" },
 ];
 
 export default function SupplementsPage() {

@@ -40,6 +40,7 @@ export default function MuscleGainDietIndiaPage() {
         { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
       ]}
       relatedArticles={[
+        { title: "Hostel and PG Muscle Gain Diet (No Cooking)", href: "/muscle-gain/hostel-pg-muscle-gain-diet", time: "9 min" },
         { title: "How Muscle Actually Grows", href: "/muscle-gain/how-muscle-grows", time: "9 min" },
         { title: "How Much Protein Do You Need?", href: "/nutrition/how-much-protein", time: "7 min" },
         { title: "Best Indian Protein Sources", href: "/nutrition/indian-protein-sources", time: "8 min" },

@@ -13,6 +13,7 @@ const articles = [
   { title: "Paneer Protein Guide", desc: "Full nutritional breakdown of paneer and how to use it to hit your daily protein target.", href: "/nutrition/paneer-protein-guide", time: "6 min" },
   { title: "Egg Protein Guide", desc: "Whole egg vs egg white — protein content, nutrition, and how many eggs you should eat.", href: "/nutrition/egg-protein-guide", time: "6 min" },
   { title: "7-Day Indian Meal Plan", desc: "A complete week of high-protein Indian meals for muscle gain or fat loss.", href: "/nutrition/7-day-meal-plan", time: "10 min" },
+  { title: "Calories and Protein in Indian Foods: Katori Guide", desc: "Calories, protein, carbs and fat in dal, phulka, idli-sambar, poha, upma and rajma chawal.", href: "/nutrition/calories-in-indian-foods", time: "8 min" },
 ];
 
 export default function NutritionPage() {

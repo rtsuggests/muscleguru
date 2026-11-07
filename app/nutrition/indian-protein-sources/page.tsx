@@ -39,6 +39,7 @@ export default function HowMuchProteinPage() {
         { name: "Macro Calculator", href: "/calculators/macro", icon: "🥗" },
       ]}
       relatedArticles={[
+        { title: "100g Protein Vegetarian Diet Under ₹150", href: "/indian-diet/100g-protein-vegetarian-diet-under-150", time: "9 min" },
         { title: "Best Indian Protein Sources", href: "/nutrition/indian-protein-sources", time: "8 min" },
         { title: "Creatine Guide for Indian Beginners", href: "/supplements/creatine-guide", time: "10 min" },
         { title: "Muscle Gain Diet for Indians", href: "/muscle-gain/muscle-gain-diet-india", time: "11 min" },

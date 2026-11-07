@@ -41,6 +41,7 @@ export default function PCOSExerciseGuidePage() {
         { name: "Calorie Deficit Calculator", href: "/calculators/calorie-deficit", icon: "⚖️" },
       ]}
       relatedArticles={[
+        { title: "PCOS and Hypothyroid Weight Loss Diet", href: "/women/pcos-hypothyroid-indian-diet", time: "10 min" },
         { title: "Exercise During Periods", href: "/women/fitness-during-periods", time: "8 min" },
         { title: "Strength Training Guide for Women", href: "/women/strength-training-guide", time: "9 min" },
       ]}

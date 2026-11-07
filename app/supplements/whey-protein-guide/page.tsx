@@ -40,6 +40,7 @@ export default function WheyProteinGuidePage() {
         { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
       ]}
       relatedArticles={[
+        { title: "How to Spot Fake Whey Protein in India", href: "/supplements/how-to-spot-fake-whey-protein-india", time: "9 min" },
         { title: "Creatine Guide for Beginners", href: "/supplements/creatine-guide", time: "10 min" },
         { title: "Best Indian Protein Sources", href: "/nutrition/indian-protein-sources", time: "8 min" },
         { title: "How Much Protein Do You Need?", href: "/nutrition/how-much-protein", time: "7 min" },

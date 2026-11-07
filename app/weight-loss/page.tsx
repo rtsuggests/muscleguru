@@ -11,6 +11,7 @@ const articles = [
   { title: "Calorie Deficit Explained: How to Lose Fat Without Losing Muscle", desc: "A complete, evidence-based guide to creating and maintaining a calorie deficit — with practical strategies for the Indian diet.", href: "/weight-loss/calorie-deficit-explained", time: "9 min" },
   { title: "Why You're Not Losing Weight: 7 Evidence-Based Reasons", desc: "The most common reasons fat loss stalls — explained by research, not bro-science. From metabolic adaptation to under-tracking.", href: "/weight-loss/why-not-losing-weight", time: "10 min" },
   { title: "Best Diet for Fat Loss: Comparing Evidence-Based Approaches", desc: "Low-carb vs. low-fat vs. intermittent fasting — what does the research actually say about which diet works best for fat loss?", href: "/weight-loss/best-diet-fat-loss", time: "11 min" },
+  { title: "Why Indians Need a Lower BMI Cut-off: 23, Not 25", desc: "ICMR-NIN's 23 and 27.5 cut-offs, thin-fat bodies, waist limits and how to check your own risk.", href: "/weight-loss/why-indians-need-lower-bmi-cutoff", time: "9 min" },
 ];
 
 export default function WeightLossPage() {

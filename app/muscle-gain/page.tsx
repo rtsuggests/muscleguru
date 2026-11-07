@@ -11,6 +11,7 @@ const articles = [
   { title: "Push Pull Legs Workout Plan India", desc: "A complete 6-day PPL split for intermediate lifters, with progressive overload built in.", href: "/muscle-gain/push-pull-legs", time: "10 min" },
   { title: "Muscle Gain Diet India: What to Eat", desc: "Calorie surplus, protein targets, and Indian foods to support consistent, lean muscle growth.", href: "/muscle-gain/muscle-gain-diet-india", time: "9 min" },
   { title: "How Muscle Actually Grows", desc: "The science of hypertrophy — mechanical tension, muscle protein synthesis, and recovery, explained simply.", href: "/muscle-gain/how-muscle-grows", time: "8 min" },
+  { title: "Hostel and PG Muscle Gain Diet (No Cooking)", desc: "Kettle-only, no-cook high-protein meals, mess food hacks and a 100 g protein day.", href: "/muscle-gain/hostel-pg-muscle-gain-diet", time: "9 min" },
 ];
 
 export default function MuscleGainPage() {

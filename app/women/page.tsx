@@ -14,6 +14,7 @@ const articles = [
   { title: "Protein Needs for Women India", desc: "How much protein Indian women need for fitness, muscle gain, and health.", href: "/women/protein-needs-women", icon: "🥗" },
   { title: "Fitness During Periods", desc: "How to train during your menstrual cycle — what to do and what to avoid.", href: "/women/fitness-during-periods", icon: "📅" },
   { title: "PCOS and Exercise Guide", desc: "Evidence-based exercise protocols specifically for women with PCOS.", href: "/women/pcos-exercise-guide", icon: "🏃" },
+  { title: "PCOS and Hypothyroid Weight Loss Diet", desc: "Plate method, roti and rice portions, millets and levothyroxine timing for Indian women.", href: "/women/pcos-hypothyroid-indian-diet", icon: "🌸" },
 ];
 
 export default function WomenPage() {

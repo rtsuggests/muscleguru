@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/calculators" },
-  title: "Free Fitness Calculators India — 26 Tools",
-  description: "26 free science-backed fitness calculators for Indian adults — BMI, TDEE, protein, VO2 max, army fitness, intermittent fasting, and more.",
+  title: "Free Fitness Calculators India — 27 Tools",
+  description: "27 free science-backed fitness calculators for Indian adults — BMI, TDEE, protein, VO2 max, army fitness, intermittent fasting, and more.",
   keywords: ["fitness calculators India","free fitness calculator India","BMI calculator India","TDEE calculator India"],
 };
 
@@ -35,6 +35,7 @@ const calculators = [
   { name:"Muscle Gain Rate",desc:"Realistic monthly and yearly muscle gain projections.",href:"/calculators/muscle-gain-rate",icon:"📈",tag:"Muscle Building"},
   { name:"Fasting Nutrition",desc:"Calorie & protein targets for Navratri, Ekadashi, Karva Chauth.",href:"/calculators/fasting-nutrition",icon:"🪔",tag:"Festival Fasting"},
   { name:"Diabetes Risk",desc:"Indian-adapted BMI + waist + lifestyle risk factors.",href:"/calculators/diabetes-bmi",icon:"🩸",tag:"Medical"},
+  { name:"IDRS Diabetes Score",desc:"The validated Indian Diabetes Risk Score from age, waist, activity and family history.",href:"/calculators/idrs",icon:"📋",tag:"Medical"},
 ];
 
 export default function CalculatorsPage() {
@@ -50,7 +51,7 @@ export default function CalculatorsPage() {
         <div style={{textAlign:"center",marginBottom:"3rem"}}>
           <h1 style={{fontSize:"clamp(1.75rem,4vw,2.75rem)",marginBottom:"0.75rem"}}>Free Fitness Calculators for India</h1>
           <p style={{fontSize:"1.05rem",color:"var(--color-muted)",maxWidth:640,margin:"0 auto 1.5rem"}}>
-            26 science-backed tools covering body composition, nutrition, exercise, cardio fitness, army training, diabetes risk, and more. All free. All formulas explained. Indian context built in.
+            27 science-backed tools covering body composition, nutrition, exercise, cardio fitness, army training, diabetes risk, and more. All free. All formulas explained. Indian context built in.
           </p>
           <div style={{display:"flex",gap:"1rem",justifyContent:"center",flexWrap:"wrap",fontSize:"0.875rem",color:"var(--color-brand-dark)",fontWeight:500}}>
             <span>✅ Instant results</span><span>📱 Mobile-friendly</span><span>🔬 Peer-reviewed formulas</span><span>🇮🇳 Indian-adapted cutoffs</span>

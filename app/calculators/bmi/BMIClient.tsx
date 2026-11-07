@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import CalcLayout from "@/components/layout/CalcLayout";
 import FAQ from "@/components/ui/FAQ";
@@ -193,7 +194,7 @@ function SEOContent() {
           <tr><td>30.0 and above</td><td>Obese</td><td>Obese (≥27.5)</td></tr>
         </tbody>
       </table>
-      <p>Importantly, multiple studies have demonstrated that South Asian adults, including Indians, tend to accumulate more visceral fat (fat around the abdominal organs) at lower BMI values than European populations. A landmark 2004 paper in the Lancet by Misra et al. and subsequent ICMR guidelines recommend lower BMI cutoff points for Indians: overweight begins at 23.0, and obesity at 27.5.</p>
+      <p>Importantly, multiple studies have demonstrated that South Asian adults, including Indians, tend to accumulate more visceral fat (fat around the abdominal organs) at lower BMI values than European populations. A 2004 WHO expert consultation published in The Lancet identified 23.0 and 27.5 as public health action points for Asian populations, and the ICMR-NIN Dietary Guidelines for Indians (2024) use the same cut-offs: overweight begins at 23.0, and obesity at 27.5. (An older 2009 consensus statement led by Misra et al. proposed 23 and 25 instead; see our guide to <Link href="/weight-loss/why-indians-need-lower-bmi-cutoff">why Indians need a lower BMI cut-off</Link>.)</p>
       <p>This distinction is clinically meaningful. Research suggests that the risk of type 2 diabetes and hypertension begins to rise in Indian adults at a BMI of around 22–23, which falls within the &quot;normal&quot; range on the standard WHO scale. This is why our calculator presents Indian-adapted thresholds alongside the international standard.</p>
 
       <h2>The Science Behind BMI: What the Research Says</h2>
