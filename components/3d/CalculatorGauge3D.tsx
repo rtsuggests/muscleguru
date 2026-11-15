@@ -1,7 +1,70 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import confetti from "canvas-confetti";
+
+// Self-contained, zero-dependency celebration confetti
+function triggerCelebrationConfetti() {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
+  const canvas = document.createElement("canvas");
+  canvas.style.position = "fixed";
+  canvas.style.top = "0";
+  canvas.style.left = "0";
+  canvas.style.width = "100vw";
+  canvas.style.height = "100vh";
+  canvas.style.pointerEvents = "none";
+  canvas.style.zIndex = "9999";
+  document.body.appendChild(canvas);
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) {
+    canvas.remove();
+    return;
+  }
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const colors = ["#10b981", "#34d399", "#6ee7b7", "#059669", "#fbbf24", "#38bdf8"];
+  const particles = Array.from({ length: 48 }, () => ({
+    x: canvas.width * (0.35 + Math.random() * 0.3),
+    y: canvas.height * 0.72,
+    vx: (Math.random() - 0.5) * 14,
+    vy: -(Math.random() * 12 + 7),
+    size: Math.random() * 7 + 4,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    alpha: 1,
+    rotation: Math.random() * 360,
+    vr: (Math.random() - 0.5) * 12,
+  }));
+
+  let start: number | null = null;
+  function animate(t: number) {
+    if (!start) start = t;
+    const progress = (t - start) / 1800;
+    if (progress >= 1 || !ctx) {
+      canvas.remove();
+      return;
+    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.38; // gravity
+      p.rotation += p.vr;
+      p.alpha = Math.max(0, 1 - progress);
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate((p.rotation * Math.PI) / 180);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+      ctx.restore();
+    }
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+}
 
 interface Zone {
   label: string;
@@ -57,16 +120,7 @@ export default function CalculatorGauge3D({
       } else {
         // Trigger celebratory confetti if in healthy range
         if (isHealthy) {
-          try {
-            confetti({
-              particleCount: 45,
-              spread: 60,
-              origin: { y: 0.75 },
-              colors: ["#10b981", "#34d399", "#6ee7b7", "#059669"],
-            });
-          } catch {
-            // no-op if confetti fails
-          }
+          triggerCelebrationConfetti();
         }
       }
     }

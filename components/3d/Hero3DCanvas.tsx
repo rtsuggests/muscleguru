@@ -806,6 +806,94 @@ export default function Hero3DCanvas() {
         }}
       />
 
+      {/* 3D Isometric Fallback & Baseline Layer */}
+      <div
+        className="animate-float"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 440,
+          height: 320,
+          pointerEvents: "none",
+          zIndex: 5,
+        }}
+      >
+        <svg viewBox="0 0 440 320" style={{ width: "100%", height: "100%", filter: "drop-shadow(0 20px 35px rgba(0,0,0,0.6))" }}>
+          <defs>
+            <linearGradient id="chromeGrip" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#f8fafc" />
+              <stop offset="30%" stopColor="#cbd5e1" />
+              <stop offset="50%" stopColor="#64748b" />
+              <stop offset="70%" stopColor="#94a3b8" />
+              <stop offset="100%" stopColor="#334155" />
+            </linearGradient>
+            <linearGradient id="plateEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor={glowTheme === "emerald" ? "#34d399" : glowTheme === "cyan" ? "#38bdf8" : "#fde047"} />
+              <stop offset="40%" stopColor={glowTheme === "emerald" ? "#10b981" : glowTheme === "cyan" ? "#06b6d4" : "#eab308"} />
+              <stop offset="80%" stopColor={glowTheme === "emerald" ? "#059669" : glowTheme === "cyan" ? "#0891b2" : "#ca8a04"} />
+              <stop offset="100%" stopColor="#0f172a" />
+            </linearGradient>
+            <filter id="neonOrbGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+
+          {/* 3D Orbital Energy Rings */}
+          <ellipse cx="220" cy="160" rx="190" ry="60" fill="none" stroke="rgba(16, 185, 129, 0.45)" strokeWidth="1.8" strokeDasharray="8 6" transform="rotate(-15 220 160)" />
+          <ellipse cx="220" cy="160" rx="160" ry="48" fill="none" stroke="rgba(6, 182, 212, 0.35)" strokeWidth="1.5" strokeDasharray="5 5" transform="rotate(22 220 160)" />
+
+          {/* Dumbbell Assembly rotated 3D perspective */}
+          <g transform="rotate(-20 220 160)">
+            {/* Left Weight Plates */}
+            <rect x="70" y="105" width="22" height="110" rx="10" fill="#064e3b" stroke="#059669" strokeWidth="2" />
+            <ellipse cx="70" cy="160" rx="14" ry="55" fill="url(#plateEmerald)" stroke="#34d399" strokeWidth="1.5" />
+            <rect x="92" y="90" width="26" height="140" rx="12" fill="#047857" stroke="#10b981" strokeWidth="2" />
+            <ellipse cx="92" cy="160" rx="16" ry="70" fill="url(#plateEmerald)" stroke="#6ee7b7" strokeWidth="2" />
+            <rect x="118" y="75" width="30" height="170" rx="14" fill="#065f46" stroke="#34d399" strokeWidth="2.5" />
+            <ellipse cx="118" cy="160" rx="18" ry="85" fill="url(#plateEmerald)" stroke="#a7f3d0" strokeWidth="2" />
+
+            {/* Inner Collar Left */}
+            <rect x="148" y="142" width="14" height="36" rx="4" fill="#eab308" stroke="#ca8a04" strokeWidth="1.5" />
+
+            {/* Knurled Steel Grip Handle */}
+            <rect x="162" y="146" width="116" height="28" rx="6" fill="url(#chromeGrip)" stroke="#475569" strokeWidth="1.5" />
+            <line x1="180" y1="147" x2="180" y2="173" stroke="rgba(0,0,0,0.3)" strokeWidth="2" />
+            <line x1="200" y1="147" x2="200" y2="173" stroke="rgba(0,0,0,0.3)" strokeWidth="2" />
+            <line x1="220" y1="147" x2="220" y2="173" stroke="rgba(0,0,0,0.3)" strokeWidth="2" />
+            <line x1="240" y1="147" x2="240" y2="173" stroke="rgba(0,0,0,0.3)" strokeWidth="2" />
+            <line x1="260" y1="147" x2="260" y2="173" stroke="rgba(0,0,0,0.3)" strokeWidth="2" />
+
+            {/* Inner Collar Right */}
+            <rect x="278" y="142" width="14" height="36" rx="4" fill="#eab308" stroke="#ca8a04" strokeWidth="1.5" />
+
+            {/* Right Weight Plates */}
+            <rect x="292" y="75" width="30" height="170" rx="14" fill="#065f46" stroke="#34d399" strokeWidth="2.5" />
+            <ellipse cx="322" cy="160" rx="18" ry="85" fill="url(#plateEmerald)" stroke="#a7f3d0" strokeWidth="2" />
+            <rect x="322" y="90" width="26" height="140" rx="12" fill="#047857" stroke="#10b981" strokeWidth="2" />
+            <ellipse cx="348" cy="160" rx="16" ry="70" fill="url(#plateEmerald)" stroke="#6ee7b7" strokeWidth="2" />
+            <rect x="348" y="105" width="22" height="110" rx="10" fill="#064e3b" stroke="#059669" strokeWidth="2" />
+            <ellipse cx="370" cy="160" rx="14" ry="55" fill="url(#plateEmerald)" stroke="#34d399" strokeWidth="1.5" />
+
+            {/* Weight Plate Label */}
+            <text x="322" y="165" fill="#fff" fontSize="13" fontWeight="900" textAnchor="middle" opacity="0.95" letterSpacing="0.5">
+              {plateWeight.toUpperCase()}
+            </text>
+          </g>
+
+          {/* Floating Kinetic Energy Spark Orbs */}
+          <circle cx="80" cy="110" r="4" fill="#34d399" filter="url(#neonOrbGlow)" />
+          <circle cx="160" cy="70" r="3.5" fill="#38bdf8" filter="url(#neonOrbGlow)" />
+          <circle cx="280" cy="80" r="5" fill="#facc15" filter="url(#neonOrbGlow)" />
+          <circle cx="360" cy="130" r="4" fill="#34d399" filter="url(#neonOrbGlow)" />
+          <circle cx="210" cy="245" r="3.5" fill="#38bdf8" filter="url(#neonOrbGlow)" />
+          <circle cx="340" cy="230" r="4.5" fill="#34d399" filter="url(#neonOrbGlow)" />
+          <circle cx="110" cy="210" r="3" fill="#facc15" filter="url(#neonOrbGlow)" />
+        </svg>
+      </div>
+
       {/* WebGL Canvas */}
       <canvas
         ref={canvasRef}
