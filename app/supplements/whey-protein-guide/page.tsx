@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/supplements/whey-protein-guide" },
+  alternates: { canonical: "https://muscleguru.in/supplements/whey-protein-guide" },
   title: "Whey Protein Guide India — Dosage",
   description: "Evidence-based guide to whey protein for Indian beginners — concentrate vs isolate vs hydrolysate, how much to take, and whether you need it.",
 };

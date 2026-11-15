@@ -6,7 +6,7 @@ const TITLE = "Karva Chauth Fasting Guide: Sargi, Hydration & Safe Exercise";
 const DESC = "How to approach the Karva Chauth fast safely — the sargi meal, hydration strategy, whether to exercise, and warning signs to break the fast.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/fasting/karva-chauth-fasting-guide" },
+  alternates: { canonical: "https://muscleguru.in/fasting/karva-chauth-fasting-guide" },
   title: "Karva Chauth Fasting — Health Guide",
   description: DESC,
   keywords: ["karva chauth fasting tips", "sargi meal ideas", "karva chauth diet plan"],

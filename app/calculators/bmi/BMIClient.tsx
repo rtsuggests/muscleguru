@@ -5,6 +5,7 @@ import CalcLayout from "@/components/layout/CalcLayout";
 import FAQ from "@/components/ui/FAQ";
 import SavedResultBanner from "@/components/ui/SavedResultBanner";
 import SaveResultButton from "@/components/ui/SaveResultButton";
+import CalculatorGauge3D from "@/components/3d/CalculatorGauge3D";
 
 const related = [
   { name: "TDEE Calculator", href: "/calculators/tdee", icon: "🔥" },
@@ -109,13 +110,23 @@ function BMICalculator() {
         <div style={{ marginTop: "1.5rem" }}>
           <div className="result-card">
             <div className="result-number">{result}</div>
-            <div className="result-label">Your BMI Score</div>
+            <div className="result-label">Your BMI Score (kg/m²)</div>
             <div style={{ marginTop: "0.75rem", display: "inline-flex", alignItems: "center", padding: "0.35rem 1rem", borderRadius: "9999px", background: cat.bg, color: cat.color, fontWeight: 700, fontSize: "0.95rem" }}>
               {cat.label}
             </div>
           </div>
 
-          <div style={{ marginTop: "1rem" }}>
+          {/* 3D Gauge Meter */}
+          <CalculatorGauge3D
+            value={result}
+            min={14}
+            max={38}
+            unit="kg/m²"
+            healthyRangeLabel="Healthy Indian ICMR Target: 18.5 – 22.9"
+            isHealthy={result >= 18.5 && result < 23}
+          />
+
+          <div style={{ marginTop: "1.25rem" }}>
             <SaveResultButton calculator="BMI" slug="bmi" icon="⚖️" headline={String(result)} label={cat.label} />
           </div>
 

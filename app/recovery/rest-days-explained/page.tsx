@@ -6,7 +6,7 @@ const TITLE = "Rest Days Explained: Why They Matter and How Many You Need";
 const DESC = "Why rest days are necessary for muscle growth, how many you need per week, active recovery options, and signs you're not resting enough.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/recovery/rest-days-explained" },
+  alternates: { canonical: "https://muscleguru.in/recovery/rest-days-explained" },
   title: "Rest Days Explained",
   description: DESC,
   keywords: ["rest days for muscle growth", "how many rest days per week", "active recovery day"],

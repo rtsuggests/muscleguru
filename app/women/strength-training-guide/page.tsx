@@ -6,7 +6,7 @@ const TITLE = "Strength Training Guide for Women in India";
 const DESC = "A complete beginner strength training guide for Indian women — a 3-day programme, exercise selection, and why strength matters for bone health.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/women/strength-training-guide" },
+  alternates: { canonical: "https://muscleguru.in/women/strength-training-guide" },
   title: "Strength Training Guide for Women India",
   description: DESC,
   keywords: ["strength training for women India", "beginner weight lifting women", "gym plan for women India"],

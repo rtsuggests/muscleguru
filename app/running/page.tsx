@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running" },
+  alternates: { canonical: "https://muscleguru.in/running" },
   title: "Running India — Plans & Injury Guides",
   description: "Complete running resource for Indian runners — 10K and half marathon plans, speed development, injury prevention, and breathing techniques.",
   keywords: ["running India","running training plan India","running tips India","how to run faster India"],

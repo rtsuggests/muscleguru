@@ -6,7 +6,7 @@ const TITLE = "No-Equipment Home Workout Guide for Beginners (India)";
 const DESC = "A complete bodyweight home workout plan with no equipment: warm-up, exercises, sets and reps, progression, and a weekly schedule for beginners.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/beginner-fitness/home-workout-guide" },
+  alternates: { canonical: "https://muscleguru.in/beginner-fitness/home-workout-guide" },
   title: "Home Workout Guide India — No Equipment",
   description: DESC,
   keywords: ["home workout no equipment India", "bodyweight workout beginners", "home workout plan India"],

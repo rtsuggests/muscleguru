@@ -6,7 +6,7 @@ const TITLE = "How to Breathe While Running: A Complete Guide";
 const DESC = "Breathing techniques for running — diaphragmatic breathing, nose vs mouth breathing, rhythmic breathing patterns, and how to prevent side stitches.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running/breathing-while-running" },
+  alternates: { canonical: "https://muscleguru.in/running/breathing-while-running" },
   title: "How to Breathe While Running",
   description: DESC,
   keywords: ["how to breathe while running", "running breathing technique", "side stitch prevention running"],

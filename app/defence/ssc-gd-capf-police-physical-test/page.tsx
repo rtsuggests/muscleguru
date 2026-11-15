@@ -6,7 +6,7 @@ const TITLE = "SSC GD, CAPF & State Police Physical Test: Standards + 6-Week Pla
 const DESC = "Exact running, height and chest standards for SSC GD, CAPF and state police exams, with a 6-week stamina plan built for training through Indian summer heat.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/defence/ssc-gd-capf-police-physical-test" },
+  alternates: { canonical: "https://muscleguru.in/defence/ssc-gd-capf-police-physical-test" },
   title: "SSC GD CAPF Police Physical Test Standards",
   description: DESC,
   keywords: ["ssc gd running time", "ssc gd physical test standards", "capf police physical test training plan"],

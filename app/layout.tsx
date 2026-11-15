@@ -13,8 +13,14 @@ export const metadata: Metadata = {
   authors: [{ name: "MuscleGuru Editorial Team" }],
   creator: "MuscleGuru.in",
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
-  openGraph: { type: "website", locale: "en_IN", url: "https://muscleguru.in", siteName: "MuscleGuru.in", title: "MuscleGuru.in — India's Evidence-Based Fitness Platform", description: "Free science-backed fitness calculators and guides for Indian adults." },
-  };
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "MuscleGuru.in",
+    title: "MuscleGuru.in — India's Evidence-Based Fitness Platform",
+    description: "Free science-backed fitness calculators and guides for Indian adults.",
+  },
+};
 
 const siteSchema = { "@context": "https://schema.org", "@type": "WebSite", name: "MuscleGuru.in", url: "https://muscleguru.in" };
 

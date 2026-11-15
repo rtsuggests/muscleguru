@@ -6,7 +6,7 @@ const TITLE = "Running Clubs in India: Why and How to Join One";
 const DESC = "Why running with a club helps consistency and performance, how to find a running club in your Indian city, and what to look for in a good one.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running/running-clubs-india" },
+  alternates: { canonical: "https://muscleguru.in/running/running-clubs-india" },
   title: "Running Clubs in India — How to Find One",
   description: DESC,
   keywords: ["running clubs India", "running group near me", "join running club India"],

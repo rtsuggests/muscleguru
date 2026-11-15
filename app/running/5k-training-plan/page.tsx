@@ -6,7 +6,7 @@ const TITLE = "5K Training Plan for Beginners: Couch to 5K in 8 Weeks";
 const DESC = "An 8-week beginner 5K training plan with a run-walk progression, weekly schedule, and tips for running your first 5K in India.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running/5k-training-plan" },
+  alternates: { canonical: "https://muscleguru.in/running/5k-training-plan" },
   title: "5K Training Plan for Beginners",
   description: DESC,
   keywords: ["5k training plan beginners", "couch to 5k India", "how to run 5k"],

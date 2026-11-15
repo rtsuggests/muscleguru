@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/weight-loss/why-not-losing-weight" },
+  alternates: { canonical: "https://muscleguru.in/weight-loss/why-not-losing-weight" },
   title: "Why Am I Not Losing Weight — Common Causes",
   description: "What does the research actually say about the best diet for fat loss? An honest comparison of low-carb, low-fat, fasting, and high-protein diets.",
 };

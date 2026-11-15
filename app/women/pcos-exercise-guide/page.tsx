@@ -6,7 +6,7 @@ const TITLE = "PCOS and Exercise: An Evidence-Based Guide";
 const DESC = "How exercise helps manage PCOS symptoms, which types work best according to the research, how much to do, and cautions around overtraining.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/women/pcos-exercise-guide" },
+  alternates: { canonical: "https://muscleguru.in/women/pcos-exercise-guide" },
   title: "PCOS and Exercise Guide — Evidence-Based",
   description: DESC,
   keywords: ["PCOS exercise guide", "best exercise for PCOS", "PCOS workout plan India"],

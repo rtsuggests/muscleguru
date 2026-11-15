@@ -7,7 +7,7 @@ const TITLE = "Why Indians Need a Lower BMI Cut-off: 23, Not 25";
 const DESC = "Why Indians face diabetes risk at a lower BMI: the 23 and 27.5 cut-offs, thin-fat bodies, waist limits, and how to check your own risk.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/weight-loss/why-indians-need-lower-bmi-cutoff" },
+  alternates: { canonical: "https://muscleguru.in/weight-loss/why-indians-need-lower-bmi-cutoff" },
   title: "Why Indians Need a Lower BMI Cut-off (23)",
   description: DESC,
   keywords: ["BMI for Indians", "Indian BMI chart 23 overweight", "thin fat Indian TOFI", "WHO BMI vs Indian BMI"],

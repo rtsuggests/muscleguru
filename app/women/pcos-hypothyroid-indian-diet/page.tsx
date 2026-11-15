@@ -7,7 +7,7 @@ const TITLE = "PCOS and Hypothyroid Weight Loss Diet for Indian Women";
 const DESC = "How to lose weight with PCOS or hypothyroidism on an Indian diet: plate method, roti and rice portions, millets, levothyroxine timing and exercise.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/women/pcos-hypothyroid-indian-diet" },
+  alternates: { canonical: "https://muscleguru.in/women/pcos-hypothyroid-indian-diet" },
   title: "PCOS & Thyroid Weight Loss Diet (India)",
   description: DESC,
   keywords: ["PCOS diet plan Indian", "hypothyroid weight loss diet India", "PCOS weight loss roti rice", "levothyroxine diet timing"],

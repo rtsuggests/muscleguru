@@ -7,7 +7,7 @@ const TITLE = "Indian Vegetarian Diet for Blood Sugar and HbA1c";
 const DESC = "A practical Indian vegetarian eating plan for blood sugar and HbA1c: plate method, millets, dal, portions, post-meal walks and a sample day.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/indian-diet/diabetes-diet-indian-vegetarian" },
+  alternates: { canonical: "https://muscleguru.in/indian-diet/diabetes-diet-indian-vegetarian" },
   title: "Indian Vegetarian Diet for Blood Sugar",
   description: DESC,
   keywords: ["HbA1c reduction diet Indian vegetarian", "diabetes diet chart vegetarian India", "millets for diabetes", "normal waist size Indian diabetes"],

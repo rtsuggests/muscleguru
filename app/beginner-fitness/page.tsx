@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/beginner-fitness" },
+  alternates: { canonical: "https://muscleguru.in/beginner-fitness" },
   title: "Beginner Fitness India — Gym Guides",
   description: "Complete beginner fitness guides for Indian adults — gym basics, home workouts, and how to start training safely with the right first routine.",
 };

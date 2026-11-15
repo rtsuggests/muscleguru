@@ -6,7 +6,7 @@ const TITLE = "3-Day Full Body Workout Plan for Beginners (India)";
 const DESC = "A complete 3-day full-body workout plan for beginners, with exercises, sets, reps and how to progress over the first months of training.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/workout-plans/3-day-full-body" },
+  alternates: { canonical: "https://muscleguru.in/workout-plans/3-day-full-body" },
   title: "3-Day Full Body Workout Plan India",
   description: DESC,
   keywords: ["3 day full body workout plan", "beginner gym plan India", "full body workout schedule"],

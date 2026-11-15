@@ -6,7 +6,7 @@ const TITLE = "Running for Weight Loss: How Much and How Often";
 const DESC = "How many calories running actually burns, a weekly running schedule for fat loss, and realistic expectations for how fast you'll see results.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running/running-for-weight-loss" },
+  alternates: { canonical: "https://muscleguru.in/running/running-for-weight-loss" },
   title: "Running for Weight Loss — Complete Guide",
   description: DESC,
   keywords: ["running for weight loss", "how much running to lose weight", "running weight loss plan"],

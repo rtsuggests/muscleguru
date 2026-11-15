@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/nutrition/indian-protein-sources" },
+  alternates: { canonical: "https://muscleguru.in/nutrition/indian-protein-sources" },
   title: "Best Indian Protein Sources — Food List",
   description: "A complete, evidence-based list of Indian protein sources — dal, paneer, soya, eggs and more — with protein content per serving for easy meal planning.",
 };

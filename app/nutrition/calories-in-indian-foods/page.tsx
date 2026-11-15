@@ -7,7 +7,7 @@ const TITLE = "Calories and Protein in Indian Foods: A Katori Guide";
 const DESC = "Calories, protein, carbs and fat in 1 katori dal, phulka, idli-sambar, poha, upma and rajma chawal, with tips for measuring your own portions.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/nutrition/calories-in-indian-foods" },
+  alternates: { canonical: "https://muscleguru.in/nutrition/calories-in-indian-foods" },
   title: "Calories in Indian Foods: Katori Guide",
   description: DESC,
   keywords: ["calories in 1 katori dal", "calories in phulka", "calories in idli sambar", "calories in poha upma rajma chawal"],

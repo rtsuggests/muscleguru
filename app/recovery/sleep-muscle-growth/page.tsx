@@ -6,7 +6,7 @@ const TITLE = "Sleep and Muscle Growth: How Much You Need and Why";
 const DESC = "How sleep affects muscle protein synthesis, growth hormone and recovery, how much sleep to aim for, and practical steps to sleep better for training.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/recovery/sleep-muscle-growth" },
+  alternates: { canonical: "https://muscleguru.in/recovery/sleep-muscle-growth" },
   title: "Sleep and Muscle Growth — Science Guide",
   description: DESC,
   keywords: ["sleep and muscle growth", "sleep for recovery", "how much sleep for bodybuilding"],

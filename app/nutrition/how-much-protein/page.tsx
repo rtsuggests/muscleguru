@@ -6,7 +6,7 @@ const TITLE = "How Much Protein Do You Need Per Day? (India Guide)";
 const DESC = "How much protein you need per day for muscle gain, fat loss or general health, with gram targets by body weight and how to hit them on an Indian diet.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/nutrition/how-much-protein" },
+  alternates: { canonical: "https://muscleguru.in/nutrition/how-much-protein" },
   title: "How Much Protein Per Day — India Guide",
   description: DESC,
   keywords: ["how much protein per day", "protein requirement India", "protein intake for muscle gain"],

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import TDEEClient from "./TDEEClient";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/calculators/tdee" },
+  alternates: { canonical: "https://muscleguru.in/calculators/tdee" },
   title: "TDEE Calculator India — Daily Calories",
   description: "Calculate your Total Daily Energy Expenditure using the Mifflin-St Jeor equation, the most accurate formula for everyday calorie needs.",
 };

@@ -6,7 +6,7 @@ const TITLE = "Navratri Diet Plan: Stay Fit During 9 Days of Fasting";
 const DESC = "A practical Navratri (falahar) diet and fitness plan — food list, a 9-day meal framework, and how to adjust training during the festival.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/fasting/navratri-diet-plan" },
+  alternates: { canonical: "https://muscleguru.in/fasting/navratri-diet-plan" },
   title: "Navratri Diet Plan — Falahar Foods",
   description: DESC,
   keywords: ["navratri diet plan", "falahar food list", "navratri fasting fitness"],

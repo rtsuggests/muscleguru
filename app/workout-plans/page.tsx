@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/workout-plans" },
+  alternates: { canonical: "https://muscleguru.in/workout-plans" },
   title: "Workout Plans India — Gym & Home Programmes",
   description: "Free workout plans for Indian lifters — 3-day full body, 4-day upper/lower, HIIT for beginners, and a muscle-building plan for naturally thin guys.",
   keywords: ["workout plans India", "gym workout plan India", "beginner workout plan India"],

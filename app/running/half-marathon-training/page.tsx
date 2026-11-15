@@ -6,7 +6,7 @@ const TITLE = "Half Marathon Training Plan: 12 Weeks to 21.1K";
 const DESC = "A 12-week half marathon training plan for intermediate runners, long run progression rules, and popular half marathons in India.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running/half-marathon-training" },
+  alternates: { canonical: "https://muscleguru.in/running/half-marathon-training" },
   title: "Half Marathon Training Plan — 12 Weeks",
   description: DESC,
   keywords: ["half marathon training plan", "21k training plan India", "half marathon India"],

@@ -6,7 +6,7 @@ const TITLE = "Best Dumbbell Exercises: A Complete Full-Body Guide";
 const DESC = "A complete list of dumbbell exercises for every major muscle group, plus a sample full-body dumbbell workout for home or gym training.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/exercise-guides/dumbbell-exercises" },
+  alternates: { canonical: "https://muscleguru.in/exercise-guides/dumbbell-exercises" },
   title: "Best Dumbbell Exercises — Full Body Guide",
   description: DESC,
   keywords: ["dumbbell exercises list", "dumbbell workout full body", "best dumbbell exercises home gym"],

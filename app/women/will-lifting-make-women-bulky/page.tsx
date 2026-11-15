@@ -6,7 +6,7 @@ const TITLE = "Will Lifting Weights Make Women Bulky? The Science";
 const DESC = "Why women don't build large muscles accidentally from strength training, the role of testosterone, and what actually happens when you lift.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/women/will-lifting-make-women-bulky" },
+  alternates: { canonical: "https://muscleguru.in/women/will-lifting-make-women-bulky" },
   title: "Will Lifting Make Women Bulky — The Truth",
   description: DESC,
   keywords: ["will weight lifting make women bulky", "does lifting make women bulky", "women strength training myths"],

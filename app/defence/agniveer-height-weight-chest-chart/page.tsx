@@ -6,7 +6,7 @@ const TITLE = "Agniveer Height, Weight & Chest Chart (Region-Wise) + 1.6km Run P
 const DESC = "Region-wise Agniveer height, weight and chest standards for GD, Technical and Tradesman, plus an 8-week diet and training plan to run 1.6km inside the cut-off.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/defence/agniveer-height-weight-chest-chart" },
+  alternates: { canonical: "https://muscleguru.in/defence/agniveer-height-weight-chest-chart" },
   title: "Agniveer Height Weight Chest Chart",
   description: DESC,
   keywords: ["agniveer height weight chest chart", "agniveer 1.6 km running time", "agniveer physical standards region wise"],

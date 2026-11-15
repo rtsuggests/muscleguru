@@ -6,7 +6,7 @@ const TITLE = "High-Protein Indian Breakfast Ideas for Fat Loss & Muscle Gain";
 const DESC = "Why a high-protein breakfast helps with hunger control and daily protein targets, with Indian vegetarian and non-vegetarian breakfast ideas.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/indian-diet/high-protein-breakfast" },
+  alternates: { canonical: "https://muscleguru.in/indian-diet/high-protein-breakfast" },
   title: "High-Protein Indian Breakfast Ideas",
   description: DESC,
   keywords: ["high protein breakfast Indian", "protein rich breakfast India", "healthy Indian breakfast for weight loss"],

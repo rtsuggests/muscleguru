@@ -7,7 +7,7 @@ const TITLE = "How to Spot Fake Whey Protein in India (and Verify Lab Tests)";
 const DESC = "How to check if whey protein is genuine in India: FSSAI licence, batch and seal checks, label red flags, lab reports, and cost per gram of protein.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/supplements/how-to-spot-fake-whey-protein-india" },
+  alternates: { canonical: "https://muscleguru.in/supplements/how-to-spot-fake-whey-protein-india" },
   title: "How to Spot Fake Whey Protein in India",
   description: DESC,
   keywords: ["fake whey protein India", "how to check whey protein authenticity", "lab tested whey protein India", "FSSAI protein powder"],

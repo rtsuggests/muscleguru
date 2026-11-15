@@ -6,7 +6,7 @@ const TITLE = "Exercise During Periods: What to Do and What to Modify";
 const DESC = "How to train safely and effectively during your period, how the menstrual cycle affects performance, and which exercises help reduce period pain.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/women/fitness-during-periods" },
+  alternates: { canonical: "https://muscleguru.in/women/fitness-during-periods" },
   title: "Exercise During Periods — Guide India",
   description: DESC,
   keywords: ["exercise during periods", "workout during menstruation", "period pain exercise relief"],

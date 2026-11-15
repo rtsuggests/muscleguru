@@ -6,7 +6,7 @@ const TITLE = "NDA & CDS Medical BMI Standards: How They Differ From Civilian BM
 const DESC = "Why the SSB medical board uses an age and height-banded weight chart instead of a flat BMI cutoff, and how it compares to civilian ranges.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/defence/nda-cds-medical-bmi-standards" },
+  alternates: { canonical: "https://muscleguru.in/defence/nda-cds-medical-bmi-standards" },
   title: "NDA CDS Medical BMI Standards Explained",
   description: DESC,
   keywords: ["NDA medical BMI standards", "CDS medical overweight underweight", "SSB medical BMI chart"],

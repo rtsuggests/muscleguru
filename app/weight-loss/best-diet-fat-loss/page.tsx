@@ -6,7 +6,7 @@ const TITLE = "Best Diet for Fat Loss in India: What the Research Says";
 const DESC = "A comparison of low-carb, intermittent fasting, and calorie counting for fat loss, and how to choose the right approach for an Indian diet.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/weight-loss/best-diet-fat-loss" },
+  alternates: { canonical: "https://muscleguru.in/weight-loss/best-diet-fat-loss" },
   title: "Best Diet for Fat Loss India",
   description: DESC,
   keywords: ["best diet for weight loss India", "low carb vs intermittent fasting", "diet for fat loss India"],

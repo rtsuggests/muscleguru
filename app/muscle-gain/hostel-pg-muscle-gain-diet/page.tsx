@@ -7,7 +7,7 @@ const TITLE = "Hostel and PG Muscle Gain Diet in India (No Cooking Needed)";
 const DESC = "A no-cook muscle gain diet for hostel and PG students: kettle-only high-protein meals, mess food hacks, a 100 g protein day and a shopping list.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/muscle-gain/hostel-pg-muscle-gain-diet" },
+  alternates: { canonical: "https://muscleguru.in/muscle-gain/hostel-pg-muscle-gain-diet" },
   title: "Hostel/PG Muscle Gain Diet (No Cooking)",
   description: DESC,
   keywords: ["hostel muscle gain diet India", "PG diet plan no cooking", "high protein no cook meals", "kettle meals for students"],

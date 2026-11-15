@@ -6,7 +6,7 @@ const TITLE = "Overtraining: Signs, Symptoms and How to Recover";
 const DESC = "How to recognize overtraining and overreaching, the warning signs to watch for, and how to recover through deloads and rest.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/recovery/overtraining-signs" },
+  alternates: { canonical: "https://muscleguru.in/recovery/overtraining-signs" },
   title: "Overtraining Signs — Recognize & Recover",
   description: DESC,
   keywords: ["overtraining signs", "overtraining syndrome symptoms", "how to recover from overtraining"],

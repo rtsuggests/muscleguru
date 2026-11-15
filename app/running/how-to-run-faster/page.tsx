@@ -6,7 +6,7 @@ const TITLE = "How to Run Faster: 5 Proven Methods";
 const DESC = "Five evidence-based methods to run faster — interval training, tempo runs, cadence, strength training and aerobic base building — plus a 6-week speed plan.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running/how-to-run-faster" },
+  alternates: { canonical: "https://muscleguru.in/running/how-to-run-faster" },
   title: "How to Run Faster — 5 Proven Methods",
   description: DESC,
   keywords: ["how to run faster", "improve running speed", "running speed training plan"],

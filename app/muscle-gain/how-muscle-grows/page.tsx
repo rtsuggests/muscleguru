@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/muscle-gain/how-muscle-grows" },
+  alternates: { canonical: "https://muscleguru.in/muscle-gain/how-muscle-grows" },
   title: "How Muscle Grows — Hypertrophy Explained",
   description: "A complete evidence-based guide to how muscle actually grows — the role of mechanical tension, protein synthesis, recovery, and training volume.",
 };

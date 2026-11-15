@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/about" },
+  alternates: { canonical: "https://muscleguru.in/about" },
   title: "About MuscleGuru.in — Our Approach",
   description: "Learn about MuscleGuru.in — India's evidence-based fitness platform. Our mission, our approach, and why we built free tools for Indian gym-goers.",
 };

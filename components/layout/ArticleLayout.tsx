@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FAQ from "@/components/ui/FAQ";
 import { REVIEWER } from "@/lib/site";
+import TiltCard from "@/components/3d/TiltCard";
 
 interface ArticleLayoutProps {
   title: string; category: string; categoryHref: string;
@@ -70,11 +71,13 @@ export default function ArticleLayout({ title, category, categoryHref, readTime,
         {relatedCalculators.length > 0 && (
           <div style={{ marginTop: "2.5rem", paddingTop: "2rem", borderTop: "1.5px solid var(--color-border)" }}>
             <h2 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>Related Calculators</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: "0.75rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.85rem" }}>
               {relatedCalculators.map(c => (
-                <Link key={c.href} href={c.href} style={{ display: "flex", alignItems: "center", gap: "0.75rem", background: "var(--color-bg)", border: "1.5px solid var(--color-border)", borderRadius: "0.75rem", padding: "0.875rem 1rem", textDecoration: "none", color: "var(--color-dark)", fontWeight: 600, fontSize: "0.875rem" }}>
-                  <span style={{ fontSize: "1.4rem" }}>{c.icon}</span>{c.name}
-                </Link>
+                <TiltCard key={c.href} maxTilt={8} scale={1.02}>
+                  <Link href={c.href} style={{ display: "flex", alignItems: "center", gap: "0.75rem", background: "#fff", border: "1.5px solid var(--color-border)", borderRadius: "0.875rem", padding: "0.875rem 1rem", textDecoration: "none", color: "var(--color-dark)", fontWeight: 700, fontSize: "0.9rem", boxShadow: "0 2px 10px rgba(0,0,0,0.02)" }}>
+                    <span style={{ fontSize: "1.5rem" }}>{c.icon}</span>{c.name}
+                  </Link>
+                </TiltCard>
               ))}
             </div>
           </div>

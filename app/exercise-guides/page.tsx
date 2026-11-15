@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/exercise-guides" },
+  alternates: { canonical: "https://muscleguru.in/exercise-guides" },
   title: "Exercise Technique Guides India",
   description: "Step-by-step exercise technique guides for Indian beginners — squat, bench press, deadlift, pull-ups and more, with common mistakes and fixes.",
   keywords: ["exercise technique guides India", "how to squat correctly", "gym exercise form guide"],

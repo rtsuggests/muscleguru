@@ -6,7 +6,7 @@ const TITLE = "Intermittent Fasting for Indians: A Practical Guide";
 const DESC = "How intermittent fasting works, common schedules like 16:8, how it fits an Indian meal pattern, and what the research shows about fat loss.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/indian-diet/intermittent-fasting-india" },
+  alternates: { canonical: "https://muscleguru.in/indian-diet/intermittent-fasting-india" },
   title: "Intermittent Fasting India — 16:8 Guide",
   description: DESC,
   keywords: ["intermittent fasting India", "16:8 fasting Indian diet", "intermittent fasting for weight loss"],

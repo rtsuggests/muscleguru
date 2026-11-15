@@ -6,7 +6,7 @@ const TITLE = "10K Training Plan: 8 Weeks From 5K to 10K";
 const DESC = "An 8-week 10K training plan for runners who can already complete a 5K, with weekly structure, easy run guidance, race-day pacing and heat tips for India.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running/10k-training-plan" },
+  alternates: { canonical: "https://muscleguru.in/running/10k-training-plan" },
   title: "10K Training Plan — 8 Weeks",
   description: DESC,
   keywords: ["10k training plan", "5k to 10k training", "10k running plan India"],

@@ -6,7 +6,7 @@ const TITLE = "Protein Needs for Women in India: A Complete Guide";
 const DESC = "How much protein Indian women need for fitness, muscle gain, fat loss and general health, with targets by goal and practical Indian food sources.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/women/protein-needs-women" },
+  alternates: { canonical: "https://muscleguru.in/women/protein-needs-women" },
   title: "Protein Needs for Women — Guide",
   description: DESC,
   keywords: ["protein needs women India", "how much protein women", "protein for Indian women fitness"],

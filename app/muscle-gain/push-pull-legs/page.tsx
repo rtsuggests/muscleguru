@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/muscle-gain/push-pull-legs" },
+  alternates: { canonical: "https://muscleguru.in/muscle-gain/push-pull-legs" },
   title: "Push Pull Legs Plan India — 6-Day PPL",
   description: "A complete, practical push pull legs programme for building muscle, with exercises, sets and reps for a 6-day split suited to intermediate lifters.",
 };

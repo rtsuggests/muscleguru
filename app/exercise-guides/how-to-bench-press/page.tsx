@@ -6,7 +6,7 @@ const TITLE = "How to Bench Press: Full Technique Guide";
 const DESC = "Step-by-step bench press technique, grip width, common mistakes, safety tips, and how to progress the bench press as a beginner.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/exercise-guides/how-to-bench-press" },
+  alternates: { canonical: "https://muscleguru.in/exercise-guides/how-to-bench-press" },
   title: "How to Bench Press — Technique Guide",
   description: DESC,
   keywords: ["how to bench press correctly", "bench press form guide", "bench press mistakes beginners"],

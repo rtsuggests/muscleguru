@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/calculators" },
+  alternates: { canonical: "https://muscleguru.in/calculators" },
   title: "Free Fitness Calculators India — 27 Tools",
   description: "27 free science-backed fitness calculators for Indian adults — BMI, TDEE, protein, VO2 max, army fitness, intermittent fasting, and more.",
   keywords: ["fitness calculators India","free fitness calculator India","BMI calculator India","TDEE calculator India"],

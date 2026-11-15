@@ -6,7 +6,7 @@ const TITLE = "What to Eat Before a Workout: Indian Pre-Workout Meal Guide";
 const DESC = "What to eat before training for energy without stomach discomfort, with Indian meal and snack examples for different timing windows.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/indian-diet/pre-workout-meal" },
+  alternates: { canonical: "https://muscleguru.in/indian-diet/pre-workout-meal" },
   title: "Pre-Workout Meal Guide — Indian Foods",
   description: DESC,
   keywords: ["pre workout meal Indian food", "what to eat before gym India", "pre workout snack India"],

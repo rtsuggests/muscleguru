@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/workout-plans/hiit-beginner" },
+  alternates: { canonical: "https://muscleguru.in/workout-plans/hiit-beginner" },
   title: "HIIT Workout Plan for Beginners India",
   description: "A safe, effective 4-week HIIT programme for Indian beginners — no equipment needed, just 20 minutes per session to build fitness fast.",
   keywords: ["HIIT workout beginners India", "HIIT plan no equipment", "high intensity interval training beginner"],

@@ -6,7 +6,7 @@ const TITLE = "Plank Guide: Perfect Form, Mistakes and Progressions";
 const DESC = "How to do a plank with correct form, common mistakes to avoid, plank progressions, and how long you should actually hold one.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/exercise-guides/plank-guide" },
+  alternates: { canonical: "https://muscleguru.in/exercise-guides/plank-guide" },
   title: "Plank Guide — Form, Mistakes & Progressions",
   description: DESC,
   keywords: ["how to do a plank correctly", "plank form guide", "plank progressions beginner"],

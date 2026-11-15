@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/exercise-guides/pull-up-guide" },
+  alternates: { canonical: "https://muscleguru.in/exercise-guides/pull-up-guide" },
   title: "Pull-Up Guide — Zero to 10 Reps",
   description: "Complete pull-up guide for Indian gym-goers. From zero pull-ups to 10 reps with an 8-week progressive programme, grip variations, and form cues.",
   keywords: ["pull up guide India", "how to do pull ups India", "pull up programme India", "zero to pull up India"],

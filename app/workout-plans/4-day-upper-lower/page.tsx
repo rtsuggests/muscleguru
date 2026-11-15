@@ -6,7 +6,7 @@ const TITLE = "4-Day Upper/Lower Workout Plan for Intermediate Lifters";
 const DESC = "A complete 4-day upper/lower split for intermediate lifters, with exercises, sets and reps, and how to progress from the 3-day full-body routine.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/workout-plans/4-day-upper-lower" },
+  alternates: { canonical: "https://muscleguru.in/workout-plans/4-day-upper-lower" },
   title: "4-Day Upper Lower Workout Plan India",
   description: DESC,
   keywords: ["4 day upper lower split", "upper lower workout plan India", "intermediate gym plan"],

@@ -6,7 +6,7 @@ const TITLE = "Best Time to Run: Morning vs Evening (India Guide)";
 const DESC = "Whether morning or evening running is better for fat loss and performance, and how Indian heat and air quality affect your choice of timing.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running/best-time-to-run" },
+  alternates: { canonical: "https://muscleguru.in/running/best-time-to-run" },
   title: "Best Time to Run — Morning vs Evening",
   description: DESC,
   keywords: ["best time to run morning or evening", "running time India heat", "morning vs evening run"],

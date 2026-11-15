@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import IdealWeightClient from "./IdealWeightClient";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/calculators/ideal-weight" },
+  alternates: { canonical: "https://muscleguru.in/calculators/ideal-weight" },
   title: "Ideal Weight Calculator India — 4 Formulas",
   description: "Find your ideal body weight range for your height using four validated formulas, with evidence-based interpretation for Indian adults.",
   openGraph: {

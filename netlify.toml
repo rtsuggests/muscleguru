@@ -1,9 +1,65 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
-  NODE_VERSION = "22.23.3"
+  NODE_VERSION = "22"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# 1. Force www and http to canonical https://muscleguru.in
+[[redirects]]
+  from = "https://www.muscleguru.in/*"
+  to = "https://muscleguru.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.muscleguru.in/*"
+  to = "https://muscleguru.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://muscleguru.in/*"
+  to = "https://muscleguru.in/:splat"
+  status = 301
+  force = true
+
+# 2. Legacy / Old Footer URL Redirects
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy-policy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms-of-service"
+  status = 301
+  force = true
+
+# 3. Security, Caching & Googlebot Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-Robots-Tag = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+    X-Robots-Tag = "all"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+    X-Robots-Tag = "all"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

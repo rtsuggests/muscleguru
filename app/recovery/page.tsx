@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/recovery" },
+  alternates: { canonical: "https://muscleguru.in/recovery" },
   title: "Recovery Guides India — Sleep & Rest",
   description: "Evidence-based recovery guides for Indian gym-goers — sleep, rest days, overtraining signs, and how to recover faster between hard training sessions.",
 };

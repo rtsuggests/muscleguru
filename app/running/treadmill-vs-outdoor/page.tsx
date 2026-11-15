@@ -6,7 +6,7 @@ const TITLE = "Treadmill vs Outdoor Running: Which Is Better?";
 const DESC = "Comparing treadmill and outdoor running for calorie burn, joint impact and training quality, with a hybrid approach that works well for Indian runners.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running/treadmill-vs-outdoor" },
+  alternates: { canonical: "https://muscleguru.in/running/treadmill-vs-outdoor" },
   title: "Treadmill vs Outdoor Running — India Guide",
   description: DESC,
   keywords: ["treadmill vs outdoor running", "treadmill running India", "is treadmill running as good as outdoor"],

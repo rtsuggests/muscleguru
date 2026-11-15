@@ -6,7 +6,7 @@ const TITLE = "Muscle Gain Diet for Indians: What to Eat and How Much";
 const DESC = "A complete muscle gain diet plan for Indian adults: calorie surplus, protein targets, meal timing, and Indian vegetarian and non-vegetarian food choices.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/muscle-gain/muscle-gain-diet-india" },
+  alternates: { canonical: "https://muscleguru.in/muscle-gain/muscle-gain-diet-india" },
   title: "Muscle Gain Diet India — What to Eat",
   description: DESC,
   keywords: ["muscle gain diet India", "bulking diet Indian food", "diet to gain muscle vegetarian"],

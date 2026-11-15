@@ -6,7 +6,7 @@ const TITLE = "How to Squat: Full Technique Guide";
 const DESC = "Step-by-step squat technique, the most common form mistakes, mobility fixes, and how to progress the squat safely as a complete beginner.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/exercise-guides/how-to-squat" },
+  alternates: { canonical: "https://muscleguru.in/exercise-guides/how-to-squat" },
   title: "How to Squat — Technique Guide",
   description: DESC,
   keywords: ["how to squat correctly", "squat form guide", "squat mistakes beginners"],

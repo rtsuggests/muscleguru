@@ -6,7 +6,7 @@ const TITLE = "Running Injuries: Prevention Guide for Common Problems";
 const DESC = "The most common running injuries — shin splints, runner's knee, IT band syndrome, plantar fasciitis — their causes, prevention, and the 10% training rule.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/running/running-injuries-prevention" },
+  alternates: { canonical: "https://muscleguru.in/running/running-injuries-prevention" },
   title: "Running Injuries — Prevention Guide",
   description: DESC,
   keywords: ["running injury prevention", "shin splints runners knee", "common running injuries"],

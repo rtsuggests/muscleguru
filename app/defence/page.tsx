@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/defence" },
+  alternates: { canonical: "https://muscleguru.in/defence" },
   title: "Defence Exam Physical Standards India",
   description: "Height, weight, chest and running standards for Agniveer, NDA, CDS, SSC GD and CAPF, with training and diet plans to meet them. Free calculators included.",
 };

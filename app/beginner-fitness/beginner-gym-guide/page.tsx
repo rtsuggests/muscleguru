@@ -6,7 +6,7 @@ const TITLE = "Beginner Gym Guide for India: Your First 3 Months";
 const DESC = "A complete beginner's guide to starting at the gym in India — the 5 basic movements, how to choose a routine, gym etiquette, and common first-timer mistakes.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/beginner-fitness/beginner-gym-guide" },
+  alternates: { canonical: "https://muscleguru.in/beginner-fitness/beginner-gym-guide" },
   title: "Beginner Gym Guide India",
   description: DESC,
   keywords: ["beginner gym guide India", "how to start gym", "first time gym tips India"],

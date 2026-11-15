@@ -6,7 +6,7 @@ const TITLE = "100g Protein Vegetarian Diet Under ₹150 a Day (Without Whey)";
 const DESC = "A 100 g protein vegetarian diet chart under ₹150 a day with no whey, with cost per 10 g of protein for soya, dal, besan, paneer, milk and eggs.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/indian-diet/100g-protein-vegetarian-diet-under-150" },
+  alternates: { canonical: "https://muscleguru.in/indian-diet/100g-protein-vegetarian-diet-under-150" },
   title: "100g Protein Veg Diet Under ₹150 a Day",
   description: DESC,
   keywords: ["100g protein vegetarian diet India", "cheap protein vegetarian India", "protein diet under 150 rupees", "high protein veg diet without whey"],

@@ -6,7 +6,7 @@ const TITLE = "Egg Protein Guide: Whole Eggs vs Egg Whites & How Many to Eat";
 const DESC = "How much protein is in an egg, whole egg vs egg white, whether cooking method matters, and how many eggs are safe to eat per day.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/nutrition/egg-protein-guide" },
+  alternates: { canonical: "https://muscleguru.in/nutrition/egg-protein-guide" },
   title: "Egg Protein Guide — Whole vs White",
   description: DESC,
   keywords: ["egg protein content", "whole egg vs egg white protein", "how many eggs per day safe"],

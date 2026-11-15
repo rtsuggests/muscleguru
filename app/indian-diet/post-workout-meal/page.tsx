@@ -6,7 +6,7 @@ const TITLE = "What to Eat After a Workout: Indian Post-Workout Meal Guide";
 const DESC = "What to eat after training to support recovery and muscle growth, with Indian vegetarian and non-vegetarian meal examples and how important timing really is.";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/indian-diet/post-workout-meal" },
+  alternates: { canonical: "https://muscleguru.in/indian-diet/post-workout-meal" },
   title: "Post-Workout Meal Guide — Indian Foods",
   description: DESC,
   keywords: ["post workout meal Indian food", "what to eat after gym India", "recovery meal after workout"],

@@ -1,8 +1,10 @@
 import { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://muscleguru.in";
-  const now = new Date();
+  const lastMod = "2026-11-10";
 
   const calculators = ["bmi","tdee","protein","body-fat","macro","water-intake","one-rep-max","calorie-deficit","lean-body-mass","ffmi","ideal-weight","running-pace","heart-rate-zone","sleep","waist-hip-ratio","calories-burned","keto-macro","body-type","pregnancy-weight-gain","vo2-max","army-fitness","vegetarian-protein","intermittent-fasting","muscle-gain-rate","diabetes-bmi","idrs"];
   const runningArticles = ["beginners-guide","5k-training-plan","10k-training-plan","half-marathon-training","running-for-weight-loss","treadmill-vs-outdoor","running-injuries-prevention","breathing-while-running","how-to-run-faster","running-clubs-india","best-time-to-run"];
@@ -19,46 +21,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const defenceArticles = ["agniveer-height-weight-chest-chart","ssc-gd-capf-police-physical-test","nda-cds-medical-bmi-standards"];
 
   const makeUrls = (section: string, slugs: string[], priority = 0.8) =>
-    slugs.map(slug => ({ url: `${base}/${section}/${slug}`, lastModified: now, changeFrequency: "monthly" as const, priority }));
+    slugs.map(slug => ({ url: `${base}/${section}/${slug}`, lastModified: lastMod, changeFrequency: "monthly" as const, priority }));
 
   return [
-    { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/calculators`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
-    { url: `${base}/my-progress`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
-    { url: `${base}/calculators/fasting-nutrition`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${base}/fasting`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
-    { url: `${base}/fasting/navratri-diet-plan`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
-    { url: `${base}/fasting/karva-chauth-fasting-guide`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: base, lastModified: lastMod, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${base}/calculators`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${base}/calculators/fasting-nutrition`, lastModified: lastMod, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/fasting`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${base}/fasting/navratri-diet-plan`, lastModified: lastMod, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${base}/fasting/karva-chauth-fasting-guide`, lastModified: lastMod, changeFrequency: "yearly", priority: 0.8 },
     ...makeUrls("calculators", calculators, 0.85),
-    { url: `${base}/running`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${base}/running`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.85 },
     ...makeUrls("running", runningArticles, 0.82),
-    { url: `${base}/nutrition`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/nutrition`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("nutrition", nutritionArticles),
-    { url: `${base}/supplements`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/supplements`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("supplements", supplementArticles),
-    { url: `${base}/muscle-gain`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/muscle-gain`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("muscle-gain", muscleGainArticles),
-    { url: `${base}/weight-loss`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/weight-loss`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("weight-loss", weightLossArticles),
-    { url: `${base}/beginner-fitness`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/beginner-fitness`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("beginner-fitness", beginnerArticles),
-    { url: `${base}/women`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/women`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("women", womenArticles),
-    { url: `${base}/exercise-guides`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/exercise-guides`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("exercise-guides", exerciseGuides),
-    { url: `${base}/workout-plans`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/workout-plans`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("workout-plans", workoutPlans),
-    { url: `${base}/recovery`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/recovery`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("recovery", recoveryArticles),
-    { url: `${base}/indian-diet`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/indian-diet`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 },
     ...makeUrls("indian-diet", indianDietArticles),
-    { url: `${base}/defence`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/defence`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.9 },
     ...makeUrls("defence", defenceArticles, 0.88),
-    { url: `${base}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
-    { url: `${base}/editorial-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
-    { url: `${base}/medical-disclaimer`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
-    { url: `${base}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${base}/terms-of-service`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${base}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${base}/about`, lastModified: lastMod, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${base}/editorial-policy`, lastModified: lastMod, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${base}/medical-disclaimer`, lastModified: lastMod, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${base}/privacy-policy`, lastModified: lastMod, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/terms-of-service`, lastModified: lastMod, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/contact`, lastModified: lastMod, changeFrequency: "yearly", priority: 0.4 },
   ];
 }

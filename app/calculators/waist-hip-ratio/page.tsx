@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import WHRClient from "./WHRClient";
 export const metadata: Metadata = {
-  alternates: { canonical: "/calculators/waist-hip-ratio" },
+  alternates: { canonical: "https://muscleguru.in/calculators/waist-hip-ratio" },
   title: "Waist-to-Hip Ratio Calculator India",
   description: "Calculate your waist-to-hip ratio, a more accurate health risk indicator than BMI for Indian adults, with interpretation guidelines included.",
 };

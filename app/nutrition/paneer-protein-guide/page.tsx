@@ -3,7 +3,7 @@ import ArticleLayout from "@/components/layout/ArticleLayout";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/nutrition/paneer-protein-guide" },
+  alternates: { canonical: "https://muscleguru.in/nutrition/paneer-protein-guide" },
   title: "Paneer Protein Content — Guide India",
   description: "A complete guide to paneer as a fitness food — protein content per 100g, how it compares to chicken and eggs, and how to fit it into an Indian diet.",
 };
